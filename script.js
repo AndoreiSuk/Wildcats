@@ -17,17 +17,22 @@ splashScreen.addEventListener("click", () => {
 // 2. DATA FOR MODALS & GALLERIES
 const champData = {
   2019: {
+    subtitle: "2019 DANZTRACK PHILIPPINES",
     title: "THE FIRST CROWN",
+    result: "Grand Champion",
+    division: "College Category",
     img: "images/2019/danztrack2019.png",
     gallery: [
       "images/2019/danztrack2019.png",
       "https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80",
-      // Add more 2019 images here
     ],
     desc: "The year it all began. The MSU-IIT Titans shocked the audience with a high-octane performance that blended traditional roots with modern hip-hop.",
   },
   2023: {
+    subtitle: "2023 DANZTRACK PHILIPPINES",
     title: "THE COMEBACK",
+    result: "Grand Champion",
+    division: "College Category",
     img: "images/2023/danztrack2023Kingkara.jpg",
     gallery: [
       "images/2023/danztrack2023Kingkara.jpg",
@@ -60,12 +65,14 @@ const champData = {
       "images/2023/danztrack2023-001.jpg",
       "images/2023/danztrack2023-002.jpg",
       "images/2023/danztrack2023-003.jpg",
-      // Add more 2023 images here
     ],
     desc: "After the profound loss in 2022, the question was: do they still have it? The Titans answered with a resounding YES.",
   },
   2024: {
+    subtitle: "2024 DANZTRACK PHILIPPINES",
     title: "BACK TO BACK",
+    result: "Grand Champion",
+    division: "College Category",
     img: "images/2024/danztrack2024Kingkara.jpg",
     gallery: [
       "images/2024/danztrack2024Kingkara.jpg",
@@ -73,13 +80,14 @@ const champData = {
       "images/2024/danztrack2024-001.jpg",
       "images/2024/danztrack2024-002.jpg",
       "images/2024/danztrack2024-003.jpg",
-
-      // Add more 2024 images here
     ],
     desc: "Defending the title is harder than winning it. Facing fierce competition from other Colleges in Iligan City, the Wildcats executed a flawless routine.",
   },
   2025: {
+    subtitle: "2025 DANZTRACK PHILIPPINES",
     title: "THE 3-PEAT DYNASTY",
+    result: "Grand Champion",
+    division: "College Division",
     img: "images/2025/danztrack2025poster.jpg",
     gallery: [
       "images/2025/danztrack2025poster.jpg",
@@ -107,18 +115,29 @@ const champData = {
       "images/2025/danztrack2025-021.jpg",
       "images/2025/danztrack2025-022.jpg",
       "images/2025/danztrack2025-023.jpg",
-      // Add more 2024 images here
     ],
     desc: "The 3-peat. Unprecedented dominance. This performance was a celebration of the team's history.",
+  },
+  2026: {
+    subtitle: "2026 WORLD OF DANCE PH", // Custom for WOD
+    title: "THE WORLD OF DANCE",
+    result: "aaaaaaaa",
+    division: "College Division",
+    img: "images/World_of_Dance_Philippines_logo.png",
+    gallery: ["images/World_of_Dance_Philippines_logo.png"],
+    desc: "Lorem Ipsum Kingkarasa Aron Dili Ma Evil Eye.",
   },
 };
 
 // Modal Variables
 const modal = document.getElementById("champModal");
 const modalImg = document.getElementById("modalImg");
-const modalYear = document.getElementById("modalYear");
+// Updated Variables to find new IDs
+const modalSubtitle = document.getElementById("modalSubtitle"); // Renamed from modalYear
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
+const modalResult = document.getElementById("modalResult");
+const modalDivision = document.getElementById("modalDivision");
 
 // Gallery Variables
 let currentGallery = [];
@@ -129,9 +148,16 @@ const lightboxImg = document.getElementById("lightboxImg");
 // OPEN MODAL
 function openModal(year) {
   const data = champData[year];
-  modalYear.innerText = year + " DANZTRACK PHILIPPINES";
+
+  // Use data from object instead of hardcoded text
+  if (modalSubtitle) modalSubtitle.innerText = data.subtitle;
   modalTitle.innerText = data.title;
   modalDesc.innerText = data.desc;
+
+  // Update Result & Division dynamically
+  if (modalResult) modalResult.innerText = data.result;
+  if (modalDivision) modalDivision.innerText = data.division;
+
   modalImg.src = data.img;
 
   // Save current gallery data for the lightbox
@@ -179,6 +205,9 @@ function changeImage(direction) {
 }
 
 // Keyboard Support for Gallery
+document.addEventListener("click", () => {
+  closeLightbox();
+});
 document.addEventListener("keydown", function (event) {
   if (!lightbox.classList.contains("active")) return;
 
