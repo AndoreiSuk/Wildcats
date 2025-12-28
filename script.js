@@ -205,9 +205,6 @@ function changeImage(direction) {
 }
 
 // Keyboard Support for Gallery
-document.addEventListener("click", () => {
-  closeLightbox();
-});
 document.addEventListener("keydown", function (event) {
   if (!lightbox.classList.contains("active")) return;
 

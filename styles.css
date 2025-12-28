@@ -1,16 +1,26 @@
-/* Smooth Scroll & Scrollbar */
-html {
-  scroll-behavior: smooth;
-}
+/* --- CUSTOM SCROLLBAR (Apply to all pages) --- */
+
+/* The width of the scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
+
+/* The background track (Dark Grey/Black) */
 ::-webkit-scrollbar-track {
   background: #0a0a0a;
+  border-left: 1px solid #333;
 }
+
+/* The moving handle (Wildcat Gold) */
 ::-webkit-scrollbar-thumb {
-  background: #800000;
-  border-radius: 4px;
+  background: #ffd700;
+  border-radius: 5px;
+  border: 2px solid #0a0a0a; /* Creates a padding effect */
+}
+
+/* Handle on hover (Wildcat Orange) */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff4500;
 }
 
 /* Parallax Hero */
