@@ -35,12 +35,6 @@
   min-height: 100dvh;
 }
 
-@media (max-width: 768px) {
-  .hero-bg {
-    background-attachment: scroll;
-  }
-}
-
 /* SPLASH SCREEN STYLES */
 #splash-screen {
   transition:
@@ -122,4 +116,52 @@
 #lightbox.active {
   opacity: 1;
   visibility: visible;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Screens under 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  /* Parallax Mobile Fix */
+  .hero-bg {
+    background-attachment: scroll;
+  }
+
+  /* Fix for "9533.jpg" - Reduce letter spacing and font size */
+  .intro-text,
+  h2,
+  p {
+    letter-spacing: 2px !important;
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  /* Fix for "9534.jpg" - Scale down the logo and massive text */
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+    line-height: 1.1;
+  }
+
+  .tagline,
+  .username {
+    font-size: 0.8rem;
+  }
+
+  /* Adjust buttons and boxes for mobile */
+  .champion-box {
+    padding: 10px 20px;
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  /* Optional: Fix the dark Instagram icon contrast */
+  .social-icon {
+    filter: invert(1);
+  }
 }
