@@ -216,3 +216,28 @@ document.addEventListener("keydown", function (event) {
     closeLightbox();
   }
 });
+
+// --- ROSTER CAROUSEL LOGIC ---
+const rosterContainer = document.getElementById("rosterContainer");
+const btnLeft = document.getElementById("slideLeft");
+const btnRight = document.getElementById("slideRight");
+
+if (rosterContainer && btnLeft && btnRight) {
+  // Calculate how far to scroll (Card width + gap)
+  // For most screens, roughly 340px covers a card and its margin
+  const scrollAmount = 340;
+
+  btnLeft.addEventListener("click", () => {
+    rosterContainer.scrollBy({
+      left: -scrollAmount,
+      behavior: "smooth",
+    });
+  });
+
+  btnRight.addEventListener("click", () => {
+    rosterContainer.scrollBy({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  });
+}

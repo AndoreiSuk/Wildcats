@@ -481,245 +481,264 @@
             ></div>
           </div>
 
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 justify-items-center"
-          >
-            <!-- NADS -->
-            <div
-              class="group relative w-full max-w-sm [-webkit-tap-highlight-color:transparent]"
-              data-aos="fade-up"
-              data-aos-delay="400"
+          <div class="relative max-w-7xl mx-auto mt-12 group/slider">
+            <!-- Desktop Navigation Buttons -->
+            <button
+              id="slideLeft"
+              class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-30 w-14 h-14 bg-black/80 border border-wildcat-gold rounded-full items-center justify-center text-white hover:bg-wildcat-orange hover:text-black transition-all shadow-[0_0_15px_rgba(255,215,0,0.3)] opacity-0 group-hover/slider:opacity-100"
             >
+              <i class="fa-solid fa-chevron-left text-xl"></i>
+            </button>
+
+            <button
+              id="slideRight"
+              class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-30 w-14 h-14 bg-black/80 border border-wildcat-gold rounded-full items-center justify-center text-white hover:bg-wildcat-orange hover:text-black transition-all shadow-[0_0_15px_rgba(255,215,0,0.3)] opacity-0 group-hover/slider:opacity-100"
+            >
+              <i class="fa-solid fa-chevron-right text-xl"></i>
+            </button>
+
+            <!-- The Scrolling Container -->
+            <div
+              id="rosterContainer"
+              class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 pt-4 px-4 scroll-smooth hide-scrollbar"
+            >
+              <!-- NADS -->
               <div
-                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-              ></div>
-              <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+                data-aos="fade-up"
+                data-aos-delay="400"
               >
-                <img
-                  src="images/NadsFreshident.jpg"
-                  alt="Nads"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
                 ></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3
-                    class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                  >
-                    Nads
-                  </h3>
-                  <p
-                    class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                  >
-                    Wildcats President
-                  </p>
-                  <p
-                    class="text-white-400 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                  >
-                    "Bun up di dancehall gyal!"
-                  </p>
+                <div
+                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                >
+                  <img
+                    src="images/NadsFreshident.jpg"
+                    alt="Nads"
+                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 w-full p-6">
+                    <h3
+                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
+                    >
+                      Nads
+                    </h3>
+                    <p
+                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
+                    >
+                      Wildcats President
+                    </p>
+                    <p
+                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
+                    >
+                      "Bun up di dancehall gyal!"
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- AYA -->
-            <div
-              class="group relative w-full max-w-sm [-webkit-tap-highlight-color:transparent]"
-              data-aos="fade-up"
-              data-aos-delay="0"
-            >
+              <!-- AYA -->
               <div
-                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-              ></div>
-              <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+                data-aos="fade-up"
+                data-aos-delay="0"
               >
-                <img
-                  src="images/ayagirl001.jpg"
-                  alt="Aya"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
                 ></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3
-                    class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                  >
-                    Aya
-                  </h3>
-                  <p
-                    class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                  >
-                    Wildcats Member
-                  </p>
-                  <p
-                    class="text-white-400 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                  >
-                    "Let Hiphop get into your soul!"
-                  </p>
+                <div
+                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                >
+                  <img
+                    src="images/ayagirl001.jpg"
+                    alt="Aya"
+                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 w-full p-6">
+                    <h3
+                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
+                    >
+                      Aya
+                    </h3>
+                    <p
+                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
+                    >
+                      Wildcats Member
+                    </p>
+                    <p
+                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
+                    >
+                      "Let Hiphop get into your soul!"
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- CHOTIE -->
-            <div
-              class="group relative w-full max-w-sm [-webkit-tap-highlight-color:transparent]"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+              <!-- CHOTIE -->
               <div
-                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-              ></div>
-              <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+                data-aos="fade-up"
+                data-aos-delay="100"
               >
-                <img
-                  src="images/chotchotGWAPA.jpg"
-                  alt="Chotie"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
                 ></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3
-                    class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                  >
-                    Chotie
-                  </h3>
-                  <p
-                    class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                  >
-                    Wildcats Member
-                  </p>
-                  <p
-                    class="text-white-400 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                  >
-                    "Ako si Precious na very shufa!"
-                  </p>
+                <div
+                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                >
+                  <img
+                    src="images/chotchotGWAPA.jpg"
+                    alt="Chotie"
+                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 w-full p-6">
+                    <h3
+                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
+                    >
+                      Chotie
+                    </h3>
+                    <p
+                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
+                    >
+                      Wildcats Member
+                    </p>
+                    <p
+                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
+                    >
+                      "Ako si Precious na very shufa!"
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- IPIN -->
-            <div
-              class="group relative w-full max-w-sm [-webkit-tap-highlight-color:transparent]"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+              <!-- IPIN -->
               <div
-                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-              ></div>
-              <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+                data-aos="fade-up"
+                data-aos-delay="200"
               >
-                <img
-                  src="images/ipin.jpg"
-                  alt="Ipin"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
                 ></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3
-                    class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                  >
-                    Ipin
-                  </h3>
-                  <p
-                    class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                  >
-                    Wildcats Member
-                  </p>
-                  <p
-                    class="text-white-400 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                  >
-                    "Hilom or e sumpa tika lagi!"
-                  </p>
+                <div
+                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                >
+                  <img
+                    src="images/ipin.jpg"
+                    alt="Ipin"
+                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 w-full p-6">
+                    <h3
+                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
+                    >
+                      Ipin
+                    </h3>
+                    <p
+                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
+                    >
+                      Wildcats Member
+                    </p>
+                    <p
+                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
+                    >
+                      "Hilom or e sumpa tika lagi!"
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- KERSIE -->
-            <div
-              class="group relative w-full max-w-sm [-webkit-tap-highlight-color:transparent]"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
+              <!-- KERSIE -->
               <div
-                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-              ></div>
-              <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+                data-aos="fade-up"
+                data-aos-delay="300"
               >
-                <img
-                  src="images/butata.jpg"
-                  alt="Kersie"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
                 ></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3
-                    class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                  >
-                    Kersie
-                  </h3>
-                  <p
-                    class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                  >
-                    Wildcats Member
-                  </p>
-                  <p
-                    class="text-white-400 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                  >
-                    "ISA AKONG BUTATA!!!"
-                  </p>
+                <div
+                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                >
+                  <img
+                    src="images/butata.jpg"
+                    alt="Kersie"
+                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 w-full p-6">
+                    <h3
+                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
+                    >
+                      Kersie
+                    </h3>
+                    <p
+                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
+                    >
+                      Wildcats Member
+                    </p>
+                    <p
+                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
+                    >
+                      "ISA AKONG BUTATA!!!"
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- SAMMY -->
-            <div
-              class="group relative w-full max-w-sm [-webkit-tap-highlight-color:transparent]"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
+              <!-- SAMMY -->
               <div
-                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-              ></div>
-              <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+                data-aos="fade-up"
+                data-aos-delay="500"
               >
-                <img
-                  src="images/Sammy003.jpg"
-                  alt="Sammy"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
                 ></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3
-                    class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                  >
-                    Sammy
-                  </h3>
-                  <p
-                    class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                  >
-                    Wildcats Member
-                  </p>
-                  <p
-                    class="text-white-400 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                  >
-                    "I ain't tryna play, boy!! Shush!!"
-                  </p>
+                <div
+                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
+                >
+                  <img
+                    src="images/Sammy003.jpg"
+                    alt="Sammy"
+                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
+                  ></div>
+                  <div class="absolute bottom-0 left-0 w-full p-6">
+                    <h3
+                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
+                    >
+                      Sammy
+                    </h3>
+                    <p
+                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
+                    >
+                      Wildcats Member
+                    </p>
+                    <p
+                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
+                    >
+                      "I ain't tryna play, boy!! Shush!!"
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
