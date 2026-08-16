@@ -459,87 +459,69 @@
       </div>
     </section>
 
-    <section class="py-24 relative bg-dark-bg overflow-hidden">
+    <!-- MEET THE CHOREOGRAPHERS SECTION -->
+    <!-- MEET THE CHOREOGRAPHERS SECTION -->
+    <section class="py-24 relative bg-dark-bg overflow-hidden border-t border-gray-800/80">
       <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-wildcat-gold/10 rounded-full blur-[100px] pointer-events-none">
       </div>
-
       <div class="px-4 max-w-7xl mx-auto relative z-20">
         <div class="text-center mb-16" data-aos="fade-up">
           <h2 class="font-heading text-4xl md:text-5xl font-black mb-4 uppercase text-white">
-            Meet the <span class="text-wildcat-gold">wildgyals!</span>
+            Meet the <span class="text-wildcat-orange">Choreographers</span>
           </h2>
           <div class="w-24 h-1 bg-gradient-to-r from-transparent via-wildcat-orange to-transparent mx-auto"></div>
         </div>
 
         <div class="relative max-w-7xl mx-auto mt-12 group/slider">
           <!-- Desktop Navigation Buttons -->
-          <button id="slideLeft"
+          <button id="slideLeft" aria-label="Scroll left"
             class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-30 w-14 h-14 bg-black/80 border border-wildcat-gold rounded-full items-center justify-center text-white hover:bg-wildcat-orange hover:text-black transition-all shadow-[0_0_15px_rgba(255,215,0,0.3)] opacity-0 group-hover/slider:opacity-100">
             <i class="fa-solid fa-chevron-left text-xl"></i>
           </button>
-
-          <button id="slideRight"
+          <button id="slideRight" aria-label="Scroll right"
             class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-30 w-14 h-14 bg-black/80 border border-wildcat-gold rounded-full items-center justify-center text-white hover:bg-wildcat-orange hover:text-black transition-all shadow-[0_0_15px_rgba(255,215,0,0.3)] opacity-0 group-hover/slider:opacity-100">
             <i class="fa-solid fa-chevron-right text-xl"></i>
           </button>
 
-          <!-- The Scrolling Container -->
+          <!-- Scrolling Container -->
           <div id="rosterContainer"
-            class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 pt-4 px-4 scroll-smooth hide-scrollbar">
-            <!-- NADS -->
+            class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 pt-4 px-4 scroll-smooth hide-scrollbar -mx-4 md:mx-0">
+            <!-- 1. NADS -->
             <div
               class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-              data-aos="fade-up" data-aos-delay="400">
+              data-aos="fade-up">
               <div
                 class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
               </div>
               <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
-                <img src="images/NadsFreshident.jpg" alt="Nads"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
-                    Nads
+                class="relative h-[480px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black flex flex-col justify-end">
+                <img src="images/NadsFreshident.jpg"
+                  onerror="this.src='https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80'"
+                  alt="Nads"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div class="relative z-10 p-6">
+                  <h3 class="text-2xl font-bold text-white font-heading uppercase tracking-tighter italic mb-1">Nads
                   </h3>
-                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
-                    Wildcats President
-                  </p>
-                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
-                    "Bun up di dancehall gyal!"
-                  </p>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-3">Choreographer /
+                    President</p>
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span
+                      class="bg-pink-500/10 backdrop-blur-md border border-pink-500/50 text-pink-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Femme</span>
+                    <span
+                      class="bg-red-500/10 backdrop-blur-md border border-red-500/50 text-red-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Heels</span>
+                    <span
+                      class="bg-emerald-500/10 backdrop-blur-md border border-emerald-500/50 text-emerald-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Dancehall</span>
+                  </div>
+                  <p class="text-gray-300 text-xs italic border-l-2 border-wildcat-orange pl-3 line-clamp-2">"Bun up di
+                    dancehall gyal!"</p>
                 </div>
               </div>
             </div>
 
-            <!-- AYA -->
-            <div
-              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-              data-aos="fade-up" data-aos-delay="0">
-              <div
-                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
-              </div>
-              <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
-                <img src="images/ayagirl001.jpg" alt="Aya"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
-                    Aya
-                  </h3>
-                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
-                    Wildcats Member
-                  </p>
-                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
-                    "Let Hiphop get into your soul!"
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- CHOTIE -->
+            <!-- 2. BUDS -->
             <div
               class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
               data-aos="fade-up" data-aos-delay="100">
@@ -547,51 +529,34 @@
                 class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
               </div>
               <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
-                <img src="images/chotchotGWAPA.jpg" alt="Chotie"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
-                    Chotie
+                class="relative h-[480px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black flex flex-col justify-end">
+                <img src="images/BudsChoreographer.jpg"
+                  onerror="this.src='https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?auto=format&fit=crop&q=80'"
+                  alt="Buds"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div class="relative z-10 p-6">
+                  <h3 class="text-2xl font-bold text-white font-heading uppercase tracking-tighter italic mb-1">Buds
                   </h3>
-                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
-                    Wildcats Member
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-3">Choreographer / Coach
                   </p>
-                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
-                    "Ako si Precious na very shufa!"
-                  </p>
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span
+                      class="bg-purple-500/10 backdrop-blur-md border border-purple-500/50 text-purple-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Waacking</span>
+                    <span
+                      class="bg-fuchsia-500/10 backdrop-blur-md border border-fuchsia-500/50 text-fuchsia-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Vogue</span>
+                    <span
+                      class="bg-white/10 backdrop-blur-md border border-white/40 text-gray-100 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Open
+                      Style</span>
+                  </div>
+                  <p class="text-gray-300 text-xs italic border-l-2 border-wildcat-orange pl-3 line-clamp-2">"Express
+                    the essence with precision."</p>
                 </div>
               </div>
             </div>
 
-            <!-- DIANA -->
-            <div
-              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-              data-aos="fade-up" data-aos-delay="0">
-              <div
-                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
-              </div>
-              <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
-                <img src="images/Diana01.jpg" alt="Aya"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
-                    Diana
-                  </h3>
-                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
-                    Wildcats Member
-                  </p>
-                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
-                    "Bes bes mag tiktok nata bes!"
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- IPIN -->
+            <!-- 3. NATHANIEL -->
             <div
               class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
               data-aos="fade-up" data-aos-delay="200">
@@ -599,51 +564,32 @@
                 class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
               </div>
               <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
-                <img src="images/ipin.jpg" alt="Ipin"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
-                    Ipin
-                  </h3>
-                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
-                    Wildcats Member
+                class="relative h-[480px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black flex flex-col justify-end">
+                <img src="images/NatnatChoreographer.jpg"
+                  onerror="this.src='https://images.unsplash.com/photo-1535525153412-5a42439a210d?auto=format&fit=crop&q=80'"
+                  alt="Nathaniel"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div class="relative z-10 p-6">
+                  <h3 class="text-2xl font-bold text-white font-heading uppercase tracking-tighter italic mb-1">
+                    Nathaniel</h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-3">Choreographer / Coach
                   </p>
-                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
-                    "Hilom or e sumpa tika lagi!"
-                  </p>
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span
+                      class="bg-emerald-500/10 backdrop-blur-md border border-emerald-500/50 text-emerald-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Dancehall</span>
+                    <span
+                      class="bg-white/10 backdrop-blur-md border border-white/40 text-gray-100 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Open
+                      Style</span>
+                  </div>
+                  <p class="text-gray-300 text-xs italic border-l-2 border-wildcat-orange pl-3 line-clamp-2">
+                    "Bomboclaat!"</p>
                 </div>
               </div>
             </div>
 
-            <!-- KATELYN -->
-            <div
-              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-              data-aos="fade-up" data-aos-delay="0">
-              <div
-                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
-              </div>
-              <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
-                <img src="images/Katelyn.jpg" alt="Aya"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
-                    Kitay
-                  </h3>
-                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
-                    Wildcats Member
-                  </p>
-                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
-                    "Hi guys ako si kikit na gwapa!!"
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- KERSIE -->
+            <!-- 4. JHORUZ -->
             <div
               class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
               data-aos="fade-up" data-aos-delay="300">
@@ -651,25 +597,68 @@
                 class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
               </div>
               <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
-                <img src="images/butata.jpg" alt="Kersie"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
-                    Kersie
+                class="relative h-[480px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black flex flex-col justify-end">
+                <img src="images/JhoruzAmbot.jpg"
+                  onerror="this.src='https://images.unsplash.com/photo-1516475429286-465d815a0df4?auto=format&fit=crop&q=80'"
+                  alt="Jhoruz"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div class="relative z-10 p-6">
+                  <h3 class="text-2xl font-bold text-white font-heading uppercase tracking-tighter italic mb-1">Jhoruz
                   </h3>
-                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
-                    Wildcats Member
-                  </p>
-                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
-                    "ISA AKONG BUTATA!!!"
-                  </p>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-3">Choreographer /
+                    Performer</p>
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span
+                      class="bg-yellow-500/10 backdrop-blur-md border border-yellow-500/50 text-yellow-300 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Afro</span>
+                    <span
+                      class="bg-sky-500/10 backdrop-blur-md border border-sky-500/50 text-sky-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Hip-Hop</span>
+                    <span
+                      class="bg-white/10 backdrop-blur-md border border-white/40 text-gray-100 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Open
+                      Style</span>
+                  </div>
+                  <p class="text-gray-300 text-xs italic border-l-2 border-wildcat-orange pl-3 line-clamp-2">"Yala
+                    Beats, Yala Beats."</p>
                 </div>
               </div>
             </div>
 
-            <!-- SAMMY -->
+            <!-- 5. JUSTINE -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="400">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[480px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black flex flex-col justify-end">
+                <img src="images/JustinePicture001.jpg"
+                  onerror="this.src='https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80'"
+                  alt="Justine"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div class="relative z-10 p-6">
+                  <h3 class="text-2xl font-bold text-white font-heading uppercase tracking-tighter italic mb-1">Justine
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-3">Choreographer /
+                    Performer</p>
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span
+                      class="bg-sky-500/10 backdrop-blur-md border border-sky-500/50 text-sky-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Hip-Hop</span>
+                    <span
+                      class="bg-yellow-500/10 backdrop-blur-md border border-yellow-500/50 text-yellow-300 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Afro</span>
+                    <span
+                      class="bg-emerald-500/10 backdrop-blur-md border border-emerald-500/50 text-emerald-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Dancehall</span>
+                  </div>
+                  <p class="text-gray-300 text-xs italic border-l-2 border-wildcat-orange pl-3 line-clamp-2">"Justine
+                    Bieber diay."</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. JOHNWYNE -->
             <div
               class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
               data-aos="fade-up" data-aos-delay="500">
@@ -677,27 +666,163 @@
                 class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
               </div>
               <div
-                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
-                <img src="images/Sammy003.jpg" alt="Sammy"
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
-                <div class="absolute bottom-0 left-0 w-full p-6">
-                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
-                    Sammy
+                class="relative h-[480px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black flex flex-col justify-end">
+                <img src="images/JohnWynePisotHAHA.jpg"
+                  onerror="this.src='https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?auto=format&fit=crop&q=80'"
+                  alt="Johnwyne"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div class="relative z-10 p-6">
+                  <h3 class="text-2xl font-bold text-white font-heading uppercase tracking-tighter italic mb-1">Johnwyne
                   </h3>
-                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
-                    Wildcats Member
-                  </p>
-                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
-                    "I ain't tryna play, boy!! Shush!!"
-                  </p>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-3">Choreographer /
+                    Performer</p>
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span
+                      class="bg-sky-500/10 backdrop-blur-md border border-sky-500/50 text-sky-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Hip-Hop</span>
+                    <span
+                      class="bg-yellow-500/10 backdrop-blur-md border border-yellow-500/50 text-yellow-300 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Afro</span>
+                  </div>
+                  <p class="text-gray-300 text-xs italic border-l-2 border-wildcat-orange pl-3 line-clamp-2">"Yoohoo
+                    dito ang tingin."</p>
                 </div>
               </div>
             </div>
+
+            <!-- 7. ADRIAN RAY -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="600">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[480px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black flex flex-col justify-end">
+                <img src="images/AdrianRayChoreographer.jpg"
+                  onerror="this.src='https://images.unsplash.com/photo-1535525153412-5a42439a210d?auto=format&fit=crop&q=80'"
+                  alt="Adrian Ray"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div class="relative z-10 p-6">
+                  <h3 class="text-2xl font-bold text-white font-heading uppercase tracking-tighter italic mb-1">Adrian
+                    Ray</h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-3">Choreographer / IPAG
+                    Artist</p>
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span
+                      class="bg-pink-500/10 backdrop-blur-md border border-pink-500/50 text-pink-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Femme</span>
+                    <span
+                      class="bg-red-500/10 backdrop-blur-md border border-red-500/50 text-red-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Heels</span>
+                    <span
+                      class="bg-emerald-500/10 backdrop-blur-md border border-emerald-500/50 text-emerald-400 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Contemporary</span>
+                  </div>
+                  <p class="text-gray-300 text-xs italic border-l-2 border-wildcat-orange pl-3 line-clamp-2">"Movement
+                    that transcends boundaries."</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. MICHAEL VINCE -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="700">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[480px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black flex flex-col justify-end">
+                <img src="images/MichaelVinceChoreographer.jpg"
+                  onerror="this.src='https://images.unsplash.com/photo-1516475429286-465d815a0df4?auto=format&fit=crop&q=80'"
+                  alt="Michael Vince"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div class="relative z-10 p-6">
+                  <h3 class="text-2xl font-bold text-white font-heading uppercase tracking-tighter italic mb-1">Michael
+                    Vince</h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-3">Choreographer /
+                    Performer</p>
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span
+                      class="bg-white/10 backdrop-blur-md border border-white/40 text-gray-100 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Open
+                      Style</span>
+                  </div>
+                  <p class="text-gray-300 text-xs italic border-l-2 border-wildcat-orange pl-3 line-clamp-2">
+                    "Art never dies, it lingers."</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 9. CARLO -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="800">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[480px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black flex flex-col justify-end">
+                <img src="images/CarloChoreographer.jpg"
+                  onerror="this.src='https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80'"
+                  alt="Carlo"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div class="relative z-10 p-6">
+                  <h3 class="text-2xl font-bold text-white font-heading uppercase tracking-tighter italic mb-1">Carlo
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-3">Choreographer /
+                    Performer</p>
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span
+                      class="bg-white/10 backdrop-blur-md border border-white/40 text-gray-100 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Open
+                      Style</span>
+                  </div>
+                  <p class="text-gray-300 text-xs italic border-l-2 border-wildcat-orange pl-3 line-clamp-2">"Energy
+                    speaks when words fail."</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10. KERSIE -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="900">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[480px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black flex flex-col justify-end">
+                <img src="images/butata.jpg"
+                  onerror="this.src='https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?auto=format&fit=crop&q=80'"
+                  alt="Kersie"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+                <div class="relative z-10 p-6">
+                  <h3 class="text-2xl font-bold text-white font-heading uppercase tracking-tighter italic mb-1">Kersie
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-3">Choreographer /
+                    Performer</p>
+                  <div class="flex flex-wrap gap-1.5 mb-3">
+                    <span
+                      class="bg-white/10 backdrop-blur-md border border-white/40 text-gray-100 text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">Open
+                      Style</span>
+                  </div>
+                  <p class="text-gray-300 text-xs italic border-l-2 border-wildcat-orange pl-3 line-clamp-2">"Burak pa
+                    gyud
+                    mo guys!"</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
+
 
     <footer class="mt-10 py-12 border-t border-gray-800 bg-black text-center">
       <div class="flex justify-center gap-8 mb-8">

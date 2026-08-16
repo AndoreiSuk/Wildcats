@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>News & Updates | MSU-IIT WILDCATS</title>
   <link rel="icon" type="image/png" href="images/wildcatslogokingkara1.png" />
 
@@ -36,1359 +36,1221 @@
   </script>
 
   <style>
+    /* Custom Smooth Scrollbar */
     ::-webkit-scrollbar {
-      width: 10px;
+      width: 6px;
     }
 
     ::-webkit-scrollbar-track {
       background: #0a0a0a;
-      border-left: 1px solid #333;
     }
 
     ::-webkit-scrollbar-thumb {
       background: #ffd700;
-      border-radius: 5px;
-      border: 2px solid #0a0a0a;
+      border-radius: 4px;
     }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: #ff4500;
+    /* Hide scrollbar for clean horizontal filter bar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   </style>
 </head>
 
-<body class="bg-dark-bg text-white overflow-x-hidden">
-  <nav class="py-4 px-4 border-b border-gray-800 bg-black/50 backdrop-blur-md fixed w-full z-50">
+<body class="bg-dark-bg text-white overflow-x-hidden antialiased selection:bg-wildcat-gold selection:text-black">
+  <!-- Sticky Navigation -->
+  <nav
+    class="py-3 sm:py-4 px-4 border-b border-gray-800 bg-black/80 backdrop-blur-md fixed w-full z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <a href="index.html"
-        class="flex items-center gap-2 text-gray-400 hover:text-wildcat-gold transition group font-bold uppercase tracking-widest text-sm">
+        class="flex items-center gap-2 text-gray-400 hover:text-wildcat-gold transition active:scale-95 group font-bold uppercase tracking-widest text-xs sm:text-sm">
         <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition"></i>
         Back to Home
       </a>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
         <img src="images/wildcatslogokingkara.png" alt="Wildcats Logo"
-          class="h-10 w-auto object-contain drop-shadow-md" />
-
-        <div class="text-xl font-black font-heading uppercase hidden md:block">
+          class="h-8 sm:h-9 w-auto object-contain drop-shadow-md" />
+        <div class="text-base sm:text-xl font-black font-heading uppercase hidden sm:block">
           Wildcats <span class="text-wildcat-gold">News</span>
         </div>
       </div>
     </div>
   </nav>
 
-  <main class="pt-32 pb-24 px-4 relative overflow-hidden">
+  <main class="pt-24 sm:pt-28 pb-20 sm:pb-24 px-3.5 sm:px-4 relative overflow-hidden">
+    <!-- Ambient Glow Accent -->
     <div
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-wildcat-gold/5 rounded-full blur-[120px] pointer-events-none z-0">
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-wildcat-gold/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none z-0">
     </div>
 
-    <div class="max-w-4xl mx-auto relative z-10">
-      <div class="text-center mb-16" data-aos="fade-down">
-        <h1 class="font-heading text-4xl md:text-6xl font-black mb-4 uppercase text-white">
-          Latest News & <span class="text-wildcat-gold">Updates</span>
+    <div class="max-w-6xl mx-auto relative z-10">
+      <!-- Title Header -->
+      <div class="text-center mb-8 sm:mb-10" data-aos="fade-down">
+        <h1
+          class="font-heading text-3xl sm:text-5xl md:text-6xl font-black mb-3 sm:mb-4 uppercase text-white tracking-tight">
+          News & <span class="text-wildcat-orange">Updates</span>
         </h1>
-        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-wildcat-orange to-transparent mx-auto"></div>
+        <div class="w-16 sm:w-20 h-1 bg-gradient-to-r from-transparent via-wildcat-orange to-transparent mx-auto"></div>
       </div>
 
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
+      <!-- Mobile Horizontal Scrollable Filter Tabs -->
+      <div
+        class="flex items-center justify-start sm:justify-center overflow-x-auto no-scrollbar gap-2 sm:gap-3 mb-8 sm:mb-12 pb-2 px-1 -mx-3.5 sm:mx-0"
         data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
+        <button
+          class="filter-btn active-filter shrink-0 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-300 bg-wildcat-gold text-black border-wildcat-gold shadow-[0_0_15px_rgba(255,215,0,0.3)] active:scale-95"
+          data-category="all">
+          All Stories
+        </button>
+        <button
+          class="filter-btn shrink-0 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-300 bg-card-bg text-gray-300 border-gray-800 hover:border-wildcat-gold hover:text-white active:scale-95"
+          data-category="championships">
+          Championships
+        </button>
+        <button
+          class="filter-btn shrink-0 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-300 bg-card-bg text-gray-300 border-gray-800 hover:border-wildcat-gold hover:text-white active:scale-95"
+          data-category="campus">
+          Campus & Events
+        </button>
+        <button
+          class="filter-btn shrink-0 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-300 bg-card-bg text-gray-300 border-gray-800 hover:border-wildcat-gold hover:text-white active:scale-95"
+          data-category="workshops">
+          Workshops
+        </button>
+        <button
+          class="filter-btn shrink-0 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-300 bg-card-bg text-gray-300 border-gray-800 hover:border-wildcat-gold hover:text-white active:scale-95"
+          data-category="auditions">
+          Auditions
+        </button>
+      </div>
 
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              August 13, 2025
+      <!-- 1. FEATURED HERO ARTICLE -->
+      <article
+        class="news-card bg-card-bg rounded-2xl sm:rounded-3xl border border-gray-800 hover:border-wildcat-gold/60 transition-all duration-300 shadow-2xl mb-8 sm:mb-12 overflow-hidden group cursor-pointer active:scale-[0.99]"
+        data-category="championships" data-aos="fade-up" onclick="openNewsModal('danztrack2025')">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+          <div class="lg:col-span-7 h-56 sm:h-80 lg:h-full min-h-[240px] sm:min-h-[300px] overflow-hidden relative">
+            <img src="images/updates/WildcatsDanztrack2025.jpg" alt="Danztrack 2025"
+              class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700"
+              loading="lazy" />
+            <span
+              class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-black/80 backdrop-blur-md border border-wildcat-gold/50 text-wildcat-gold text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 rounded-full uppercase tracking-wider">
+              Featured Headline
             </span>
           </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            MSU-IIT Wildcats Receive First-Ever Institute-Level Recognition
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            The
-            <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong>
-            proudly mark a historic milestone as they receive their very first
-            Institute-level award; the
-            <strong class="text-wildcat-gold italic">Gawad Serbisyo 2025</strong>
-            , presented on August 13, 2025 by the
-            <span class="italic">Office of the Vice Chancellor for Student Services</span>
-            and the
-            <span class="italic">Office of Student Development Services</span>
-          </p>
-          <p>
-            The Gawad Serbisyo recognizes exemplary service, dedication, and
-            commitment to the Institute's values. This achievement reflects
-            the
-            <strong class="text-wildcat-gold">WILDCATS'</strong>
-            passion for excellence, teamwork, and their unwavering drive to
-            contribute positively to the MSU-IIT community.
-          </p>
-          <p>
-            <span class="italic text-wildcat-gold">"This is not merely an accolade; it is our first step toward a
-              wonderful future ahead,"</span>
-            the WILDCATS expressed.
-            <span class="italic">"It symbolizes the beginning of a legacy, a journey where
-              challenges will be embraced, victories will be celebrated and
-              service will remain at the heart of everything we do."</span>
-          </p>
-          <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">
-            With this recognition, the MSU-IIT Wildcats look forward to
-            continuing their mission of fostering camaraderie, sportsmanship,
-            and leadership, while setting their sights on greater achievements
-            in the years to come.
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsGawadSerbisyo2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIIT</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              August 15, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            The Crowd goes Wild with Wildcats!
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            <strong class="text-wildcat-gold">MSU-IIT Wildcats</strong>
-            roared louder than ever with their much-awaited comeback
-            performance during the
-            <span class="italic text-wildcat-gold">KASAMA General Assembly and Acquaintance Party (GAAP)</span>, an
-            unforgettable night brought to us by
-            <span class="italic">TM Tambayan.</span>
-            Sharing the stage with the university's finest performing groups,
-            the WILDCATS once again proved their passion and spirit in
-            bringing world-class entertainment. The event reached its peak of
-            excitement as the sensational Filipino band
-            <strong class="text-wildcat-gold">Dilaw</strong>, capped the
-            evening with a powerful performance that left the crowd energized
-            and in awe.
-          </p>
-          <p>
-            This memorable gathering not only showcased the extraordinary
-            talents of MSU-IIT students but also strengthened the sense of
-            unity, pride, and camaraderie within the campus community. Truly,
-            it was a night that celebrated artistry, youth, and the Wildcat
-            spirit that continues to inspire many.
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsGAAP2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIIT</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#GAAP2025</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#WelcomingWeek2025</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              August 17, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            SPECIAL AUDITION ALERT
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p><span class="italic">We heard your screams, Wildcats!</span></p>
-          <p>
-            Because of your unstoppable passion and loud calls to be part of
-            the family,
-            <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong> is
-            opening another round of
-            <strong class="text-wildcat-gold">SPECIAL AUDITIONS!</strong>
-          </p>
-          <p>
-            This is your chance to showcase your talent, your fire, and your
-            spirit. Don't miss this opportunity to roar with us and be part of
-            something of bigger.
-          </p>
-          <ul>
-            <li>
-              <strong class="text-wildcat-gold">Date:</strong>
-              August 20, 2025
-            </li>
-            <li>
-              <strong class="text-wildcat-gold">Time:</strong>
-              4:00 PM Onwards
-            </li>
-            <li>
-              <strong class="text-wildcat-gold">Venue:</strong>
-              IDS Multipurpose Hall
-            </li>
-          </ul>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsSpecialAudition2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIIT</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#SpecialAudition</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#PirenaWarka</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              August 20, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            MSU-IIT WILDCATS Special Auditions Going Wild!
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            The
-            <strong class="text-wildcat-gold">MSU-IIT Wildcats Special Auditions</strong>, held on
-            <span class="italic">August 20, 2025 at IDS Multipurpose Hall</span>, successfully brought together
-            passionate and talented
-            individuals eager to become part of the Wildcats family. The
-            audition day was filled with high energy, determination, and
-            outstanding performances that truly showcased the spirit of
-            excellence and school pride.
-          </p>
-          <p>
-            Aspirants demonstrated their skills, confidence, and commitment,
-            making the selection process both exciting and challenging for the
-            panel. The event marked another milestone in strengthening the
-            Wildcats legacy, as new members step forward to carry the roar,
-            unity, and pride of MSU-IIT into the coming season.
-          </p>
-        </div>
-
-        <div
-          class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50 group/image cursor-pointer mb-8"
-          onclick="
-              openGallery([
-                'images/special/specialaud001.jpg',
-                'images/special/specialaud002.jpg',
-                'images/special/specialaud003.jpg',
-                'images/special/specialaud004.jpg',
-                'images/special/specialaud005.jpg',
-                'images/special/specialaud006.jpg',
-                'images/special/specialaud007.jpg',
-                'images/special/specialaud008.jpg',
-                'images/special/specialaud009.jpg',
-                'images/special/specialaud010.jpg',
-                'images/special/specialaud011.jpg',
-                'images/special/specialaud012.jpg',
-                'images/special/specialaud013.jpg',
-                'images/special/specialaud014.jpg',
-                'images/special/specialaud015.jpg',
-                'images/special/specialaud016.jpg',
-                'images/special/specialaud017.jpg',
-                'images/special/specialaud018.jpg',
-                'images/special/specialaud019.jpg',
-                'images/special/specialaud020.jpg',
-                'images/special/specialaud021.jpg',
-                'images/special/specialaud022.jpg',
-                'images/special/specialaud023.jpg',
-                'images/special/specialaud024.jpg',
-                'images/special/specialaud025.jpg',
-                'images/special/specialaud026.jpg',
-                'images/special/specialaud027.jpg',
-                'images/special/specialaud028.jpg',
-                'images/special/specialaud029.jpg',
-                'images/special/specialaud030.jpg',
-                'images/special/specialaud031.jpg',
-                'images/special/specialaud032.jpg',
-                'images/special/specialaud033.jpg',
-                'images/special/specialaud034.jpg',
-                'images/special/specialaud035.jpg',
-                'images/special/specialaud036.jpg',
-                'images/special/specialaud037.jpg',
-                'images/special/specialaud038.jpg',
-                'images/special/specialaud039.jpg',
-                'images/special/specialaud040.jpg',
-                'images/special/specialaud041.jpg',
-                'images/special/specialaud042.jpg',
-                'images/special/specialaud043.jpg',
-                'images/special/specialaud044.jpg',
-                'images/special/specialaud045.jpg',
-                'images/special/specialaud046.jpg',
-                'images/special/specialaud047.jpg',
-                'images/special/specialaud048.jpg',
-                'images/special/specialaud049.jpg',
-                'images/special/specialaud050.jpg',
-                'images/special/specialaud051.jpg',
-                'images/special/specialaud052.jpg',
-                'images/special/specialaud053.jpg',
-                'images/special/specialaud054.jpg',
-                'images/special/specialaud055.jpg',
-                'images/special/specialaud056.jpg',
-                'images/special/specialaud057.jpg',
-              ])
-            ">
-          <img src="images/special/specialaud001.jpg" alt="Cover"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-
-          <div class="absolute inset-0 bg-black/10 group-hover:bg-black/40 transition duration-500"></div>
-          <div
-            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/image:opacity-100 transition duration-300">
-            <div
-              class="bg-black/60 backdrop-blur-md border border-wildcat-gold px-6 py-3 rounded-full flex items-center gap-3 transform translate-y-4 group-hover/image:translate-y-0 transition duration-300 shadow-[0_0_15px_rgba(255,215,0,0.3)]">
-              <i class="fa-solid fa-images text-wildcat-gold text-lg"></i>
-              <span class="text-white font-bold uppercase text-xs tracking-[0.2em]">View Gallery</span>
+          <div class="lg:col-span-5 p-5 sm:p-8 md:p-10 flex flex-col justify-between">
+            <div>
+              <span
+                class="text-wildcat-gold text-[11px] sm:text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 mb-2 sm:mb-3">
+                <i class="fa-regular fa-calendar text-wildcat-orange"></i> September 22, 2025
+              </span>
+              <h2
+                class="text-xl sm:text-3xl font-heading font-black text-white uppercase italic leading-tight mb-2.5 sm:mb-4 group-hover:text-wildcat-gold transition">
+                HISTORY MADE, LEGACY SEALED
+              </h2>
+              <p
+                class="text-gray-300 text-xs sm:text-base font-light leading-relaxed mb-4 sm:mb-6 line-clamp-3 sm:line-clamp-4">
+                The <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong> have once again proven their unstoppable
+                spirit as they are crowned <strong class="text-wildcat-gold">CHAMPIONS</strong> of <strong
+                  class="text-wildcat-gold">Danztrack Philippines 2025 – College Division</strong>! With passion, grit,
+                and unity, they secured a historic <strong class="text-wildcat-gold">THREE-PEAT</strong>!
+              </p>
+            </div>
+            <div class="pt-3.5 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between">
+              <span
+                class="text-[10px] sm:text-xs font-bold text-wildcat-gold uppercase tracking-widest">#ThreePeatRepeat</span>
+              <span
+                class="text-xs text-wildcat-orange font-bold uppercase tracking-wider flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+                Read Full Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </span>
             </div>
           </div>
         </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#SpecialAuditions</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#PirenaWarka</span>
-        </footer>
       </article>
 
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
+      <!-- 2. 2-COLUMN RESPONSIVE GRID -->
+      <div id="newsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
 
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              August 21, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            Into the CoMEOWnity! 🐾
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            Members of the
-            <strong class="text-wildcat-gold">MSU-IIT Wildcats</strong>
-            proudly joined their respective barangays in the
-            <strong class="italic text-wildcat-gold">Linggo Ng Kabataan (LNK) - SANGKAbataan Pop Dance Competition
-              2025</strong>
-            showcasing their skills and passion for performance, the Wildcats
-            brought the same energy and discipline they are known for on
-            bigger stages into their local communities. Their participation
-            highlighted not only their talent in dance but also their
-            commitment to youth empowerment and community involvement.
-          </p>
-          <p>
-            Once again, the
-            <span class="text-wildcat-gold">Wildcats</span> proved that they
-            are champions both in the University and in their barangays,
-            emboying
-            <span class="italic">the true spirit of leadership, artistry, and youth
-              engagement.</span>
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsLNK2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIIT</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#LNKSangkabataan2025</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              August 30, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            From Grrr to Groove a PAWrfect PURRformance
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            The
-            <strong class="text-wildcat-gold">MSU-IIT Wildcats</strong>
-            , one of the university's acclaimed dance organizations, proudly
-            showcased their talents as members participated in
-            <strong class="italic text-wildcat-gold">Sayaw Iligan Season 4 All Stars</strong>
-            , an official event under this year's celebration of the
-            <strong class="text-wildcat-gold">Diyandi Festival.</strong> Their
-            involvement in the festival highlighted not only their artistry
-            but also their active contribution to the city's cultural and
-            creative community.
-          </p>
-          <p>
-            <strong class="text-wildcat-gold">Wildcats</strong> continue to
-            distinguish themselves through the diversity of their members. The
-            organizations is composed of performers proficient in various
-            dance genres, including hip hop, contemporary, jazz, urban
-            choreography, and Korean Pop (K-Pop). This broad range of
-            expertise not only underscores the versatility of its members but
-            also solidifies the Wildcat's reputation as a
-            <span class="italic text-wildcat-gold">dynamic and adaptable collective.</span>
-          </p>
-          <p>
-            Participation in Sayaw Iligan Season 4 All Stars further affirmed
-            the Wildcats' dedication to advancing the art of dance, both
-            within the university and in the wider community. Their
-            performances reflected not only technical skill and artistry but
-            also a deep sense of collaboration and unity among their members.
-          </p>
-          <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">
-            As they move forward, the
-            <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong> remain
-            committed to
-            <span class="italic">nurturing talent, celebrating diversity in dance</span>, and upholding their mission to
-            inspire audiences through
-            performances that embody both
-            <span class="italic">discipline and passion</span>
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsSayawIligan2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIIT</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#SayawIliganSeason4</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              September 16 - 17, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            MSU-IIT WILDCATS Resident Performers Shine in "HUNINAY: Songs of
-            Mothers and Cradles"
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            Five outstanding members of the MSU-IIT Wildcats Resident
-            Performers proudly took part in
-            <strong class="text-wildcat-gold">HUNINAY: Songs of Mothers and Cradles</strong>
-            , a dance-drama musical and concert presented by the
-            <strong class="text-wildcat-gold">Integrated Performing Arts Guild (IPAG)</strong>
-            in collaboration with
-            <strong class="text-wildcat-gold">OCTAVA Choral Society.</strong>
-          </p>
-          <p>
-            Representing the Wildcats Resident Performers, the following
-            artists showcased their passion and artistry on stage;
-            <span class="italic text-wildcat-gold">Adrian Ray Agosto, Princess Lucille Mutya, Ian Pierce Pactol,
-              Monaliza Escudero, Kyacinth Mich Pascua</span>
-            As members of IPAG, these young artists continue to explore
-            creative movements that transcend boundaries, blending dance,
-            drama, and music to celebrate the Filipino spirit and its deep
-            emotional narratives.
-          </p>
-          <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">
-            Through their performances, the Wildcats once again demonstrated
-            their commitment to artistic excellence and to the cultural
-            mission of MSU-IIT.
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsHuninay2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#IPAG</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#Octava</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#Huninay</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              September 18, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            MSU-IIT WILDCATS Set the Stage on Fire at the 13th ASTHRD Graduate
-            Scholars' Conference
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            The MSU-IIT Wildcats once again proved why they're a force to be
-            reckoned with as they proudly opened the
-            <span class="italic">Socials Night</span>= of the
-            <strong class="text-wildcat-gold">Department of Science and Technology - Science Education
-              Institute (DOST-SEI)</strong>
-            in collaboration with the
-            <strong class="text-wildcat-gold">ASTHRDP National Science Consortium</strong>
-            during the
-            <span class="italic">13th ASTHRD Graduate Scholars'</span>
-            Conference at the Limketkai Luxe Hotel, Cagayan de Oro City, last
-            September 18, 2025.
-          </p>
-          <p>
-            With their energy, passion, and signature moves, the Wildcats lit
-            up the stage and gave the audience a taste of MSU-IIT's
-            world-class talent. Their performance brought not only
-            entertainment but also pride, showing how art and excellence can
-            shine alongside science and innovation.
-          </p>
-          <p>
-            The Wildcats are deeply honored to have been part of this
-            prestigious gathering of brilliant scholars and changemakers. A
-            huge thank you to Ma'am Leila B. Tomenio for the trust and
-            invitation—it was truly an unforgettable night to celebrate both
-            knowledge and creativity!
-          </p>
-          <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">
-            From the dance floor to the conference hall, the Wildcats continue
-            to roar with pride, carrying the MSU-IIT spirit wherever they go.
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsDOST2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIIT</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              September 21, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            The Princess is now a queen!
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            The MSU-IIT Wildcats family proudly congratulates our very own
-            <strong class="text-wildcat-gold">Princess Jane Ganaden</strong>
-            the current President of MSU-IIT WILDCATS, for being crowned as
-            the
-            <strong class="text-wildcat-gold">Diyandi Festival Queen 2025</strong>
-            during the grand coronation night held last September 21, 2025 at
-            <span class="italic">Robinson's Mall Atrium</span>
-          </p>
-          <p>
-            Her journey to the crown was nothing short of spectacular as she
-            also brought home the special awards for
-            <strong class="text-wildcat-gold">Best in Choreography (Group Performance)</strong>
-            and the
-            <strong class="text-wildcat-gold">People's Choice Award</strong>,
-            a true testament to her
-            <span class="italic">artistry, grace, and the love</span> of the
-            people of Iligan City.
-          </p>
-          <p>
-            Princess Jane's triumph is more than a personal victory, it is a
-            celebration of
-            <span class="italic text-wildcat-gold">Iliganon pride, culture, and excellence</span>
-            as she leads the Wildcats with passion and determination, she now
-            carries the honor of representing not only the University but also
-            the vibrant spirit of the Diyandi Festival.
-          </p>
-          <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">
-            Once again, congratulations Diyandi Festival Queen 2025
-            <span class="italic">Princess Jane Ganaden</span>
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsDiyandiQueen2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#DiyandiQueen2025</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#WildcatsPride</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#QueenWithAPurpose</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              September 22, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            HISTORY MADE, LEGACY SEALED
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            The
-            <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong> have
-            once again proven their unstoppable spirit as they are crowned
-            <strong class="text-wildcat-gold">CHAMPIONS</strong> of
-            <strong class="text-wildcat-gold">Danztrack Philippines 2025 – College Division</strong>! With passion,
-            grit, and unity, they secured a historic
-            <strong class="text-wildcat-gold">THREE-PEAT</strong>—their third
-            consecutive championship title!
-          </p>
-          <p>
-            The Wildcats also bagged
-            <strong class="text-wildcat-gold">Best in Production Number</strong>
-            and <strong class="text-wildcat-gold">Best in Costume</strong>,
-            showcasing their talent, creativity, and cultural pride on the
-            grand stage.
-          </p>
-          <p>
-            This triumph wouldn't be possible without the unwavering support
-            of Mindanao State University - Iligan Institute of Technology ,
-            led by Chancellor Alizedney M. Ditucalan, and the Office of the
-            Vice Chancellor for Student Services .
-          </p>
-          <p>
-            Deepest gratitude to our choreographers, faculty in charge Sir
-            Manuel Jr. Padayogdog, mentors, and the families of our
-            performers. Special thanks to the Working Committee headed by Ken
-            Medalla, Bagtik Apparel Ph, and our Publication Team who captured
-            this triumph for the world to see.
-          </p>
-          <p>
-            Above all, we thank our supporters, alumni, fellow students, and
-            friends who cheered, prayed, and stood with us. Your faith made
-            every performance more powerful and every victory more meaningful.
-          </p>
-          <p>
-            <strong class="text-wildcat-gold">CHOREOGRAPHERS:</strong> Justine
-            Caylan, Nathaniel Bañares, Adrian Ray Agosto, Christian Denille
-            Carinal, Leila Tomenio, Michael Vincent Tingson, Naina Anjali
-            Banawa, Buds Leo Capatagan, Jhorus Seville
-          </p>
-          <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">
-            This victory is a testament to teamwork, resilience, and the
-            MSU-IIT legacy of excellence. The Wildcats stand tall as proud
-            ambassadors, carrying the torch of passion and pride!
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsDanztrack2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#Danztrack2025</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#WeRunThis!</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#ThreePeatRepeat</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              October 2, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            MSU-IIT Wildcats Illuminates a Night of Culture at 11th ACPES
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            The MSU-IIT Wildcats Resident Performers once again showcased
-            their artistry and versatility as they became part of the grand
-            Cultural Night during the
-            <strong class="text-wildcat-gold">11th ASEAN Council of Physical Education and Sports</strong>
-            held on October 2, 2025, at the Mindanao State University–Iligan
-            Institute of Technology.
-          </p>
-          <p>
-            Many of these performers are also members of the
-            <strong class="text-wildcat-gold">MSU-IIT Integrated Performing Arts Guild (IPAG)</strong>:
-            <span class="italic">Princess Lucille Mutya, Ian Pierce Pactol, Monaliza Escudero
-              and Kyacinth Mich Pascua.</span>
-            they are known for their innovative works that blend tradition,
-            movement, and modern artistry. Their collaboration with IPAG
-            during the Cultural Night was a testament to the shared vision of
-            excellence and cultural expression that both groups uphold.
-          </p>
-          <p>
-            Beyond the stage, several Wildcats also served as part of the
-            working committee, contributing their time, creativity, and
-            dedication to the successful organization of the 11th ACPES. Their
-            involvement, both as artists and organizers, reflected their
-            commitment to promoting the spirit of teamwork, excellence, and
-            service.
-          </p>
-          <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">
-            Through their performance and participation, the Wildcats not only
-            showcased their talent but also embodied the values of MSU-IIT:
-            passion for the arts, leadership in service, and pride in cultural
-            identity.
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsASEANCouncil.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#11thACPES</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#WildcatsInACPES</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              October 12, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            The HYPE in WILDCATS - Hip Hop Reloaded Season 8
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            Two of our very own MSU-IIT Wildcats Resident Performers,
-            <strong class="text-wildcat-gold">Justine Jay Caylan</strong>
-            and
-            <strong class="text-wildcat-gold">John Wyne Palubon</strong>,
-            proudly represent on HipHop Reloaded Season 8 2025 competition
-            held in in <span class="italic">Oroquieta City</span>, one of the
-            most anticipated hip-hop dance events in the region.
-          </p>
-          <p>
-            Showcasing their exceptional rhythm, creativity, and passion for
-            the art of street dance, the duo, under the team name
-            <strong class="text-wildcat-gold">HYPE IT UP</strong>, earned
-            remarkable victories:
-          </p>
-          <ul>
-            <li>
-              🥈
-              <strong class="text-wildcat-gold">1st Runner Up in the Small Division</strong>
-            </li>
-            <li>
-              🥉
-              <strong class="text-wildcat-gold">3rd Runner Up in the Open Division</strong>
-            </li>
-          </ul>
-          <p>
-            Their outstanding performance highlighted not only their technical
-            skill and artistry but also the Wildcats' commitment to excellence
-            and innovation in dance. The MSU-IIT Wildcats extend heartfelt
-            congratulations to <span class="italic">HYPE IT UP</span> for
-            bringing pride and inspiration through their talent, hard work,
-            and dedication to the craft.
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsHipHopReloaded2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#TheHYPEinWILDCATS</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#HYPEITUP</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              October 22 - 24, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            WILDCATS on Broadway: MSU-IIT Wildcats joins Street of Dreams:
-            Twin Workshop
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            The
-            <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong>
-            were ready to jive and jazz as they participated in
-            <strong class="text-wildcat-gold">The Street of Dreams: A Twin Workshop in Dance Theatre and
-              Technical Theatre</strong>
-            held on October 22 to 24, 2025.
-          </p>
-          <p>
-            Through the cooperative work of the
-            <span class="text-wildcat-gold">MSU-IIT Center for Culture and Arts, Mindanao Creative &
-              Cultural Workshops Group, Inc;</span>
-            and the
-            <span class="text-wildcat-gold">MSU-IIT Integrated Performing Arts Guild</span>, The Street of Dreams was
-            paved with a three-day workshop on
-            Broadway and Jazz, lead by Pinoy Broadway Legend
-            <strong class="text-wildcat-gold">Mr. Miguel Braganza</strong> ;
-            and the intricate works of light and sound design, lead by
-            Multi-award winning Lighting Designer
-            <strong class="text-wildcat-gold">Mr. Katsh Catoy.</strong>
-          </p>
-          <p>
-            The workshop concluded wih participants' showcase, where our very
-            own
-            <span class="italic">MSU-IIT WILDCATS Resident Performers</span>,
-            jazzed up the stage, ultimately proving their versatility across
-            different dance styles.
-          </p>
-          <p>
-            Special acknowledgement to the following WILDCATS for their
-            participating in the workshop:
-          </p>
-          <ul>
-            <li>Abes, Freelyn</li>
-            <li>Acierto, John Hardy</li>
-            <li>Agosto, Adrian Ray</li>
-            <li>Atillo, Kristina</li>
-            <li>Bacus, Juniezsa Cassandra</li>
-            <li>Capatagan, Buds</li>
-            <li>Escudero, Monaliza</li>
-            <li>Lado, Nelle</li>
-            <li>Leyran, Krishna</li>
-            <li>Monsanto, Andrey Gwynn</li>
-            <li>Mutya, Princess Lucille</li>
-            <li>Palubon, Samantha</li>
-            <li>Pascua, Kyacinth Mich</li>
-            <li>Tagab, Win</li>
-          </ul>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsTwinWorkshop.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#TwinBroadwayWorkshop</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#IPAG</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              October 26, 2025
-            </span>
-          </div>
-          <h2 class="text-2xl md:text-3xl font-heading font-black text-white uppercase leading-tight italic">
-            MSU-IIT WILDCATS launches First Mentoring Program 2025
-          </h2>
-        </header>
-
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            After weeks of rigorous training, the
-            <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong>
-            showcased their signature pieces during the first ever
-            <strong class="text-wildcat-gold">Mentoring Program</strong> held
-            on October 26, 2025 at the City Hall's Anahaw Amphitheatre, Palao,
-            Iligan City.
-          </p>
-          <p>
-            With the help of their gracious and extensively committed mentors,
-            the mentees have been molded to perfection in preparation for
-            their final performance wherein each mentee will be critiqued by
-            well-renowned
-            <strong class="text-wildcat-gold">Head Coaches: Coach Buds Capatagan, Coach Leila Tomenio, Coach
-              Uriel Actub and Coach Natahaniel Banares</strong>
-            who shared their insights and encouraging words to further enhance
-            the potentials of the Wildcats dancers.
-          </p>
-          <p>
-            The program was concluded with an awarding ceremony, where several
-            individuals were recognized for their display of incomparable
-            talent and commitment for the organization; and a meeting to
-            discuss any future endeavors of the group.
-          </p>
-          <p>
-            Special apreciation to all the mentors, for their hands-on
-            monitoring of the improvements of their mentees:
-          </p>
-          <ul>
-            <li>Agosto, Adrian Ray</li>
-            <li>Baula, Naina</li>
-            <li>Carim, Fahad</li>
-            <li>Carinal, Christian Denille</li>
-            <li>Caylan, Justine</li>
-            <li>Flores, Rufel</li>
-            <li>Ganaden, Princess Jane</li>
-            <li>Grabato, Aujee</li>
-            <li>Igot, Monic</li>
-            <li>Mutya, Princess Lucille</li>
-            <li>Oga, James Arthur</li>
-            <li>Patagani, Crecia</li>
-            <li>Seville, Jhoruz</li>
-            <li>Tingson, Michael Vince</li>
-            <li>Villadores, Jezreel</li>
-          </ul>
-        </div>
-
-        <div
-          class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50 group/image cursor-pointer mb-8"
-          onclick="
-              openGallery([
-                'images/mentoring/mentoring002.jpg',
-                'images/mentoring/mentoring003.jpg',
-                'images/mentoring/mentoring004.jpg',
-                'images/mentoring/mentoring005.jpg',
-                'images/mentoring/mentoring006.jpg',
-                'images/mentoring/mentoring007.jpg',
-                'images/mentoring/mentoring008.jpg',
-                'images/mentoring/mentoring009.jpg',
-                'images/mentoring/mentoring010.jpg',
-                'images/mentoring/mentoring011.jpg',
-                'images/mentoring/mentoring012.jpg',
-                'images/mentoring/mentoring013.jpg',
-                'images/mentoring/mentoring014.jpg',
-                'images/mentoring/mentoring015.jpg',
-                'images/mentoring/mentoring016.jpg',
-                'images/mentoring/mentoring017.jpg',
-                'images/mentoring/mentoring018.jpg',
-                'images/mentoring/mentoring019.jpg',
-                'images/mentoring/mentoring020.jpg',
-                'images/mentoring/mentoring021.jpg',
-                'images/mentoring/mentoring022.jpg',
-                'images/mentoring/mentoring023.jpg',
-                'images/mentoring/mentoring024.jpg',
-                'images/mentoring/mentoring025.jpg',
-                'images/mentoring/mentoring026.jpg',
-                'images/mentoring/mentoring027.jpg',
-                'images/mentoring/mentoring028.jpg',
-                'images/mentoring/mentoring029.jpg',
-                'images/mentoring/mentoring030.jpg',
-                'images/mentoring/mentoring031.jpg',
-                'images/mentoring/mentoring032.jpg',
-                'images/mentoring/mentoring033.jpg',
-                'images/mentoring/mentoring034.jpg',
-                'images/mentoring/mentoring035.jpg',
-                'images/mentoring/mentoring036.jpg',
-                'images/mentoring/mentoring037.jpg',
-                'images/mentoring/mentoring038.jpg',
-                'images/mentoring/mentoring039.jpg',
-                'images/mentoring/mentoring040.jpg',
-                'images/mentoring/mentoring041.jpg',
-                'images/mentoring/mentoring042.jpg',
-                'images/mentoring/mentoring043.jpg',
-                'images/mentoring/mentoring044.jpg',
-                'images/mentoring/mentoring045.jpg',
-              ])
-            ">
-          <img src="images/mentoring/mentoring045.jpg" alt="Cover"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-
-          <div class="absolute inset-0 bg-black/10 group-hover:bg-black/40 transition duration-500"></div>
-          <div
-            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/image:opacity-100 transition duration-300">
-            <div
-              class="bg-black/60 backdrop-blur-md border border-wildcat-gold px-6 py-3 rounded-full flex items-center gap-3 transform translate-y-4 group-hover/image:translate-y-0 transition duration-300 shadow-[0_0_15px_rgba(255,215,0,0.3)]">
-              <i class="fa-solid fa-images text-wildcat-gold text-lg"></i>
-              <span class="text-white font-bold uppercase text-xs tracking-[0.2em]">View Gallery</span>
+        <!-- GAAP 2026 Equestria -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('gaap2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsGAAP2026.jpg" alt="GAAP 2026 Equestria"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Aug
+                14, 2026</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                WILDCATS in Equestria!
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                <span class="text-wildcat-gold font-bold uppercase">MSU-IIT WILDCATS</span> set the beat with a dazzling
+                display of fierceness and excellence as they opened the Acquaintance Party during GAAP 2026.
+              </p>
             </div>
           </div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MentoringProgram2025</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#WildcatsMentorship</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider">
-              <i class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>
-              November 8, 2025
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#GAAP2026</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </span>
           </div>
-          <h2 class="text-2xl md:text-4xl font-heading font-black text-white uppercase leading-tight italic">
-            Claws of Victory: Wildcats bring home the bacon at MASTS '25
-          </h2>
-        </header>
+        </article>
 
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            Three of our very own MSU-IIT WILDCATS Resident Performers,
-            <strong class="text-wildcat-gold">Francis A. Durac, Monaliza B. Escudero, and Leah Mae P.
-              Toring</strong>
-            rose victorious in the sports field as they competed at the
-            Mindanao Association of State Tertiary Schools (MASTS)
-            Incorporated Friendship Games and Socio-Cultural Festival 2025 at
-            Oroquieta City, Misamis Occidental.
-          </p>
-          <p>
-            Marking MSU-IIT's debut appearance in the Mindanao-wide arena, our
-            Wildcats displayed great fierceness and grit as they pounced their
-            way to victory against many competing Higher Education Institutes.
-          </p>
-          <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">
-            This momentous milestone is a burning proof of the versatile
-            athleticism of the Wildcats, who can not only slay on the dance
-            stage, but can also fight tooth and claw in the sports arena.
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsMASTS2025.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIITWildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MASTS2025</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#VICTORY</span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider"><i
-                class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>July 20, 2026</span>
+        <!-- Auditions 2026 -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="auditions" data-aos="fade-up" onclick="openNewsModal('auditions2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/wildcatsaudition2026.jpg" alt="Auditions 2026"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">July
+                20, 2026</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                AUDITIONS 2026
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Sharpen your claws. The hunt is about to begin! 🐱 Auditions coming soon—full details dropping shortly.
+                Stay tuned, MSU-IIT. 👀🔥
+              </p>
+            </div>
           </div>
-          <h2 class="text-2xl md:text-4xl font-heading font-black text-white uppercase leading-tight italic">
-            AUDITIONS 2026
-          </h2>
-        </header>
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            Sharpen your claws. The hunt is about to begin! 🐱 Auditions
-            coming soon—full details dropping shortly. Stay tuned, MSU-IIT.
-            👀🔥
-          </p>
-        </div>
-
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/wildcatsaudition2026.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
-
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIIT</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#msuiitwildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#Auditions2026</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">
-            #ComingSoon
-          </span>
-        </footer>
-      </article>
-
-      <article
-        class="bg-[#111111] p-6 md:p-10 rounded-3xl border border-gray-800 shadow-2xl mb-12 relative overflow-hidden group"
-        data-aos="fade-up">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-wildcat-gold/20 to-wildcat-orange/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition duration-700 -z-10">
-        </div>
-        <header class="mb-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-wildcat-gold text-sm font-bold uppercase tracking-wider"><i
-                class="fa-regular fa-calendar text-wildcat-orange mr-2"></i>August 14, 2026</span>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#Auditions2026</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
           </div>
-          <h2 class="text-2xl md:text-4xl font-heading font-black text-white uppercase leading-tight italic">
-            WILDCATS in Equestria!
-          </h2>
-        </header>
-        <div class="text-gray-300 leading-relaxed text-lg space-y-6 mb-8 font-light">
-          <p>
-            <span class="text-wildcat-gold font-bold uppercase">MSU-IIT WILDCATS</span> set the beat with a dazzling
-            display of fierceness and excellence as they opened the <span
-              class="text-wildcat-gold font-bold uppercase">Acquiantance Party</span> during the <span
-              class="text-wildcat-gold font-bold uppercase">GAAP 2026.</span>
-          </p>
-          <p>In the magical world of <span class="text-wildcat-gold font-bold">My Little Pony</span>—the event
-            theme, WILDCATS delivered a mystical number highlighting the versatility and undeniable prowess of the pack
-            encompassing a wide range of styles and energies raising the hype of the crowd.
-          </p>
-          <p>Meanwhile, the WILDCATS would like to extend their deepest gratitude to everyone who made this performance
-            possible.</p>
-          <p>Watch out folks, there's more to come.
-            Into the wild, WILDCATS!
-          </p>
-        </div>
+        </article>
 
-        <div class="rounded-2xl overflow-hidden relative shadow-lg border border-gray-800/50">
-          <img src="images/updates/WildcatsGAAP2026.jpg" alt="MASTS 25 Victory Banner"
-            class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-700 ease-in-out" />
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-500"></div>
-        </div>
+        <!-- MASTS 2025 -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="championships" data-aos="fade-up" onclick="openNewsModal('masts2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsMASTS2025.jpg" alt="MASTS 2025"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Nov
+                8, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                Claws of Victory: MASTS '25
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Three of our very own MSU-IIT WILDCATS Resident Performers rose victorious in the sports field at the
+                MASTS 2025 Friendship Games in Oroquieta City.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#MASTS2025</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
 
-        <footer class="mt-8 pt-6 border-t border-gray-800 flex flex-wrap gap-2">
-          <span class="text-xs uppercase tracking-widest text-gray-500">Tags:</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#MSUIIT</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#msuiitwildcats</span>
-          <span class="text-xs text-wildcat-gold uppercase tracking-widest font-bold">#GAAP2026</span>
-        </footer>
-      </article>
+        <!-- Mentoring Program 2025 -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="workshops" data-aos="fade-up" onclick="openNewsModal('mentoring2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative cursor-pointer" onclick="openGallery([
+                  'images/mentoring/mentoring045.jpg',
+                  'images/mentoring/mentoring002.jpg',
+                  'images/mentoring/mentoring003.jpg',
+                  'images/mentoring/mentoring004.jpg',
+                  'images/mentoring/mentoring005.jpg',
+                  'images/mentoring/mentoring006.jpg',
+                  'images/mentoring/mentoring007.jpg',
+                  'images/mentoring/mentoring008.jpg',
+                  'images/mentoring/mentoring009.jpg',
+                  'images/mentoring/mentoring010.jpg',
+                  'images/mentoring/mentoring011.jpg',
+                  'images/mentoring/mentoring012.jpg',
+                  'images/mentoring/mentoring013.jpg',
+                  'images/mentoring/mentoring014.jpg',
+                  'images/mentoring/mentoring015.jpg',
+                  'images/mentoring/mentoring016.jpg',
+                  'images/mentoring/mentoring017.jpg',
+                  'images/mentoring/mentoring018.jpg',
+                  'images/mentoring/mentoring019.jpg',
+                  'images/mentoring/mentoring020.jpg',
+                  'images/mentoring/mentoring021.jpg',
+                  'images/mentoring/mentoring022.jpg',
+                  'images/mentoring/mentoring023.jpg',
+                  'images/mentoring/mentoring024.jpg',
+                  'images/mentoring/mentoring025.jpg',
+                  'images/mentoring/mentoring026.jpg',
+                  'images/mentoring/mentoring027.jpg',
+                  'images/mentoring/mentoring028.jpg',
+                  'images/mentoring/mentoring029.jpg',
+                  'images/mentoring/mentoring030.jpg',
+                  'images/mentoring/mentoring031.jpg',
+                  'images/mentoring/mentoring032.jpg',
+                  'images/mentoring/mentoring033.jpg',
+                  'images/mentoring/mentoring034.jpg',
+                  'images/mentoring/mentoring035.jpg',
+                  'images/mentoring/mentoring036.jpg',
+                  'images/mentoring/mentoring037.jpg',
+                  'images/mentoring/mentoring038.jpg',
+                  'images/mentoring/mentoring039.jpg',
+                  'images/mentoring/mentoring040.jpg',
+                  'images/mentoring/mentoring041.jpg',
+                  'images/mentoring/mentoring042.jpg',
+                  'images/mentoring/mentoring043.jpg',
+                  'images/mentoring/mentoring044.jpg'
+                ])">
+              <img src="images/mentoring/mentoring045.jpg" alt="Mentoring Program"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Oct
+                26, 2025</span>
+              <span
+                class="absolute bottom-3 right-3 bg-black/80 text-wildcat-gold text-xs px-2.5 py-1 rounded-md border border-wildcat-gold/40 flex items-center gap-1.5 shadow-lg">
+                <i class="fa-solid fa-images"></i> 45 Photos
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                MSU-IIT WILDCATS First Mentoring Program 2025
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                After weeks of rigorous training, the MSU-IIT WILDCATS showcased signature routines evaluated by our
+                Head Coaches at Anahaw Amphitheatre.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#Mentorship</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- Twin Workshop Broadway -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="workshops" data-aos="fade-up" onclick="openNewsModal('broadway2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsTwinWorkshop.jpg" alt="Twin Workshop"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Oct
+                22 - 24, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                WILDCATS on Broadway: Twin Workshop
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Wildcats participated in The Street of Dreams 3-day workshop in Broadway/Jazz led by Pinoy Broadway
+                Legend Mr. Miguel Braganza.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#IPAG
+              #Broadway</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- Hip Hop Reloaded -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="championships" data-aos="fade-up" onclick="openNewsModal('hiphopReloaded2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsHipHopReloaded2025.jpg" alt="Hip Hop Reloaded"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Oct
+                12, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                The HYPE in WILDCATS - Hip Hop Reloaded S8
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Justine Jay Caylan and John Wyne Palubon under HYPE IT UP earned 1st Runner Up (Small Division) and 3rd
+                Runner Up (Open Division).
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#HYPEITUP</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- 11th ACPES Cultural Night -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('acpes2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsASEANCouncil.jpg" alt="11th ACPES"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Oct
+                2, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                MSU-IIT Wildcats at 11th ACPES
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Wildcats Resident Performers showcased their artistry and versatility as part of the grand Cultural
+                Night during the 11th ACPES at MSU-IIT.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#11thACPES</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- Diyandi Queen 2025 -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('diyandiQueen2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsDiyandiQueen2025.jpg" alt="Diyandi Queen"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Sep
+                21, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                The Princess is now a queen!
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Wildcats President Princess Jane Ganaden was crowned Diyandi Festival Queen 2025, taking home Best in
+                Choreography and People's Choice Award.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#DiyandiQueen2025</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- DOST Conference CDO -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('dost2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsDOST2025.jpg" alt="DOST Conference"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Sep
+                18, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                13th ASTHRD Scholars' Conference
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                The Wildcats lit up the stage opening Socials Night for DOST-SEI at the Limketkai Luxe Hotel, Cagayan de
+                Oro City.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#DOST #CDO</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- HUNINAY IPAG Concert -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('huninay2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsHuninay2025.jpg" alt="HUNINAY"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Sep
+                16 - 17, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                Wildcats in "HUNINAY" Musical
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Five outstanding Wildcats took part in HUNINAY, a dance-drama musical presented by IPAG in collaboration
+                with OCTAVA Choral Society.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#IPAG
+              #Huninay</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- Sayaw Iligan Season 4 -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('sayawIligan2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsSayawIligan2025.jpg" alt="Sayaw Iligan"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Aug
+                30, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                Sayaw Iligan Season 4 All Stars
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Wildcats dancers showcased their talents in Sayaw Iligan Season 4 All Stars under this year's
+                celebration of the Diyandi Festival.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#SayawIligan</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- Special Auditions -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="auditions" data-aos="fade-up" onclick="openNewsModal('specialAuditions2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative cursor-pointer" onclick="openGallery([
+                  'images/special/specialaud001.jpg',
+                  'images/special/specialaud002.jpg',
+                  'images/special/specialaud003.jpg',
+                  'images/special/specialaud004.jpg',
+                  'images/special/specialaud005.jpg',
+                  'images/special/specialaud006.jpg',
+                  'images/special/specialaud007.jpg',
+                  'images/special/specialaud008.jpg',
+                  'images/special/specialaud009.jpg',
+                  'images/special/specialaud010.jpg',
+                  'images/special/specialaud011.jpg',
+                  'images/special/specialaud012.jpg',
+                  'images/special/specialaud013.jpg',
+                  'images/special/specialaud014.jpg',
+                  'images/special/specialaud015.jpg',
+                  'images/special/specialaud016.jpg',
+                  'images/special/specialaud017.jpg',
+                  'images/special/specialaud018.jpg',
+                  'images/special/specialaud019.jpg',
+                  'images/special/specialaud020.jpg',
+                  'images/special/specialaud021.jpg',
+                  'images/special/specialaud022.jpg',
+                  'images/special/specialaud023.jpg',
+                  'images/special/specialaud024.jpg',
+                  'images/special/specialaud025.jpg',
+                  'images/special/specialaud026.jpg',
+                  'images/special/specialaud027.jpg',
+                  'images/special/specialaud028.jpg',
+                  'images/special/specialaud029.jpg',
+                  'images/special/specialaud030.jpg',
+                  'images/special/specialaud031.jpg',
+                  'images/special/specialaud032.jpg',
+                  'images/special/specialaud033.jpg',
+                  'images/special/specialaud034.jpg',
+                  'images/special/specialaud035.jpg',
+                  'images/special/specialaud036.jpg',
+                  'images/special/specialaud037.jpg',
+                  'images/special/specialaud038.jpg',
+                  'images/special/specialaud039.jpg',
+                  'images/special/specialaud040.jpg',
+                  'images/special/specialaud041.jpg',
+                  'images/special/specialaud042.jpg',
+                  'images/special/specialaud043.jpg',
+                  'images/special/specialaud044.jpg',
+                  'images/special/specialaud045.jpg',
+                  'images/special/specialaud046.jpg',
+                  'images/special/specialaud047.jpg',
+                  'images/special/specialaud048.jpg',
+                  'images/special/specialaud049.jpg',
+                  'images/special/specialaud050.jpg',
+                  'images/special/specialaud051.jpg',
+                  'images/special/specialaud052.jpg',
+                  'images/special/specialaud053.jpg',
+                  'images/special/specialaud054.jpg',
+                  'images/special/specialaud055.jpg',
+                  'images/special/specialaud056.jpg',
+                  'images/special/specialaud057.jpg'
+                ])">
+              <img src="images/special/specialaud001.jpg" alt="Special Auditions"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Aug
+                20, 2025</span>
+              <span
+                class="absolute bottom-3 right-3 bg-black/80 text-wildcat-gold text-xs px-2.5 py-1 rounded-md border border-wildcat-gold/40 flex items-center gap-1.5 shadow-lg">
+                <i class="fa-solid fa-images"></i> 57 Photos
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                Special Auditions Going Wild!
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Passionate and talented individuals gathered at IDS Multipurpose Hall to become part of the Wildcats
+                family.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#SpecialAuditions</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- Special Audition Alert -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="auditions" data-aos="fade-up" onclick="openNewsModal('auditionAlert2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsSpecialAudition2025.jpg" alt="Special Audition Alert"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Aug
+                17, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                SPECIAL AUDITION ALERT
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                We heard your screams, Wildcats! Because of your unstoppable passion, MSU-IIT WILDCATS opened another
+                round of special auditions.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#SpecialAudition</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- LNK Sangkabataan -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('lnk2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsLNK2025.jpg" alt="LNK Sangkabataan"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Aug
+                21, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                Into the CoMEOWnity! 🐾
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Members of the MSU-IIT Wildcats proudly joined their respective barangays in the LNK SANGKAbataan Pop
+                Dance Competition 2025.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#LNKSangkabataan</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- GAAP 2025 -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('gaap2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsGAAP2025.jpg" alt="GAAP 2025"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Aug
+                15, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                The Crowd goes Wild with Wildcats!
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                MSU-IIT Wildcats roared louder than ever with their much-awaited comeback performance during KASAMA GAAP
+                2025 with Dilaw.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#GAAP2025</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+        <!-- Gawad Serbisyo 2025 -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('gawadSerbisyo2025')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsGawadSerbisyo2025.jpg" alt="Gawad Serbisyo"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Aug
+                13, 2025</span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                Gawad Serbisyo 2025 Recognition
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                MSU-IIT Wildcats receive their first-ever Institute-level award presented by the Office of the Vice
+                Chancellor for Student Services.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#MSUIIT</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300">
+              Read Story <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- 3. LOAD MORE BUTTON -->
+      <div class="text-center mt-12 sm:mt-16">
+        <button id="loadMoreBtn"
+          class="px-7 sm:px-8 py-3 rounded-full border border-wildcat-gold text-wildcat-gold hover:bg-wildcat-gold hover:text-black active:scale-95 font-bold uppercase tracking-widest text-[11px] sm:text-xs transition duration-300 shadow-[0_0_15px_rgba(255,215,0,0.2)]">
+          Load More Stories <i class="fa-solid fa-chevron-down ml-1.5"></i>
+        </button>
+      </div>
     </div>
   </main>
 
-  <footer class="py-12 border-t border-gray-800 bg-black text-center relative z-20">
-    <div class="flex justify-center gap-8 mb-8">
-      <a href="https://facebook.com/MSUIITWILDCATS" target="_blank"
-        class="text-gray-400 hover:text-blue-500 text-2xl transition"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="https://instagram.com/msuiitwildcats" target="_blank"
-        class="text-gray-400 hover:text-pink-500 text-2xl transition"><i class="fa-brands fa-instagram"></i></a>
-    </div>
-    <p class="text-gray-600 text-sm">
-      © 2025 MSU-IIT Wildcats. Made with ❤️ in Iligan City. Into the
-      Wild--Cats!!!
-    </p>
-  </footer>
+  <!-- MOBILE-PERFECT ARTICLE READER MODAL -->
+  <div id="articleModal" class="fixed inset-0 z-[80] hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeNewsModal()"></div>
 
-  <div id="news-lightbox"
-    class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
-    <button onclick="closeGallery()"
-      class="absolute top-6 right-6 text-white text-4xl hover:text-wildcat-gold transition z-50">
-      &times;
-    </button>
+    <div
+      class="relative bg-[#141414] w-full max-w-3xl rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-700 shadow-2xl z-10 max-h-[88vh] sm:max-h-[90vh] flex flex-col my-auto">
+      <!-- Close Button -->
+      <button onclick="closeNewsModal()"
+        class="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 z-30 bg-black/80 hover:bg-red-600 active:scale-90 text-white w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition border border-gray-600"
+        aria-label="Close article">
+        <i class="fa-solid fa-xmark text-sm sm:text-base"></i>
+      </button>
 
-    <button onclick="changeSlide(-1)"
-      class="absolute left-4 text-white text-3xl hover:text-wildcat-gold p-4 transition z-50 bg-black/50 rounded-full h-12 w-12 flex items-center justify-center hover:bg-black">
-      <i class="fa-solid fa-chevron-left"></i>
-    </button>
+      <!-- Modal Uncropped Media View -->
+      <div
+        class="w-full bg-black/70 relative overflow-hidden flex items-center justify-center border-b border-gray-800 shrink-0">
+        <img id="modalArticleImg" src="" alt="Story banner"
+          class="w-full max-h-[38vh] sm:max-h-[48vh] object-contain" />
+        <span id="modalArticleDate"
+          class="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 bg-black/85 backdrop-blur-md border border-wildcat-gold/50 text-wildcat-gold text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 rounded-full uppercase tracking-wider shadow-lg"></span>
+      </div>
 
-    <img id="lightbox-img" src=""
-      class="max-h-[85vh] max-w-[90vw] object-contain rounded-md shadow-2xl border border-gray-800" />
-
-    <button onclick="changeSlide(1)"
-      class="absolute right-4 text-white text-3xl hover:text-wildcat-gold p-4 transition z-50 bg-black/50 rounded-full h-12 w-12 flex items-center justify-center hover:bg-black">
-      <i class="fa-solid fa-chevron-right"></i>
-    </button>
-
-    <div id="gallery-counter" class="absolute bottom-6 text-gray-400 text-sm tracking-widest uppercase font-bold">
-      1 / 1
+      <!-- Smooth Scrollable Body -->
+      <div class="p-5 sm:p-8 md:p-10 overflow-y-auto space-y-3.5 sm:space-y-4 overscroll-contain">
+        <h2 id="modalArticleTitle"
+          class="text-xl sm:text-2xl md:text-3xl font-heading font-black text-white uppercase italic leading-tight">
+        </h2>
+        <div id="modalArticleBody"
+          class="text-gray-300 text-xs sm:text-base font-light leading-relaxed space-y-3 sm:space-y-4 pt-1 sm:pt-2">
+        </div>
+        <div id="modalArticleTags"
+          class="pt-4 sm:pt-6 border-t border-gray-800 flex flex-wrap gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold text-wildcat-gold">
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Sticky Floating Back-to-Top Button -->
+  <button id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 w-11 h-11 sm:w-12 sm:h-12 bg-black/85 border border-wildcat-gold text-wildcat-gold hover:bg-wildcat-orange hover:text-black active:scale-90 rounded-full flex items-center justify-center shadow-2xl opacity-0 pointer-events-none transition-all duration-300">
+    <i class="fa-solid fa-arrow-up text-sm sm:text-base"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer class="py-10 sm:py-12 border-t border-gray-800 bg-black text-center relative z-20">
+    <div class="flex justify-center gap-7 sm:gap-8 mb-6 sm:mb-8">
+      <a href="https://facebook.com/MSUIITWILDCATS" target="_blank"
+        class="text-gray-400 hover:text-blue-500 text-xl sm:text-2xl transition" aria-label="Facebook"><i
+          class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://instagram.com/msuiitwildcats" target="_blank"
+        class="text-gray-400 hover:text-pink-500 text-xl sm:text-2xl transition" aria-label="Instagram"><i
+          class="fa-brands fa-instagram"></i></a>
+    </div>
+    <p class="text-gray-600 text-xs sm:text-sm px-4">
+      © 2026 MSU-IIT Wildcats. Made with ❤️ in Iligan City. Into the Wild--Cats!!!
+    </p>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="news-lightbox"
+    class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center opacity-0 transition-opacity duration-300">
+    <button onclick="closeGallery()"
+      class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white text-3xl sm:text-4xl hover:text-wildcat-gold transition z-50"
+      aria-label="Close gallery">&times;</button>
+    <button onclick="changeSlide(-1)"
+      class="absolute left-3 sm:left-4 text-white text-xl sm:text-3xl hover:text-wildcat-gold p-3 transition z-50 bg-black/60 rounded-full h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center hover:bg-black"
+      aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+    <img id="lightbox-img" src=""
+      class="max-h-[80vh] sm:max-h-[85vh] max-w-[92vw] sm:max-w-[90vw] object-contain rounded-md shadow-2xl border border-gray-800"
+      alt="Gallery image" />
+    <button onclick="changeSlide(1)"
+      class="absolute right-3 sm:right-4 text-white text-xl sm:text-3xl hover:text-wildcat-gold p-3 transition z-50 bg-black/60 rounded-full h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center hover:bg-black"
+      aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+    <div id="gallery-counter"
+      class="absolute bottom-5 sm:bottom-6 text-gray-400 text-xs sm:text-sm tracking-widest uppercase font-bold">1 / 1
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      once: true,
-      duration: 1000,
-      offset: 50,
-    });
-  </script>
+    AOS.init({ once: true, duration: 1000, offset: 50 });
 
-  <script>
-    // --- NEWS GALLERY LOGIC ---
+    // --- COMPLETE NEWS DATA STORE ---
+    const newsData = {
+      danztrack2025: {
+        title: "HISTORY MADE, LEGACY SEALED",
+        date: "September 22, 2025",
+        img: "images/updates/WildcatsDanztrack2025.jpg",
+        tags: ["#MSUIITWildcats", "#Danztrack2025", "#WeRunThis!", "#ThreePeatRepeat"],
+        body: `
+            <p>The <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong> have once again proven their unstoppable spirit as they are crowned <strong class="text-wildcat-gold">CHAMPIONS</strong> of <strong class="text-wildcat-gold">Danztrack Philippines 2025 – College Division</strong>! With passion, grit, and unity, they secured a historic <strong class="text-wildcat-gold">THREE-PEAT</strong>—their third consecutive championship title!</p>
+            <p>The Wildcats also bagged <strong class="text-wildcat-gold">Best in Production Number</strong> and <strong class="text-wildcat-gold">Best in Costume</strong>, showcasing their talent, creativity, and cultural pride on the grand stage.</p>
+            <p>This triumph wouldn't be possible without the unwavering support of Mindanao State University - Iligan Institute of Technology, led by Chancellor Alizedney M. Ditucalan, and the Office of the Vice Chancellor for Student Services.</p>
+            <p>Deepest gratitude to our choreographers, faculty in charge Sir Manuel Jr. Padayogdog, mentors, and the families of our performers. Special thanks to the Working Committee headed by Ken Medalla, Bagtik Apparel Ph, and our Publication Team who captured this triumph for the world to see.</p>
+            <p>Above all, we thank our supporters, alumni, fellow students, and friends who cheered, prayed, and stood with us. Your faith made every performance more powerful and every victory more meaningful.</p>
+            <p><strong class="text-wildcat-gold">CHOREOGRAPHERS:</strong> Justine Caylan, Nathaniel Bañares, Adrian Ray Agosto, Christian Denille Carinal, Leila Tomenio, Michael Vincent Tingson, Naina Anjali Banawa, Buds Leo Capatagan, Jhorus Seville</p>
+            <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">This victory is a testament to teamwork, resilience, and the MSU-IIT legacy of excellence. The Wildcats stand tall as proud ambassadors, carrying the torch of passion and pride!</p>
+          `
+      },
+      gaap2026: {
+        title: "WILDCATS in Equestria!",
+        date: "August 14, 2026",
+        img: "images/updates/WildcatsGAAP2026.jpg",
+        tags: ["#MSUIIT", "#msuiitwildcats", "#GAAP2026"],
+        body: `
+            <p><span class="text-wildcat-gold font-bold uppercase">MSU-IIT WILDCATS</span> set the beat with a dazzling display of fierceness and excellence as they opened the <span class="text-wildcat-gold font-bold uppercase">Acquaintance Party</span> during the <span class="text-wildcat-gold font-bold uppercase">GAAP 2026.</span></p>
+            <p>In the magical world of <span class="text-wildcat-gold font-bold">My Little Pony</span>—the event theme, WILDCATS delivered a mystical number highlighting the versatility and undeniable prowess of the pack encompassing a wide range of styles and energies raising the hype of the crowd.</p>
+            <p>Meanwhile, the WILDCATS would like to extend their deepest gratitude to everyone who made this performance possible.</p>
+            <p class="italic text-wildcat-gold font-bold">Watch out folks, there's more to come. Into the wild, WILDCATS!</p>
+          `
+      },
+      auditions2026: {
+        title: "AUDITIONS 2026",
+        date: "July 20, 2026",
+        img: "images/wildcatsaudition2026.jpg",
+        tags: ["#MSUIIT", "#msuiitwildcats", "#Auditions2026", "#ComingSoon"],
+        body: `
+            <p>Sharpen your claws. The hunt is about to begin! 🐱 Auditions coming soon—full details dropping shortly. Stay tuned, MSU-IIT. 👀🔥</p>
+            <p>Full guidelines, choreography style requirements, and venue schedules will be released across all our official social media channels. Prepare to roar!</p>
+          `
+      },
+      masts2025: {
+        title: "Claws of Victory: Wildcats bring home the bacon at MASTS '25",
+        date: "November 8, 2025",
+        img: "images/updates/WildcatsMASTS2025.jpg",
+        tags: ["#MSUIITWildcats", "#MASTS2025", "#VICTORY"],
+        body: `
+            <p>Three of our very own MSU-IIT WILDCATS Resident Performers, <strong class="text-wildcat-gold">Francis A. Durac, Monaliza B. Escudero, and Leah Mae P. Toring</strong> rose victorious in the sports field as they competed at the Mindanao Association of State Tertiary Schools (MASTS) Incorporated Friendship Games and Socio-Cultural Festival 2025 at Oroquieta City, Misamis Occidental.</p>
+            <p>Marking MSU-IIT's debut appearance in the Mindanao-wide arena, our Wildcats displayed great fierceness and grit as they pounced their way to victory against many competing Higher Education Institutes.</p>
+            <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">This momentous milestone is a burning proof of the versatile athleticism of the Wildcats, who can not only slay on the dance stage, but can also fight tooth and claw in the sports arena.</p>
+          `
+      },
+      mentoring2025: {
+        title: "MSU-IIT WILDCATS launches First Mentoring Program 2025",
+        date: "October 26, 2025",
+        img: "images/mentoring/mentoring045.jpg",
+        tags: ["#MSUIITWildcats", "#MentoringProgram2025", "#WildcatsMentorship"],
+        body: `
+            <p>After weeks of rigorous training, the <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong> showcased their signature pieces during the first ever <strong class="text-wildcat-gold">Mentoring Program</strong> held on October 26, 2025 at the City Hall's Anahaw Amphitheatre, Palao, Iligan City.</p>
+            <p>With the help of their gracious and extensively committed mentors, the mentees have been molded to perfection in preparation for their final performance wherein each mentee will be critiqued by well-renowned <strong class="text-wildcat-gold">Head Coaches: Coach Buds Capatagan, Coach Leila Tomenio, Coach Uriel Actub and Coach Nathaniel Bañares</strong> who shared their insights and encouraging words to further enhance the potentials of the Wildcats dancers.</p>
+            <p>The program was concluded with an awarding ceremony, where several individuals were recognized for their display of incomparable talent and commitment for the organization; and a meeting to discuss any future endeavors of the group.</p>
+            <p class="font-bold text-wildcat-gold pt-2">Special appreciation to all the mentors:</p>
+            <p class="text-gray-400">Adrian Ray Agosto, Naina Baula, Fahad Carim, Christian Denille Carinal, Justine Caylan, Rufel Flores, Princess Jane Ganaden, Aujee Grabato, Monic Igot, Princess Lucille Mutya, James Arthur Oga, Crecia Patagani, Jhoruz Seville, Michael Vince Tingson, and Jezreel Villadores.</p>
+          `
+      },
+      broadway2025: {
+        title: "WILDCATS on Broadway: Street of Dreams Twin Workshop",
+        date: "October 22 - 24, 2025",
+        img: "images/updates/WildcatsTwinWorkshop.jpg",
+        tags: ["#MSUIITWildcats", "#TwinBroadwayWorkshop", "#IPAG"],
+        body: `
+            <p>The <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong> were ready to jive and jazz as they participated in <strong class="text-wildcat-gold">The Street of Dreams: A Twin Workshop in Dance Theatre and Technical Theatre</strong> held on October 22 to 24, 2025.</p>
+            <p>Through the cooperative work of the <span class="text-wildcat-gold">MSU-IIT Center for Culture and Arts, Mindanao Creative & Cultural Workshops Group, Inc;</span> and the <span class="text-wildcat-gold">MSU-IIT Integrated Performing Arts Guild</span>, The Street of Dreams was paved with a three-day workshop on Broadway and Jazz, led by Pinoy Broadway Legend <strong class="text-wildcat-gold">Mr. Miguel Braganza</strong>; and the intricate works of light and sound design, led by Multi-award winning Lighting Designer <strong class="text-wildcat-gold">Mr. Katsh Catoy</strong>.</p>
+            <p>The workshop concluded with a participants' showcase, where our very own <span class="italic">MSU-IIT WILDCATS Resident Performers</span> jazzed up the stage, ultimately proving their versatility across different dance styles.</p>
+            <p class="font-bold text-wildcat-gold pt-2">Special acknowledgement to participating WILDCATS:</p>
+            <p class="text-gray-400">Freelyn Abes, John Hardy Acierto, Adrian Ray Agosto, Kristina Atillo, Juniezsa Cassandra Bacus, Buds Capatagan, Monaliza Escudero, Nelle Lado, Krishna Leyran, Andrey Gwynn Monsanto, Princess Lucille Mutya, Samantha Palubon, Kyacinth Mich Pascua, and Win Tagab.</p>
+          `
+      },
+      hiphopReloaded2025: {
+        title: "The HYPE in WILDCATS - Hip Hop Reloaded Season 8",
+        date: "October 12, 2025",
+        img: "images/updates/WildcatsHipHopReloaded2025.jpg",
+        tags: ["#MSUIITWildcats", "#TheHYPEinWILDCATS", "#HYPEITUP"],
+        body: `
+            <p>Two of our very own MSU-IIT Wildcats Resident Performers, <strong class="text-wildcat-gold">Justine Jay Caylan</strong> and <strong class="text-wildcat-gold">John Wyne Palubon</strong>, proudly represented on HipHop Reloaded Season 8 2025 competition held in Oroquieta City, one of the most anticipated hip-hop dance events in the region.</p>
+            <p>Showcasing their exceptional rhythm, creativity, and passion for the art of street dance, the duo, under the team name <strong class="text-wildcat-gold">HYPE IT UP</strong>, earned remarkable victories:</p>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>🥈 <strong class="text-wildcat-gold">1st Runner Up in the Small Division</strong></li>
+              <li>🥉 <strong class="text-wildcat-gold">3rd Runner Up in the Open Division</strong></li>
+            </ul>
+            <p>Their outstanding performance highlighted not only their technical skill and artistry but also the Wildcats' commitment to excellence and innovation in dance. The MSU-IIT Wildcats extend heartfelt congratulations to <span class="italic">HYPE IT UP</span> for bringing pride and inspiration through their craft.</p>
+          `
+      },
+      acpes2025: {
+        title: "MSU-IIT Wildcats Illuminates a Night of Culture at 11th ACPES",
+        date: "October 2, 2025",
+        img: "images/updates/WildcatsASEANCouncil.jpg",
+        tags: ["#MSUIITWildcats", "#11thACPES", "#WildcatsInACPES"],
+        body: `
+            <p>The MSU-IIT Wildcats Resident Performers once again showcased their artistry and versatility as they became part of the grand Cultural Night during the <strong class="text-wildcat-gold">11th ASEAN Council of Physical Education and Sports</strong> held on October 2, 2025, at MSU-IIT.</p>
+            <p>Many of these performers are also members of the <strong class="text-wildcat-gold">MSU-IIT Integrated Performing Arts Guild (IPAG)</strong>: <span class="italic">Princess Lucille Mutya, Ian Pierce Pactol, Monaliza Escudero and Kyacinth Mich Pascua.</span> They are known for their innovative works that blend tradition, movement, and modern artistry.</p>
+            <p>Beyond the stage, several Wildcats also served as part of the working committee, contributing their time, creativity, and dedication to the successful organization of the 11th ACPES.</p>
+            <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">Through their performance and participation, the Wildcats not only showcased their talent but also embodied the values of MSU-IIT: passion for the arts, leadership in service, and pride in cultural identity.</p>
+          `
+      },
+      diyandiQueen2025: {
+        title: "The Princess is now a queen!",
+        date: "September 21, 2025",
+        img: "images/updates/WildcatsDiyandiQueen2025.jpg",
+        tags: ["#MSUIITWildcats", "#DiyandiQueen2025", "#WildcatsPride", "#QueenWithAPurpose"],
+        body: `
+            <p>The MSU-IIT Wildcats family proudly congratulates our very own <strong class="text-wildcat-gold">Princess Jane Ganaden</strong>, President of MSU-IIT WILDCATS, for being crowned <strong class="text-wildcat-gold">Diyandi Festival Queen 2025</strong> during the grand coronation night held last September 21, 2025 at <span class="italic">Robinson's Mall Atrium</span>.</p>
+            <p>Her journey to the crown was nothing short of spectacular as she also brought home the special awards for <strong class="text-wildcat-gold">Best in Choreography (Group Performance)</strong> and the <strong class="text-wildcat-gold">People's Choice Award</strong>, a true testament to her artistry, grace, and the love of the people of Iligan City.</p>
+            <p>Princess Jane's triumph is more than a personal victory, it is a celebration of <span class="italic text-wildcat-gold">Iliganon pride, culture, and excellence</span>. As she leads the Wildcats with passion, she now carries the honor of representing both the University and the vibrant spirit of the Diyandi Festival.</p>
+            <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">Once again, congratulations Diyandi Festival Queen 2025 <span class="italic">Princess Jane Ganaden</span>!</p>
+          `
+      },
+      dost2025: {
+        title: "MSU-IIT WILDCATS Set the Stage on Fire at 13th ASTHRD Graduate Scholars' Conference",
+        date: "September 18, 2025",
+        img: "images/updates/WildcatsDOST2025.jpg",
+        tags: ["#MSUIIT", "#MSUIITWildcats"],
+        body: `
+            <p>The MSU-IIT Wildcats once again proved why they're a force to be reckoned with as they proudly opened the <span class="italic">Socials Night</span> of the <strong class="text-wildcat-gold">Department of Science and Technology - Science Education Institute (DOST-SEI)</strong> in collaboration with the <strong class="text-wildcat-gold">ASTHRDP National Science Consortium</strong> at the Limketkai Luxe Hotel, Cagayan de Oro City.</p>
+            <p>With their energy, passion, and signature moves, the Wildcats lit up the stage and gave the audience a taste of MSU-IIT's world-class talent. Their performance brought not only entertainment but also pride, showing how art and excellence can shine alongside science and innovation.</p>
+            <p>The Wildcats are deeply honored to have been part of this prestigious gathering of brilliant scholars and changemakers. A huge thank you to Ma'am Leila B. Tomenio for the trust and invitation!</p>
+          `
+      },
+      huninay2025: {
+        title: "MSU-IIT WILDCATS Resident Performers Shine in \"HUNINAY: Songs of Mothers and Cradles\"",
+        date: "September 16 - 17, 2025",
+        img: "images/updates/WildcatsHuninay2025.jpg",
+        tags: ["#MSUIITWildcats", "#IPAG", "#Octava", "#Huninay"],
+        body: `
+            <p>Five outstanding members of the MSU-IIT Wildcats Resident Performers proudly took part in <strong class="text-wildcat-gold">HUNINAY: Songs of Mothers and Cradles</strong>, a dance-drama musical and concert presented by the <strong class="text-wildcat-gold">Integrated Performing Arts Guild (IPAG)</strong> in collaboration with <strong class="text-wildcat-gold">OCTAVA Choral Society</strong>.</p>
+            <p>Representing the Wildcats Resident Performers, the following artists showcased their passion and artistry on stage: <span class="italic text-wildcat-gold">Adrian Ray Agosto, Princess Lucille Mutya, Ian Pierce Pactol, Monaliza Escudero, Kyacinth Mich Pascua</span>.</p>
+            <p>As members of IPAG, these young artists continue to explore creative movements that transcend boundaries, blending dance, drama, and music to celebrate the Filipino spirit and its deep emotional narratives.</p>
+          `
+      },
+      sayawIligan2025: {
+        title: "From Grrr to Groove a PAWrfect PURRformance",
+        date: "August 30, 2025",
+        img: "images/updates/WildcatsSayawIligan2025.jpg",
+        tags: ["#MSUIIT", "#MSUIITWildcats", "#SayawIliganSeason4"],
+        body: `
+            <p>The <strong class="text-wildcat-gold">MSU-IIT Wildcats</strong>, one of the university's acclaimed dance organizations, proudly showcased their talents as members participated in <strong class="italic text-wildcat-gold">Sayaw Iligan Season 4 All Stars</strong>, an official event under this year's celebration of the <strong class="text-wildcat-gold">Diyandi Festival</strong>.</p>
+            <p><strong class="text-wildcat-gold">Wildcats</strong> continue to distinguish themselves through the diversity of their members. The organization is composed of performers proficient in various dance genres, including hip hop, contemporary, jazz, urban choreography, and Korean Pop (K-Pop).</p>
+            <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">As they move forward, the <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong> remain committed to nurturing talent, celebrating diversity in dance, and upholding their mission to inspire audiences.</p>
+          `
+      },
+      specialAuditions2025: {
+        title: "MSU-IIT WILDCATS Special Auditions Going Wild!",
+        date: "August 20, 2025",
+        img: "images/special/specialaud001.jpg",
+        tags: ["#MSUIITWildcats", "#SpecialAuditions", "#PirenaWarka"],
+        body: `
+            <p>The <strong class="text-wildcat-gold">MSU-IIT Wildcats Special Auditions</strong>, held on <span class="italic">August 20, 2025 at IDS Multipurpose Hall</span>, successfully brought together passionate and talented individuals eager to become part of the Wildcats family.</p>
+            <p>Aspirants demonstrated their skills, confidence, and commitment, making the selection process both exciting and challenging for the panel. The event marked another milestone in strengthening the Wildcats legacy, as new members step forward to carry the roar and pride of MSU-IIT.</p>
+          `
+      },
+      auditionAlert2025: {
+        title: "SPECIAL AUDITION ALERT",
+        date: "August 17, 2025",
+        img: "images/updates/WildcatsSpecialAudition2025.jpg",
+        tags: ["#MSUIIT", "#MSUIITWildcats", "#SpecialAudition", "#PirenaWarka"],
+        body: `
+            <p><span class="italic">We heard your screams, Wildcats!</span></p>
+            <p>Because of your unstoppable passion and loud calls to be part of the family, <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong> is opening another round of <strong class="text-wildcat-gold">SPECIAL AUDITIONS!</strong></p>
+            <p>This is your chance to showcase your talent, your fire, and your spirit. Don't miss this opportunity to roar with us!</p>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong class="text-wildcat-gold">Date:</strong> August 20, 2025</li>
+              <li><strong class="text-wildcat-gold">Time:</strong> 4:00 PM Onwards</li>
+              <li><strong class="text-wildcat-gold">Venue:</strong> IDS Multipurpose Hall</li>
+            </ul>
+          `
+      },
+      lnk2025: {
+        title: "Into the CoMEOWnity! 🐾",
+        date: "August 21, 2025",
+        img: "images/updates/WildcatsLNK2025.jpg",
+        tags: ["#MSUIIT", "#MSUIITWildcats", "#LNKSangkabataan2025"],
+        body: `
+            <p>Members of the <strong class="text-wildcat-gold">MSU-IIT Wildcats</strong> proudly joined their respective barangays in the <strong class="italic text-wildcat-gold">Linggo Ng Kabataan (LNK) - SANGKAbataan Pop Dance Competition 2025</strong>.</p>
+            <p>Showcasing their skills and passion for performance, the Wildcats brought the same energy and discipline they are known for on bigger stages into their local communities, highlighting their talent in dance and commitment to youth empowerment.</p>
+          `
+      },
+      gaap2025: {
+        title: "The Crowd goes Wild with Wildcats!",
+        date: "August 15, 2025",
+        img: "images/updates/WildcatsGAAP2025.jpg",
+        tags: ["#MSUIIT", "#MSUIITWildcats", "#GAAP2025", "#WelcomingWeek2025"],
+        body: `
+            <p><strong class="text-wildcat-gold">MSU-IIT Wildcats</strong> roared louder than ever with their much-awaited comeback performance during the <span class="italic text-wildcat-gold">KASAMA General Assembly and Acquaintance Party (GAAP)</span>, an unforgettable night brought to us by <span class="italic">TM Tambayan</span>.</p>
+            <p>Sharing the stage with the university's finest performing groups, the WILDCATS once again proved their passion in bringing world-class entertainment alongside sensational Filipino band <strong class="text-wildcat-gold">Dilaw</strong>.</p>
+          `
+      },
+      gawadSerbisyo2025: {
+        title: "MSU-IIT Wildcats Receive First-Ever Institute-Level Recognition",
+        date: "August 13, 2025",
+        img: "images/updates/WildcatsGawadSerbisyo2025.jpg",
+        tags: ["#MSUIIT", "#MSUIITWildcats"],
+        body: `
+            <p>The <strong class="text-wildcat-gold">MSU-IIT WILDCATS</strong> proudly mark a historic milestone as they receive their very first Institute-level award: the <strong class="text-wildcat-gold italic">Gawad Serbisyo 2025</strong>, presented on August 13, 2025 by the <span class="italic">Office of the Vice Chancellor for Student Services</span> and the <span class="italic">Office of Student Development Services</span>.</p>
+            <p>The Gawad Serbisyo recognizes exemplary service, dedication, and commitment to the Institute's values, reflecting the WILDCATS' passion for excellence and teamwork.</p>
+            <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">"This is not merely an accolade; it is our first step toward a wonderful future ahead."</p>
+          `
+      }
+    };
+
+    // --- ARTICLE MODAL LOGIC ---
+    function openNewsModal(key) {
+      const item = newsData[key];
+      if (!item) return;
+
+      document.getElementById("modalArticleTitle").innerText = item.title;
+      document.getElementById("modalArticleDate").innerText = item.date;
+      document.getElementById("modalArticleImg").src = item.img;
+      document.getElementById("modalArticleBody").innerHTML = item.body;
+      document.getElementById("modalArticleTags").innerHTML = item.tags
+        .map(tag => `<span>${tag}</span>`)
+        .join(" ");
+
+      document.getElementById("articleModal").classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeNewsModal() {
+      document.getElementById("articleModal").classList.add("hidden");
+      document.body.style.overflow = "auto";
+    }
+
+    // --- PAGINATION & FILTER LOGIC (INSTANT RENDER) ---
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const newsCards = document.querySelectorAll('.news-card');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const ITEMS_PER_PAGE = 6;
+    let visibleCount = ITEMS_PER_PAGE;
+    let currentCategory = 'all';
+
+    function updateCardVisibility() {
+      let matchingCount = 0;
+
+      newsCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const isMatchingCategory = currentCategory === 'all' || category === currentCategory;
+
+        if (isMatchingCategory) {
+          matchingCount++;
+          if (matchingCount <= visibleCount) {
+            card.classList.remove('hidden');
+            card.classList.add('aos-animate');
+          } else {
+            card.classList.add('hidden');
+          }
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (matchingCount <= visibleCount) {
+        loadMoreBtn.classList.add('hidden');
+      } else {
+        loadMoreBtn.classList.remove('hidden');
+      }
+
+      if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+      }
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-wildcat-gold', 'text-black', 'border-wildcat-gold', 'shadow-[0_0_15px_rgba(255,215,0,0.3)]');
+          b.classList.add('bg-card-bg', 'text-gray-300', 'border-gray-800');
+        });
+        btn.classList.add('bg-wildcat-gold', 'text-black', 'border-wildcat-gold', 'shadow-[0_0_15px_rgba(255,215,0,0.3)]');
+        btn.classList.remove('bg-card-bg', 'text-gray-300', 'border-gray-800');
+
+        currentCategory = btn.getAttribute('data-category');
+        visibleCount = ITEMS_PER_PAGE;
+        updateCardVisibility();
+      });
+    });
+
+    loadMoreBtn.addEventListener('click', () => {
+      visibleCount += 4;
+      updateCardVisibility();
+    });
+
+    updateCardVisibility();
+
+    // --- BACK TO TOP SCROLL TRIGGER ---
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 350) {
+        backToTop.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        backToTop.classList.add('opacity-0', 'pointer-events-none');
+      }
+    });
+
+    // --- GALLERY LIGHTBOX LOGIC ---
     let currentImages = [];
     let currentIndex = 0;
     const lightbox = document.getElementById("news-lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
     const counter = document.getElementById("gallery-counter");
 
-    // Function to Open Gallery
     function openGallery(images) {
       currentImages = images;
       currentIndex = 0;
       updateLightbox();
-
-      // Show Lightbox
       lightbox.classList.remove("hidden");
-      // Small delay to allow fade-in animation
       setTimeout(() => lightbox.classList.remove("opacity-0"), 10);
-      document.body.style.overflow = "hidden"; // Stop background scrolling
+      document.body.style.overflow = "hidden";
     }
 
-    // Function to Close Gallery
     function closeGallery() {
       lightbox.classList.add("opacity-0");
       setTimeout(() => {
@@ -1397,27 +1259,28 @@
       }, 300);
     }
 
-    // Update Image Source
     function updateLightbox() {
       lightboxImg.src = currentImages[currentIndex];
       counter.innerText = currentIndex + 1 + " / " + currentImages.length;
     }
 
-    // Next/Prev Navigation
     function changeSlide(direction) {
       currentIndex += direction;
-      // Loop logic
       if (currentIndex < 0) currentIndex = currentImages.length - 1;
       if (currentIndex >= currentImages.length) currentIndex = 0;
       updateLightbox();
     }
 
-    // Keyboard Support (Left/Right/Esc)
+    // Keyboard Accessibility
     document.addEventListener("keydown", function (e) {
-      if (lightbox.classList.contains("hidden")) return;
-      if (e.key === "ArrowLeft") changeSlide(-1);
-      if (e.key === "ArrowRight") changeSlide(1);
-      if (e.key === "Escape") closeGallery();
+      if (e.key === "Escape") {
+        closeNewsModal();
+        closeGallery();
+      }
+      if (!lightbox.classList.contains("hidden")) {
+        if (e.key === "ArrowLeft") changeSlide(-1);
+        if (e.key === "ArrowRight") changeSlide(1);
+      }
     });
   </script>
 </body>
