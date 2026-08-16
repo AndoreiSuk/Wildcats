@@ -1,1141 +1,806 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MSU-IIT WILDCATS</title>
-    <link rel="icon" type="image/png" href="images/wildcatslogokingkara1.png" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSU-IIT WILDCATS</title>
+  <link rel="icon" type="image/png" href="images/wildcatslogokingkara1.png" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="styles.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "iit-maroon": "#800000",
-              "iit-red": "#b30000",
-              "wildcat-gold": "#FFD700",
-              "wildcat-orange": "#FF4500",
-              "dark-bg": "#0a0a0a",
-              "card-bg": "#111111",
-            },
-            fontFamily: {
-              sans: ["Poppins", "sans-serif"],
-              heading: ["Montserrat", "sans-serif"],
-            },
-            animation: {
-              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-            },
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "iit-maroon": "#800000",
+            "iit-red": "#b30000",
+            "wildcat-gold": "#FFD700",
+            "wildcat-orange": "#FF4500",
+            "dark-bg": "#0a0a0a",
+            "card-bg": "#111111",
+          },
+          fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+            heading: ["Montserrat", "sans-serif"],
+          },
+          animation: {
+            "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
           },
         },
-      };
-    </script>
-  </head>
+      },
+    };
+  </script>
+</head>
 
-  <body class="bg-dark-bg text-white overflow-x-hidden">
-    <div
-      id="splash-screen"
-      class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center cursor-pointer px-4 text-center"
-    >
-      <div id="splash-logo-container" class="relative group">
-        <img
-          src="images/wildcatslogokingkara.png"
-          alt="Click to Enter"
-          class="relative w-40 h-40 md:w-80 md:h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-      </div>
-      <p
-        class="mt-8 text-gray-300 text-sm md:text-xl tracking-[0.3em] uppercase animate-pulse"
-      >
-        Do you have what it takes to go wild??
-      </p>
+<body class="bg-dark-bg text-white overflow-x-hidden">
+  <div id="splash-screen"
+    class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center cursor-pointer px-4 text-center">
+    <div id="splash-logo-container" class="relative group">
+      <img src="images/wildcatslogokingkara.png" alt="Click to Enter"
+        class="relative w-40 h-40 md:w-80 md:h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
     </div>
+    <p class="mt-8 text-gray-300 text-sm md:text-xl tracking-[0.3em] uppercase animate-pulse">
+      Do you have what it takes to go wild??
+    </p>
+  </div>
 
-    <div id="main-content">
-      <section
-        class="hero-bg flex flex-col items-center justify-center relative px-4"
-      >
-        <div
-          class="relative mb-8 md:mb-12"
-          data-aos="zoom-in"
-          data-aos-duration="1500"
-        >
-          <div
-            class="absolute inset-0 rounded-full bg-wildcat-gold blur-xl opacity-20 animate-pulse"
-          ></div>
-          <img
-            src="images/wildcatslogo.jpg"
-            alt="Wildcats Logo"
-            class="relative w-32 h-32 md:w-52 md:h-52 rounded-full border-4 border-wildcat-orange shadow-2xl object-cover z-10"
-          />
-        </div>
-        <div class="text-center z-10">
-          <p
-            class="text-gray-400 tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-base uppercase mb-2"
-          >
-            @msuiitwildcats
-          </p>
-          <h1
-            class="font-heading text-4xl md:text-7xl font-black text-white mb-4 tracking-tighter"
-          >
-            INTO THE <span class="text-wildcat-orange italic">WILD---</span
-            ><span class="text-iit-red">CATS!</span>
-          </h1>
-          <div class="mt-6 md:mt-8" data-aos="fade-up" data-aos-delay="200">
-            <a
-              href="wildcats-news.html"
-              class="group relative inline-flex items-center overflow-hidden rounded-full border-2 border-wildcat-gold px-6 py-2 md:px-8 md:py-3 font-bold text-wildcat-orange hover:text-black focus:outline-none focus:ring active:bg-wildcat-orange transition duration-300"
-            >
-              <span
-                class="absolute inset-0 transition-transform duration-300 group-hover:translate-x-full bg-wildcat-gold"
-              ></span>
-              <span
-                class="relative uppercase tracking-widest text-xs md:text-sm"
-                >See Latest News</span
-              >
-              <i
-                class="fa-solid fa-arrow-right ml-3 relative text-sm group-hover:text-black transition"
-              ></i>
-            </a>
-          </div>
-        </div>
-        <div class="absolute bottom-6 md:bottom-10 animate-bounce">
-          <i
-            class="fa-solid fa-chevron-down text-wildcat-gold text-xl md:text-2xl"
-          ></i>
-        </div>
-      </section>
-
-      <section class="py-24 relative overflow-hidden bg-[#0f0f0f]">
-        <div
-          class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900/40 via-transparent to-transparent pointer-events-none"
-        ></div>
-        <div class="px-4 max-w-7xl mx-auto relative z-20">
-          <div class="text-center mb-16" data-aos="fade-up">
-            <h2
-              class="font-heading text-4xl md:text-5xl font-black mb-6 uppercase"
-            >
-              <span class="text-orange-gradient">Who We Are</span>
-            </h2>
-            <p
-              class="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-light"
-            >
-              The
-              <span class="text-wildcat-gold font-bold">MSU-IIT Wildcats</span>
-              is the premier institute based resident street dance group of
-              Mindanao State University - Iligan Institute of Technology. We are
-              a community of passionate dancers dedicated to excellence,
-              creativity, and representing the wild spirit of MSU-IIT.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div
-              class="bg-card-bg p-8 rounded-2xl border border-gray-800 hover:border-orange-500 hover:-translate-y-2 transition-all duration-300 group"
-              data-aos="fade-up"
-              data-aos-delay="0"
-            >
-              <div
-                class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition"
-              >
-                <i class="fa-solid fa-trophy text-white text-2xl"></i>
-              </div>
-              <h3 class="font-heading font-bold text-xl text-white mb-2">
-                Achievements
-              </h3>
-              <p class="text-gray-500 text-sm">4-time Danztrack PH Champion</p>
-            </div>
-
-            <div
-              class="bg-card-bg p-8 rounded-2xl border border-gray-800 hover:border-orange-500 hover:-translate-y-2 transition-all duration-300 group"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div
-                class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition"
-              >
-                <i class="fa-solid fa-medal text-white text-2xl"></i>
-              </div>
-              <h3 class="font-heading font-bold text-xl text-white mb-2">
-                Excellence
-              </h3>
-              <p class="text-gray-500 text-sm">Award-Winning Performances</p>
-            </div>
-
-            <div
-              class="bg-card-bg p-8 rounded-2xl border border-gray-800 hover:border-orange-500 hover:-translate-y-2 transition-all duration-300 group"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div
-                class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition"
-              >
-                <i class="fa-solid fa-users text-white text-2xl"></i>
-              </div>
-              <h3 class="font-heading font-bold text-xl text-white mb-2">
-                Community
-              </h3>
-              <p class="text-gray-500 text-sm">Student-Led Organization</p>
-            </div>
-
-            <div
-              class="bg-card-bg p-8 rounded-2xl border border-gray-800 hover:border-orange-500 hover:-translate-y-2 transition-all duration-300 group"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div
-                class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition"
-              >
-                <i class="fa-solid fa-calendar-days text-white text-2xl"></i>
-              </div>
-              <h3 class="font-heading font-bold text-xl text-white mb-2">
-                Active
-              </h3>
-              <p class="text-gray-500 text-sm">Year-Round Training</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="py-24 relative bg-gradient-to-b from-dark-bg via-dark-bg to-[#1a0505]"
-      >
-        <div class="px-4 max-w-7xl mx-auto relative z-20">
-          <h2
-            class="text-center font-heading text-4xl md:text-5xl font-bold mb-16"
-            data-aos="fade-up"
-          >
-            OUR
+  <div id="main-content">
+    <section class="hero-bg flex flex-col items-center justify-center relative px-4">
+      <div class="relative mb-8 md:mb-12" data-aos="zoom-in" data-aos-duration="1500">
+        <div class="absolute inset-0 rounded-full bg-wildcat-gold blur-xl opacity-20 animate-pulse"></div>
+        <img src="images/wildcatslogo.jpg" alt="Wildcats Logo"
+          class="relative w-32 h-32 md:w-52 md:h-52 rounded-full border-4 border-wildcat-orange shadow-2xl object-cover z-10" />
+      </div>
+      <div class="text-center z-10">
+        <p class="text-gray-400 tracking-[0.2em] md:tracking-[0.3em] text-xs md:text-base uppercase mb-2">
+          @msuiitwildcats
+        </p>
+        <h1 class="font-heading text-4xl md:text-7xl font-black text-white mb-4 tracking-tighter">
+          INTO THE <span class="text-wildcat-orange italic">WILD---</span><span class="text-iit-red">CATS!</span>
+        </h1>
+        <div class="mt-6 md:mt-8" data-aos="fade-up" data-aos-delay="200">
+          <a href="wildcats-news.html"
+            class="group relative inline-flex items-center overflow-hidden rounded-full border-2 border-wildcat-gold px-6 py-2 md:px-8 md:py-3 font-bold text-wildcat-orange hover:text-black focus:outline-none focus:ring active:bg-wildcat-orange transition duration-300">
             <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-wildcat-gold to-yellow-200"
-              >LEGACY</span
-            >
+              class="absolute inset-0 transition-transform duration-300 group-hover:translate-x-full bg-wildcat-gold"></span>
+            <span class="relative uppercase tracking-widest text-xs md:text-sm">See Latest News</span>
+            <i class="fa-solid fa-arrow-right ml-3 relative text-sm group-hover:text-black transition"></i>
+          </a>
+        </div>
+      </div>
+      <div class="absolute bottom-6 md:bottom-10 animate-bounce">
+        <i class="fa-solid fa-chevron-down text-wildcat-gold text-xl md:text-2xl"></i>
+      </div>
+    </section>
+
+    <section class="py-24 relative overflow-hidden bg-[#0f0f0f]">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-900/40 via-transparent to-transparent pointer-events-none">
+      </div>
+      <div class="px-4 max-w-7xl mx-auto relative z-20">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="font-heading text-4xl md:text-5xl font-black mb-6 uppercase">
+            <span class="text-orange-gradient">Who We Are</span>
           </h2>
+          <p class="text-gray-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-light">
+            The
+            <span class="text-wildcat-gold font-bold">MSU-IIT Wildcats</span>
+            is the premier institute based resident street dance group of
+            Mindanao State University - Iligan Institute of Technology. We are
+            a community of passionate dancers dedicated to excellence,
+            creativity, and representing the wild spirit of MSU-IIT.
+          </p>
+        </div>
 
-          <div class="relative">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-card-bg p-8 rounded-2xl border border-gray-800 hover:border-orange-500 hover:-translate-y-2 transition-all duration-300 group"
+            data-aos="fade-up" data-aos-delay="0">
             <div
-              class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full timeline-line z-0"
-            ></div>
+              class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition">
+              <i class="fa-solid fa-trophy text-white text-2xl"></i>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-white mb-2">
+              Achievements
+            </h3>
+            <p class="text-gray-500 text-sm">4-time Danztrack PH Champion</p>
+          </div>
 
+          <div
+            class="bg-card-bg p-8 rounded-2xl border border-gray-800 hover:border-orange-500 hover:-translate-y-2 transition-all duration-300 group"
+            data-aos="fade-up" data-aos-delay="100">
             <div
-              class="mb-12 flex flex-col md:flex-row items-center w-full justify-between relative z-10"
-            >
+              class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition">
+              <i class="fa-solid fa-medal text-white text-2xl"></i>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-white mb-2">
+              Excellence
+            </h3>
+            <p class="text-gray-500 text-sm">Award-Winning Performances</p>
+          </div>
+
+          <div
+            class="bg-card-bg p-8 rounded-2xl border border-gray-800 hover:border-orange-500 hover:-translate-y-2 transition-all duration-300 group"
+            data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition">
+              <i class="fa-solid fa-users text-white text-2xl"></i>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-white mb-2">
+              Community
+            </h3>
+            <p class="text-gray-500 text-sm">Student-Led Organization</p>
+          </div>
+
+          <div
+            class="bg-card-bg p-8 rounded-2xl border border-gray-800 hover:border-orange-500 hover:-translate-y-2 transition-all duration-300 group"
+            data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition">
+              <i class="fa-solid fa-calendar-days text-white text-2xl"></i>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-white mb-2">
+              Active
+            </h3>
+            <p class="text-gray-500 text-sm">Year-Round Training</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 relative bg-gradient-to-b from-dark-bg via-dark-bg to-[#1a0505]">
+      <div class="px-4 max-w-7xl mx-auto relative z-20">
+        <h2 class="text-center font-heading text-4xl md:text-5xl font-bold mb-16" data-aos="fade-up">
+          OUR
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-wildcat-gold to-yellow-200">LEGACY</span>
+        </h2>
+
+        <div class="relative">
+          <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full timeline-line z-0"></div>
+
+          <div class="mb-12 flex flex-col md:flex-row items-center w-full justify-between relative z-10">
+            <div class="w-full md:w-5/12 order-1 md:order-1" data-aos="fade-right">
               <div
-                class="w-full md:w-5/12 order-1 md:order-1"
-                data-aos="fade-right"
-              >
+                class="timeline-card group cursor-pointer relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl"
+                onclick="openModal('2019')">
                 <div
-                  class="timeline-card group cursor-pointer relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl"
-                  onclick="openModal('2019')"
-                >
-                  <div
-                    class="absolute top-4 left-4 z-20 bg-gradient-to-r from-wildcat-gold to-yellow-600 text-black px-4 py-1 rounded-full border border-white"
-                  >
-                    <span class="font-bold text-sm">2019</span>
-                  </div>
-                  <div class="h-64 overflow-hidden relative">
-                    <div
-                      class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition z-10"
-                    ></div>
-                    <img
-                      src="images/2019/danztrack2019.png"
-                      onerror="
+                  class="absolute top-4 left-4 z-20 bg-gradient-to-r from-wildcat-gold to-yellow-600 text-black px-4 py-1 rounded-full border border-white">
+                  <span class="font-bold text-sm">2019</span>
+                </div>
+                <div class="h-64 overflow-hidden relative">
+                  <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition z-10"></div>
+                  <img src="images/2019/danztrack2019.png" onerror="
                         this.src =
                           'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80'
-                      "
-                      class="timeline-img w-full h-full object-cover"
-                    />
-                    <div
-                      class="absolute bottom-0 left-0 p-6 z-20 w-full bg-gradient-to-t from-black to-transparent"
-                    >
-                      <h3 class="text-2xl font-bold text-white mb-1">
-                        The First Crown
-                      </h3>
-                      <p class="text-sm text-gray-300 line-clamp-2">
-                        The beginning of the legacy. The MSU-IIT Titans stunned
-                        the crowd...
-                      </p>
-                      <p
-                        class="text-wildcat-gold text-xs mt-3 font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform"
-                      >
-                        Click to view
-                        <i class="fa-solid fa-arrow-right ml-1"></i>
-                      </p>
-                    </div>
+                      " class="timeline-img w-full h-full object-cover" />
+                  <div class="absolute bottom-0 left-0 p-6 z-20 w-full bg-gradient-to-t from-black to-transparent">
+                    <h3 class="text-2xl font-bold text-white mb-1">
+                      The First Crown
+                    </h3>
+                    <p class="text-sm text-gray-300 line-clamp-2">
+                      The beginning of the legacy. The MSU-IIT Titans stunned
+                      the crowd...
+                    </p>
+                    <p
+                      class="text-wildcat-gold text-xs mt-3 font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+                      Click to view
+                      <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </p>
                   </div>
                 </div>
               </div>
-              <div
-                class="hidden md:flex w-2/12 justify-center items-center order-2"
-              >
-                <div
-                  class="w-6 h-6 bg-wildcat-gold rounded-full shadow-[0_0_15px_rgba(255,215,0,0.6)] border-4 border-black z-20"
-                ></div>
-              </div>
-              <div class="hidden md:block w-5/12 order-3"></div>
             </div>
-
-            <div
-              class="mb-12 flex flex-col md:flex-row items-center w-full justify-between relative z-10"
-            >
-              <div class="hidden md:block w-5/12 order-1"></div>
+            <div class="hidden md:flex w-2/12 justify-center items-center order-2">
               <div
-                class="hidden md:flex w-2/12 justify-center items-center order-2"
-              >
-                <div
-                  class="w-6 h-6 bg-wildcat-gold rounded-full shadow-[0_0_15px_rgba(255,215,0,0.6)] border-4 border-black z-20"
-                ></div>
+                class="w-6 h-6 bg-wildcat-gold rounded-full shadow-[0_0_15px_rgba(255,215,0,0.6)] border-4 border-black z-20">
               </div>
+            </div>
+            <div class="hidden md:block w-5/12 order-3"></div>
+          </div>
+
+          <div class="mb-12 flex flex-col md:flex-row items-center w-full justify-between relative z-10">
+            <div class="hidden md:block w-5/12 order-1"></div>
+            <div class="hidden md:flex w-2/12 justify-center items-center order-2">
               <div
-                class="w-full md:w-5/12 order-3 md:order-3"
-                data-aos="fade-left"
-              >
+                class="w-6 h-6 bg-wildcat-gold rounded-full shadow-[0_0_15px_rgba(255,215,0,0.6)] border-4 border-black z-20">
+              </div>
+            </div>
+            <div class="w-full md:w-5/12 order-3 md:order-3" data-aos="fade-left">
+              <div
+                class="timeline-card group cursor-pointer relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl"
+                onclick="openModal('2023')">
                 <div
-                  class="timeline-card group cursor-pointer relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl"
-                  onclick="openModal('2023')"
-                >
-                  <div
-                    class="absolute top-4 left-4 z-20 bg-gradient-to-r from-wildcat-gold to-yellow-600 text-black px-4 py-1 rounded-full border border-white"
-                  >
-                    <span class="font-bold text-sm">2023</span>
-                  </div>
-                  <div class="h-64 overflow-hidden relative">
-                    <div
-                      class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition z-10"
-                    ></div>
-                    <img
-                      src="images/2023/danztrack2023.jpg"
-                      onerror="
+                  class="absolute top-4 left-4 z-20 bg-gradient-to-r from-wildcat-gold to-yellow-600 text-black px-4 py-1 rounded-full border border-white">
+                  <span class="font-bold text-sm">2023</span>
+                </div>
+                <div class="h-64 overflow-hidden relative">
+                  <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition z-10"></div>
+                  <img src="images/2023/danztrack2023.jpg" onerror="
                         this.src =
                           'https://images.unsplash.com/photo-1535525153412-5a42439a210d?auto=format&fit=crop&q=80'
-                      "
-                      class="timeline-img w-full h-full object-cover"
-                    />
-                    <div
-                      class="absolute bottom-0 left-0 p-6 z-20 w-full bg-gradient-to-t from-black to-transparent"
-                    >
-                      <h3 class="text-2xl font-bold text-white mb-1">
-                        The Comeback
-                      </h3>
-                      <p class="text-sm text-gray-300 line-clamp-2">
-                        Returning to the stage stronger than ever...
-                      </p>
-                      <p
-                        class="text-wildcat-gold text-xs mt-3 font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform"
-                      >
-                        Click to view
-                        <i class="fa-solid fa-arrow-right ml-1"></i>
-                      </p>
-                    </div>
+                      " class="timeline-img w-full h-full object-cover" />
+                  <div class="absolute bottom-0 left-0 p-6 z-20 w-full bg-gradient-to-t from-black to-transparent">
+                    <h3 class="text-2xl font-bold text-white mb-1">
+                      The Comeback
+                    </h3>
+                    <p class="text-sm text-gray-300 line-clamp-2">
+                      Returning to the stage stronger than ever...
+                    </p>
+                    <p
+                      class="text-wildcat-gold text-xs mt-3 font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+                      Click to view
+                      <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div
-              class="mb-12 flex flex-col md:flex-row items-center w-full justify-between relative z-10"
-            >
+          <div class="mb-12 flex flex-col md:flex-row items-center w-full justify-between relative z-10">
+            <div class="w-full md:w-5/12 order-1 md:order-1" data-aos="fade-right">
               <div
-                class="w-full md:w-5/12 order-1 md:order-1"
-                data-aos="fade-right"
-              >
+                class="timeline-card group cursor-pointer relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl"
+                onclick="openModal('2024')">
                 <div
-                  class="timeline-card group cursor-pointer relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl"
-                  onclick="openModal('2024')"
-                >
-                  <div
-                    class="absolute top-4 left-4 z-20 bg-gradient-to-r from-wildcat-gold to-yellow-600 text-black px-4 py-1 rounded-full border border-white"
-                  >
-                    <span class="font-bold text-sm">2024</span>
-                  </div>
-                  <div class="h-64 overflow-hidden relative">
-                    <div
-                      class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition z-10"
-                    ></div>
-                    <img
-                      src="images/2024/danztrack2024.jpg"
-                      onerror="
+                  class="absolute top-4 left-4 z-20 bg-gradient-to-r from-wildcat-gold to-yellow-600 text-black px-4 py-1 rounded-full border border-white">
+                  <span class="font-bold text-sm">2024</span>
+                </div>
+                <div class="h-64 overflow-hidden relative">
+                  <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition z-10"></div>
+                  <img src="images/2024/danztrack2024.jpg" onerror="
                         this.src =
                           'https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?auto=format&fit=crop&q=80'
-                      "
-                      class="timeline-img w-full h-full object-cover"
-                    />
-                    <div
-                      class="absolute bottom-0 left-0 p-6 z-20 w-full bg-gradient-to-t from-black to-transparent"
-                    >
-                      <h3 class="text-2xl font-bold text-white mb-1">
-                        Back-to-Back
-                      </h3>
-                      <p class="text-sm text-gray-300 line-clamp-2">
-                        Defending the throne with a groundbreaking routine...
-                      </p>
-                      <p
-                        class="text-wildcat-gold text-xs mt-3 font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform"
-                      >
-                        Click to view
-                        <i class="fa-solid fa-arrow-right ml-1"></i>
-                      </p>
-                    </div>
+                      " class="timeline-img w-full h-full object-cover" />
+                  <div class="absolute bottom-0 left-0 p-6 z-20 w-full bg-gradient-to-t from-black to-transparent">
+                    <h3 class="text-2xl font-bold text-white mb-1">
+                      Back-to-Back
+                    </h3>
+                    <p class="text-sm text-gray-300 line-clamp-2">
+                      Defending the throne with a groundbreaking routine...
+                    </p>
+                    <p
+                      class="text-wildcat-gold text-xs mt-3 font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+                      Click to view
+                      <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </p>
                   </div>
                 </div>
               </div>
-              <div
-                class="hidden md:flex w-2/12 justify-center items-center order-2"
-              >
-                <div
-                  class="w-6 h-6 bg-wildcat-gold rounded-full shadow-[0_0_15px_rgba(255,215,0,0.6)] border-4 border-black z-20"
-                ></div>
-              </div>
-              <div class="hidden md:block w-5/12 order-3"></div>
             </div>
-
-            <div
-              class="mb-12 flex flex-col md:flex-row items-center w-full justify-between relative z-10"
-            >
-              <div class="hidden md:block w-5/12 order-1"></div>
+            <div class="hidden md:flex w-2/12 justify-center items-center order-2">
               <div
-                class="hidden md:flex w-2/12 justify-center items-center order-2"
-              >
-                <div
-                  class="w-6 h-6 bg-wildcat-gold rounded-full shadow-[0_0_15px_rgba(255,215,0,0.6)] border-4 border-black z-20"
-                ></div>
+                class="w-6 h-6 bg-wildcat-gold rounded-full shadow-[0_0_15px_rgba(255,215,0,0.6)] border-4 border-black z-20">
               </div>
+            </div>
+            <div class="hidden md:block w-5/12 order-3"></div>
+          </div>
+
+          <div class="mb-12 flex flex-col md:flex-row items-center w-full justify-between relative z-10">
+            <div class="hidden md:block w-5/12 order-1"></div>
+            <div class="hidden md:flex w-2/12 justify-center items-center order-2">
               <div
-                class="w-full md:w-5/12 order-3 md:order-3"
-                data-aos="fade-left"
-              >
+                class="w-6 h-6 bg-wildcat-gold rounded-full shadow-[0_0_15px_rgba(255,215,0,0.6)] border-4 border-black z-20">
+              </div>
+            </div>
+            <div class="w-full md:w-5/12 order-3 md:order-3" data-aos="fade-left">
+              <div
+                class="timeline-card group cursor-pointer relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl"
+                onclick="openModal('2025')">
                 <div
-                  class="timeline-card group cursor-pointer relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl"
-                  onclick="openModal('2025')"
-                >
-                  <div
-                    class="absolute top-4 left-4 z-20 bg-gradient-to-r from-wildcat-gold to-yellow-600 text-black px-4 py-1 rounded-full border border-white"
-                  >
-                    <span class="font-black text-sm">2025</span>
-                  </div>
-                  <div class="h-64 overflow-hidden relative">
-                    <div
-                      class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition z-10"
-                    ></div>
-                    <img
-                      src="images/2025/danztrack2025.jpg"
-                      onerror="
+                  class="absolute top-4 left-4 z-20 bg-gradient-to-r from-wildcat-gold to-yellow-600 text-black px-4 py-1 rounded-full border border-white">
+                  <span class="font-black text-sm">2025</span>
+                </div>
+                <div class="h-64 overflow-hidden relative">
+                  <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition z-10"></div>
+                  <img src="images/2025/danztrack2025.jpg" onerror="
                         this.src =
                           'https://images.unsplash.com/photo-1516475429286-465d815a0df4?auto=format&fit=crop&q=80'
-                      "
-                      class="timeline-img w-full h-full object-cover"
-                    />
-                    <div
-                      class="absolute bottom-0 left-0 p-6 z-20 w-full bg-gradient-to-t from-black to-transparent"
-                    >
-                      <h3 class="text-2xl font-bold text-white mb-1">
-                        The 3-Peat Dynasty
-                      </h3>
-                      <p class="text-sm text-gray-300 line-clamp-2">
-                        Making history as the first ever three-peat Champion...
-                      </p>
-                      <p
-                        class="text-wildcat-gold text-xs mt-3 font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform"
-                      >
-                        Click to view
-                        <i class="fa-solid fa-arrow-right ml-1"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TOP NEWS / HIGHLIGHTS SECTION -->
-      <section
-        class="py-20 relative bg-[#0d0d0d] border-t border-b border-gray-800/80"
-      >
-        <div class="px-4 max-w-7xl mx-auto relative z-20">
-          <!-- Header -->
-          <div
-            class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12"
-            data-aos="fade-up"
-          >
-            <div>
-              <p
-                class="text-wildcat-gold font-bold uppercase tracking-[0.2em] text-xs mb-2"
-              >
-                Latest Updates
-              </p>
-              <h2
-                class="font-heading text-3xl md:text-5xl font-black uppercase text-white"
-              >
-                Top <span class="text-wildcat-orange">News</span>
-              </h2>
-            </div>
-            <a
-              href="wildcats-news.html"
-              class="mt-4 md:mt-0 text-sm font-bold uppercase tracking-wider text-gray-400 hover:text-wildcat-gold transition duration-300 flex items-center gap-2 group"
-            >
-              View All News
-              <i
-                class="fa-solid fa-arrow-right group-hover:translate-x-1 transition duration-300"
-              ></i>
-            </a>
-          </div>
-
-          <!-- News Container (Horizontal Scroll on Mobile, 3-Column Grid on Desktop) -->
-          <div
-            class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory pb-6 md:pb-0 scroll-smooth hide-scrollbar -mx-4 px-4 md:mx-0 md:px-0"
-          >
-            <!-- News Card 1: Danztrack 3-Peat -->
-            <a
-              href="wildcats-news.html"
-              class="snap-center shrink-0 w-[85vw] sm:w-[320px] md:w-auto group bg-card-bg rounded-2xl overflow-hidden border border-gray-800 hover:border-wildcat-gold transition duration-300 flex flex-col justify-between shadow-lg"
-              data-aos="fade-up"
-              data-aos-delay="0"
-            >
-              <div>
-                <div class="h-48 overflow-hidden relative">
-                  <img
-                    src="images/updates/WildcatsDanztrack2025.jpg"
-                    alt="Danztrack 2025"
-                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                    loading="lazy"
-                  />
-                  <span
-                    class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-wildcat-gold text-xs font-bold px-3 py-1 rounded-full border border-wildcat-gold/30"
-                  >
-                    Sep 22, 2025
-                  </span>
-                </div>
-                <div class="p-6">
-                  <h3
-                    class="font-heading text-xl font-bold text-white group-hover:text-wildcat-gold transition duration-300 line-clamp-2 uppercase italic mb-3"
-                  >
-                    History Made, Legacy Sealed: Danztrack 3-Peat
-                  </h3>
-                  <p class="text-gray-400 text-sm line-clamp-3 font-light mb-4">
-                    The MSU-IIT Wildcats secured a historic three-peat victory
-                    in Danztrack Philippines 2025 – College Division along with
-                    Best in Production and Costume!
-                  </p>
-                </div>
-              </div>
-              <div class="px-6 pb-6 pt-0">
-                <span
-                  class="text-xs text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1 group-hover:translate-x-1 transition duration-300"
-                >
-                  Read Story
-                  <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                </span>
-              </div>
-            </a>
-
-            <!-- News Card 2: Mentoring Program -->
-            <a
-              href="wildcats-news.html"
-              class="snap-center shrink-0 w-[85vw] sm:w-[320px] md:w-auto group bg-card-bg rounded-2xl overflow-hidden border border-gray-800 hover:border-wildcat-gold transition duration-300 flex flex-col justify-between shadow-lg"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div>
-                <div class="h-48 overflow-hidden relative">
-                  <img
-                    src="images/mentoring/mentoring045.jpg"
-                    alt="Mentoring Program"
-                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                    loading="lazy"
-                  />
-                  <span
-                    class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-wildcat-gold text-xs font-bold px-3 py-1 rounded-full border border-wildcat-gold/30"
-                  >
-                    Oct 26, 2025
-                  </span>
-                </div>
-                <div class="p-6">
-                  <h3
-                    class="font-heading text-xl font-bold text-white group-hover:text-wildcat-gold transition duration-300 line-clamp-2 uppercase italic mb-3"
-                  >
-                    First Wildcats Mentoring Program 2025
-                  </h3>
-                  <p class="text-gray-400 text-sm line-clamp-3 font-light mb-4">
-                    After weeks of intense training, Wildcats dancers showcased
-                    signature pieces evaluated by our renowned Head Coaches at
-                    Anahaw Amphitheatre.
-                  </p>
-                </div>
-              </div>
-              <div class="px-6 pb-6 pt-0">
-                <span
-                  class="text-xs text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1 group-hover:translate-x-1 transition duration-300"
-                >
-                  Read Story
-                  <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                </span>
-              </div>
-            </a>
-
-            <!-- News Card 3: Auditions 2026 -->
-            <a
-              href="wildcats-news.html"
-              class="snap-center shrink-0 w-[85vw] sm:w-[320px] md:w-auto group bg-card-bg rounded-2xl overflow-hidden border border-gray-800 hover:border-wildcat-gold transition duration-300 flex flex-col justify-between shadow-lg"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div>
-                <div class="h-48 overflow-hidden relative">
-                  <img
-                    src="images/wildcatsaudition2026.jpg"
-                    alt="Auditions 2026"
-                    class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                    loading="lazy"
-                  />
-                  <span
-                    class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-wildcat-gold text-xs font-bold px-3 py-1 rounded-full border border-wildcat-gold/30"
-                  >
-                    July 20, 2026
-                  </span>
-                </div>
-                <div class="p-6">
-                  <h3
-                    class="font-heading text-xl font-bold text-white group-hover:text-wildcat-gold transition duration-300 line-clamp-2 uppercase italic mb-3"
-                  >
-                    Auditions 2026
-                  </h3>
-                  <p class="text-gray-400 text-sm line-clamp-3 font-light mb-4">
-                    Sharpen your claws. The hunt is about to begin! 🐱 Auditions
-                    coming soon—full details dropping shortly. Stay tuned,
-                    MSU-IIT. 👀🔥
-                  </p>
-                </div>
-              </div>
-              <div class="px-6 pb-6 pt-0">
-                <span
-                  class="text-xs text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1 group-hover:translate-x-1 transition duration-300"
-                >
-                  Read Story
-                  <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="py-24 relative bg-dark-bg overflow-hidden">
-        <div
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-wildcat-gold/10 rounded-full blur-[100px] pointer-events-none"
-        ></div>
-
-        <div class="px-4 max-w-7xl mx-auto relative z-20">
-          <div class="text-center mb-16" data-aos="fade-up">
-            <h2
-              class="font-heading text-4xl md:text-5xl font-black mb-4 uppercase text-white"
-            >
-              Meet the <span class="text-wildcat-gold">wildgyals!</span>
-            </h2>
-            <div
-              class="w-24 h-1 bg-gradient-to-r from-transparent via-wildcat-orange to-transparent mx-auto"
-            ></div>
-          </div>
-
-          <div class="relative max-w-7xl mx-auto mt-12 group/slider">
-            <!-- Desktop Navigation Buttons -->
-            <button
-              id="slideLeft"
-              class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-30 w-14 h-14 bg-black/80 border border-wildcat-gold rounded-full items-center justify-center text-white hover:bg-wildcat-orange hover:text-black transition-all shadow-[0_0_15px_rgba(255,215,0,0.3)] opacity-0 group-hover/slider:opacity-100"
-            >
-              <i class="fa-solid fa-chevron-left text-xl"></i>
-            </button>
-
-            <button
-              id="slideRight"
-              class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-30 w-14 h-14 bg-black/80 border border-wildcat-gold rounded-full items-center justify-center text-white hover:bg-wildcat-orange hover:text-black transition-all shadow-[0_0_15px_rgba(255,215,0,0.3)] opacity-0 group-hover/slider:opacity-100"
-            >
-              <i class="fa-solid fa-chevron-right text-xl"></i>
-            </button>
-
-            <!-- The Scrolling Container -->
-            <div
-              id="rosterContainer"
-              class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 pt-4 px-4 scroll-smooth hide-scrollbar"
-            >
-              <!-- NADS -->
-              <div
-                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div
-                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-                ></div>
-                <div
-                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
-                >
-                  <img
-                    src="images/NadsFreshident.jpg"
-                    alt="Nads"
-                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
-                  ></div>
-                  <div class="absolute bottom-0 left-0 w-full p-6">
-                    <h3
-                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                    >
-                      Nads
+                      " class="timeline-img w-full h-full object-cover" />
+                  <div class="absolute bottom-0 left-0 p-6 z-20 w-full bg-gradient-to-t from-black to-transparent">
+                    <h3 class="text-2xl font-bold text-white mb-1">
+                      The 3-Peat Dynasty
                     </h3>
-                    <p
-                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                    >
-                      Wildcats President
+                    <p class="text-sm text-gray-300 line-clamp-2">
+                      Making history as the first ever three-peat Champion...
                     </p>
                     <p
-                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                    >
-                      "Bun up di dancehall gyal!"
+                      class="text-wildcat-gold text-xs mt-3 font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+                      Click to view
+                      <i class="fa-solid fa-arrow-right ml-1"></i>
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <!-- AYA -->
-              <div
-                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-                data-aos="fade-up"
-                data-aos-delay="0"
-              >
-                <div
-                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-                ></div>
-                <div
-                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
-                >
-                  <img
-                    src="images/ayagirl001.jpg"
-                    alt="Aya"
-                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
-                  ></div>
-                  <div class="absolute bottom-0 left-0 w-full p-6">
-                    <h3
-                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                    >
-                      Aya
-                    </h3>
-                    <p
-                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                    >
-                      Wildcats Member
-                    </p>
-                    <p
-                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                    >
-                      "Let Hiphop get into your soul!"
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- CHOTIE -->
-              <div
-                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <div
-                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-                ></div>
-                <div
-                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
-                >
-                  <img
-                    src="images/chotchotGWAPA.jpg"
-                    alt="Chotie"
-                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
-                  ></div>
-                  <div class="absolute bottom-0 left-0 w-full p-6">
-                    <h3
-                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                    >
-                      Chotie
-                    </h3>
-                    <p
-                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                    >
-                      Wildcats Member
-                    </p>
-                    <p
-                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                    >
-                      "Ako si Precious na very shufa!"
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- DIANA -->
-              <div
-                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-                data-aos="fade-up"
-                data-aos-delay="0"
-              >
-                <div
-                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-                ></div>
-                <div
-                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
-                >
-                  <img
-                    src="images/Diana01.jpg"
-                    alt="Aya"
-                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
-                  ></div>
-                  <div class="absolute bottom-0 left-0 w-full p-6">
-                    <h3
-                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                    >
-                      Diana
-                    </h3>
-                    <p
-                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                    >
-                      Wildcats Member
-                    </p>
-                    <p
-                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                    >
-                      "Bes bes mag tiktok nata bes!"
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- IPIN -->
-              <div
-                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div
-                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-                ></div>
-                <div
-                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
-                >
-                  <img
-                    src="images/ipin.jpg"
-                    alt="Ipin"
-                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
-                  ></div>
-                  <div class="absolute bottom-0 left-0 w-full p-6">
-                    <h3
-                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                    >
-                      Ipin
-                    </h3>
-                    <p
-                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                    >
-                      Wildcats Member
-                    </p>
-                    <p
-                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                    >
-                      "Hilom or e sumpa tika lagi!"
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- KATELYN -->
-              <div
-                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-                data-aos="fade-up"
-                data-aos-delay="0"
-              >
-                <div
-                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-                ></div>
-                <div
-                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
-                >
-                  <img
-                    src="images/Katelyn.jpg"
-                    alt="Aya"
-                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
-                  ></div>
-                  <div class="absolute bottom-0 left-0 w-full p-6">
-                    <h3
-                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                    >
-                      Kitay
-                    </h3>
-                    <p
-                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                    >
-                      Wildcats Member
-                    </p>
-                    <p
-                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                    >
-                      "Hi guys ako si kikit na gwapa!!"
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- KERSIE -->
-              <div
-                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div
-                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-                ></div>
-                <div
-                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
-                >
-                  <img
-                    src="images/butata.jpg"
-                    alt="Kersie"
-                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
-                  ></div>
-                  <div class="absolute bottom-0 left-0 w-full p-6">
-                    <h3
-                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                    >
-                      Kersie
-                    </h3>
-                    <p
-                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                    >
-                      Wildcats Member
-                    </p>
-                    <p
-                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                    >
-                      "ISA AKONG BUTATA!!!"
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- SAMMY -->
-              <div
-                class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                <div
-                  class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10"
-                ></div>
-                <div
-                  class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black"
-                >
-                  <img
-                    src="images/Sammy003.jpg"
-                    alt="Sammy"
-                    class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"
-                  ></div>
-                  <div class="absolute bottom-0 left-0 w-full p-6">
-                    <h3
-                      class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic"
-                    >
-                      Sammy
-                    </h3>
-                    <p
-                      class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2"
-                    >
-                      Wildcats Member
-                    </p>
-                    <p
-                      class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3"
-                    >
-                      "I ain't tryna play, boy!! Shush!!"
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="mt-10 py-12 border-t border-gray-800 bg-black text-center">
-        <div class="flex justify-center gap-8 mb-8">
-          <a
-            href="https://facebook.com/MSUIITWILDCATS"
-            target="_blank"
-            class="text-gray-400 hover:text-blue-500 text-2xl transition"
-            ><i class="fa-brands fa-facebook-f"></i
-          ></a>
-          <a
-            href="https://instagram.com/msuiitwildcats"
-            target="_blank"
-            class="text-gray-400 hover:text-pink-500 text-2xl transition"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-        </div>
-        <p class="text-gray-600 text-sm">
-          © 2026 MSU-IIT Wildcats. Made with ❤️ in Iligan City. Into the
-          Wild--Cats!!!
-        </p>
-      </footer>
-
-      <div
-        id="champModal"
-        class="modal fixed inset-0 z-50 flex items-center justify-center p-4"
-      >
-        <div
-          class="absolute inset-0 bg-black/90 backdrop-blur-sm"
-          onclick="closeModal()"
-        ></div>
-        <div
-          class="modal-content relative bg-[#1a1a1a] w-full max-w-4xl rounded-2xl overflow-hidden border border-gray-700 shadow-2xl flex flex-col md:flex-row max-h-[90vh]"
-        >
-          <button
-            onclick="closeModal()"
-            class="absolute top-4 right-4 z-50 bg-black/50 hover:bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition"
-          >
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-
-          <div
-            class="w-full md:w-1/2 h-64 md:h-auto relative cursor-pointer group"
-            onclick="openLightbox()"
-          >
-            <img
-              id="modalImg"
-              src=""
-              class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-105"
-            />
-            <div
-              class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300 flex flex-col items-center justify-center"
-            >
-              <div
-                class="opacity-0 group-hover:opacity-100 transition duration-300 transform group-hover:translate-y-0 text-center"
-              >
-                <i
-                  class="fa-solid fa-expand text-wildcat-gold text-4xl mb-2 drop-shadow-lg"
-                ></i>
-                <p
-                  class="text-white font-bold uppercase tracking-widest text-sm shadow-black drop-shadow-md"
-                >
-                  View Gallery
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center overflow-y-auto"
-          >
-            <span
-              id="modalSubtitle"
-              class="text-wildcat-gold font-bold tracking-widest text-lg mb-2"
-            >
-              YEAR CHAMPIONSHIP
-            </span>
-
-            <h2
-              id="modalTitle"
-              class="text-3xl md:text-4xl font-black text-white mb-6 uppercase"
-            >
-              TITLE
-            </h2>
-
-            <p id="modalDesc" class="text-gray-300 leading-relaxed mb-8">
-              Description goes here...
-            </p>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div class="bg-black/30 p-4 rounded-lg border border-gray-700">
-                <i class="fa-solid fa-trophy text-wildcat-gold mb-2"></i>
-                <p class="text-xs text-gray-400 uppercase">Result</p>
-                <p id="modalResult" class="font-bold text-white">
-                  Grand Champion
-                </p>
-              </div>
-              <div class="bg-black/30 p-4 rounded-lg border border-gray-700">
-                <i class="fa-solid fa-users text-iit-red mb-2"></i>
-                <p class="text-xs text-gray-400 uppercase">Division</p>
-                <p id="modalDivision" class="font-bold text-white">
-                  College Category
-                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- TOP NEWS / HIGHLIGHTS SECTION -->
+    <section class="py-20 relative bg-[#0d0d0d] border-t border-b border-gray-800/80">
+      <div class="px-4 max-w-7xl mx-auto relative z-20">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12"
+          data-aos="fade-up">
+          <div>
+            <p class="text-wildcat-gold font-bold uppercase tracking-[0.2em] text-xs mb-2">
+              Latest Updates
+            </p>
+            <h2 class="font-heading text-3xl md:text-5xl font-black uppercase text-white">
+              Top <span class="text-wildcat-orange">News</span>
+            </h2>
+          </div>
+          <a href="wildcats-news.html"
+            class="mt-4 md:mt-0 text-sm font-bold uppercase tracking-wider text-gray-400 hover:text-wildcat-gold transition duration-300 flex items-center gap-2 group">
+            View All News
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition duration-300"></i>
+          </a>
+        </div>
+
+        <!-- News Container (Horizontal Scroll on Mobile, 3-Column Grid on Desktop) -->
+        <div
+          class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory pb-6 md:pb-0 scroll-smooth hide-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
+          <!-- News Card 1: Danztrack 3-Peat -->
+          <a href="wildcats-news.html"
+            class="snap-center shrink-0 w-[85vw] sm:w-[320px] md:w-auto group bg-card-bg rounded-2xl overflow-hidden border border-gray-800 hover:border-wildcat-gold transition duration-300 flex flex-col justify-between shadow-lg"
+            data-aos="fade-up" data-aos-delay="0">
+            <div>
+              <div class="h-48 overflow-hidden relative">
+                <img src="images/updates/WildcatsDanztrack2025.jpg" alt="Danztrack 2025"
+                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+                <span
+                  class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-wildcat-gold text-xs font-bold px-3 py-1 rounded-full border border-wildcat-gold/30">
+                  Sep 22, 2025
+                </span>
+              </div>
+              <div class="p-6">
+                <h3
+                  class="font-heading text-xl font-bold text-white group-hover:text-wildcat-gold transition duration-300 line-clamp-2 uppercase italic mb-3">
+                  History Made, Legacy Sealed: Danztrack 3-Peat
+                </h3>
+                <p class="text-gray-400 text-sm line-clamp-3 font-light mb-4">
+                  The MSU-IIT Wildcats secured a historic three-peat victory
+                  in Danztrack Philippines 2025 – College Division along with
+                  Best in Production and Costume!
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <span
+                class="text-xs text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1 group-hover:translate-x-1 transition duration-300">
+                Read Story
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Card 2: Mentoring Program -->
+          <a href="wildcats-news.html"
+            class="snap-center shrink-0 w-[85vw] sm:w-[320px] md:w-auto group bg-card-bg rounded-2xl overflow-hidden border border-gray-800 hover:border-wildcat-gold transition duration-300 flex flex-col justify-between shadow-lg"
+            data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="h-48 overflow-hidden relative">
+                <img src="images/mentoring/mentoring045.jpg" alt="Mentoring Program"
+                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+                <span
+                  class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-wildcat-gold text-xs font-bold px-3 py-1 rounded-full border border-wildcat-gold/30">
+                  Oct 26, 2025
+                </span>
+              </div>
+              <div class="p-6">
+                <h3
+                  class="font-heading text-xl font-bold text-white group-hover:text-wildcat-gold transition duration-300 line-clamp-2 uppercase italic mb-3">
+                  First Wildcats Mentoring Program 2025
+                </h3>
+                <p class="text-gray-400 text-sm line-clamp-3 font-light mb-4">
+                  After weeks of intense training, Wildcats dancers showcased
+                  signature pieces evaluated by our renowned Head Coaches at
+                  Anahaw Amphitheatre.
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <span
+                class="text-xs text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1 group-hover:translate-x-1 transition duration-300">
+                Read Story
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </span>
+            </div>
+          </a>
+
+          <!-- News Card 3: Auditions 2026 -->
+          <a href="wildcats-news.html"
+            class="snap-center shrink-0 w-[85vw] sm:w-[320px] md:w-auto group bg-card-bg rounded-2xl overflow-hidden border border-gray-800 hover:border-wildcat-gold transition duration-300 flex flex-col justify-between shadow-lg"
+            data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="h-48 overflow-hidden relative">
+                <img src="images/wildcatsaudition2026.jpg" alt="Auditions 2026"
+                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+                <span
+                  class="absolute top-3 left-3 bg-black/70 backdrop-blur-md text-wildcat-gold text-xs font-bold px-3 py-1 rounded-full border border-wildcat-gold/30">
+                  July 20, 2026
+                </span>
+              </div>
+              <div class="p-6">
+                <h3
+                  class="font-heading text-xl font-bold text-white group-hover:text-wildcat-gold transition duration-300 line-clamp-2 uppercase italic mb-3">
+                  Auditions 2026
+                </h3>
+                <p class="text-gray-400 text-sm line-clamp-3 font-light mb-4">
+                  Sharpen your claws. The hunt is about to begin! 🐱 Auditions
+                  coming soon—full details dropping shortly. Stay tuned,
+                  MSU-IIT. 👀🔥
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <span
+                class="text-xs text-wildcat-orange font-bold uppercase tracking-widest flex items-center gap-1 group-hover:translate-x-1 transition duration-300">
+                Read Story
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 relative bg-dark-bg overflow-hidden">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-wildcat-gold/10 rounded-full blur-[100px] pointer-events-none">
+      </div>
+
+      <div class="px-4 max-w-7xl mx-auto relative z-20">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="font-heading text-4xl md:text-5xl font-black mb-4 uppercase text-white">
+            Meet the <span class="text-wildcat-gold">wildgyals!</span>
+          </h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-transparent via-wildcat-orange to-transparent mx-auto"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto mt-12 group/slider">
+          <!-- Desktop Navigation Buttons -->
+          <button id="slideLeft"
+            class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-30 w-14 h-14 bg-black/80 border border-wildcat-gold rounded-full items-center justify-center text-white hover:bg-wildcat-orange hover:text-black transition-all shadow-[0_0_15px_rgba(255,215,0,0.3)] opacity-0 group-hover/slider:opacity-100">
+            <i class="fa-solid fa-chevron-left text-xl"></i>
+          </button>
+
+          <button id="slideRight"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-30 w-14 h-14 bg-black/80 border border-wildcat-gold rounded-full items-center justify-center text-white hover:bg-wildcat-orange hover:text-black transition-all shadow-[0_0_15px_rgba(255,215,0,0.3)] opacity-0 group-hover/slider:opacity-100">
+            <i class="fa-solid fa-chevron-right text-xl"></i>
+          </button>
+
+          <!-- The Scrolling Container -->
+          <div id="rosterContainer"
+            class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 pt-4 px-4 scroll-smooth hide-scrollbar">
+            <!-- NADS -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="400">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
+                <img src="images/NadsFreshident.jpg" alt="Nads"
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6">
+                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
+                    Nads
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
+                    Wildcats President
+                  </p>
+                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
+                    "Bun up di dancehall gyal!"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- AYA -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="0">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
+                <img src="images/ayagirl001.jpg" alt="Aya"
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6">
+                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
+                    Aya
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
+                    Wildcats Member
+                  </p>
+                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
+                    "Let Hiphop get into your soul!"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CHOTIE -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="100">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
+                <img src="images/chotchotGWAPA.jpg" alt="Chotie"
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6">
+                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
+                    Chotie
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
+                    Wildcats Member
+                  </p>
+                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
+                    "Ako si Precious na very shufa!"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- DIANA -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="0">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
+                <img src="images/Diana01.jpg" alt="Aya"
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6">
+                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
+                    Diana
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
+                    Wildcats Member
+                  </p>
+                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
+                    "Bes bes mag tiktok nata bes!"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- IPIN -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="200">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
+                <img src="images/ipin.jpg" alt="Ipin"
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6">
+                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
+                    Ipin
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
+                    Wildcats Member
+                  </p>
+                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
+                    "Hilom or e sumpa tika lagi!"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- KATELYN -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="0">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
+                <img src="images/Katelyn.jpg" alt="Aya"
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6">
+                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
+                    Kitay
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
+                    Wildcats Member
+                  </p>
+                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
+                    "Hi guys ako si kikit na gwapa!!"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- KERSIE -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="300">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
+                <img src="images/butata.jpg" alt="Kersie"
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6">
+                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
+                    Kersie
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
+                    Wildcats Member
+                  </p>
+                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
+                    "ISA AKONG BUTATA!!!"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SAMMY -->
+            <div
+              class="snap-center shrink-0 w-[85vw] sm:w-[320px] group relative [-webkit-tap-highlight-color:transparent]"
+              data-aos="fade-up" data-aos-delay="500">
+              <div
+                class="absolute -inset-1 bg-gradient-to-b from-wildcat-gold to-wildcat-orange rounded-2xl blur opacity-0 group-hover:opacity-40 transition duration-500 -z-10">
+              </div>
+              <div
+                class="relative h-[450px] w-full overflow-hidden rounded-2xl border border-gray-800 shadow-2xl bg-black">
+                <img src="images/Sammy003.jpg" alt="Sammy"
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 w-full p-6">
+                  <h3 class="text-3xl font-bold text-white font-heading uppercase tracking-tighter italic">
+                    Sammy
+                  </h3>
+                  <p class="text-wildcat-gold font-bold uppercase tracking-widest text-xs mb-2">
+                    Wildcats Member
+                  </p>
+                  <p class="text-gray-300 text-sm italic mb-4 border-l-2 border-wildcat-orange pl-3">
+                    "I ain't tryna play, boy!! Shush!!"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mt-10 py-12 border-t border-gray-800 bg-black text-center">
+      <div class="flex justify-center gap-8 mb-8">
+        <a href="https://facebook.com/MSUIITWILDCATS" target="_blank"
+          class="text-gray-400 hover:text-blue-500 text-2xl transition"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://instagram.com/msuiitwildcats" target="_blank"
+          class="text-gray-400 hover:text-pink-500 text-2xl transition"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <p class="text-gray-600 text-sm">
+        © 2026 MSU-IIT Wildcats. Made with ❤️ in Iligan City. Into the
+        Wild--Cats!!!
+      </p>
+    </footer>
+
+    <div id="champModal" class="modal fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
+      <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal()"></div>
 
       <div
-        id="lightbox"
-        class="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center"
-      >
-        <button
-          onclick="closeLightbox()"
-          class="absolute top-6 right-6 text-white text-4xl hover:text-red-500 z-[70] transition"
-        >
+        class="modal-content relative bg-[#1a1a1a] w-full max-w-4xl rounded-2xl overflow-hidden border border-gray-700 shadow-2xl flex flex-col md:flex-row max-h-[90vh] my-auto">
+        <!-- Close Button -->
+        <button onclick="closeModal()"
+          class="absolute top-3 right-3 z-50 bg-black/70 hover:bg-red-600 text-white w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center transition border border-gray-600"
+          aria-label="Close modal">
           <i class="fa-solid fa-xmark"></i>
         </button>
-        <button
-          onclick="changeImage(-1)"
-          class="absolute left-4 md:left-10 text-white text-4xl hover:text-wildcat-gold z-[70] p-4"
-        >
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <img
-          id="lightboxImg"
-          src=""
-          class="max-h-[90vh] max-w-[90vw] object-contain rounded shadow-2xl transition-all duration-300"
-        />
-        <button
-          onclick="changeImage(1)"
-          class="absolute right-4 md:right-10 text-white text-4xl hover:text-wildcat-gold z-[70] p-4"
-        >
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
+
+        <!-- Image Container -->
+        <div class="w-full md:w-1/2 h-48 sm:h-64 md:h-auto shrink-0 relative cursor-pointer group"
+          onclick="openLightbox()">
+          <img id="modalImg" src="" alt="Championship view"
+            class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+          <div
+            class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition duration-300 flex flex-col items-center justify-center">
+            <div
+              class="opacity-0 group-hover:opacity-100 transition duration-300 transform group-hover:translate-y-0 text-center">
+              <i class="fa-solid fa-expand text-wildcat-gold text-3xl md:text-4xl mb-2 drop-shadow-lg"></i>
+              <p class="text-white font-bold uppercase tracking-widest text-xs md:text-sm shadow-black drop-shadow-md">
+                View Gallery
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="w-full md:w-1/2 p-5 sm:p-8 md:p-12 flex flex-col justify-between overflow-y-auto">
+          <div>
+            <span id="modalSubtitle"
+              class="text-wildcat-gold font-bold tracking-wider text-xs sm:text-sm uppercase block mb-1 leading-snug">
+              YEAR CHAMPIONSHIP
+            </span>
+            <h2 id="modalTitle"
+              class="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 sm:mb-6 uppercase tracking-tight leading-tight">
+              TITLE
+            </h2>
+            <p id="modalDesc"
+              class="text-gray-300 text-xs sm:text-base leading-relaxed mb-6 font-light tracking-normal">
+              Description goes here...
+            </p>
+          </div>
+
+          <!-- Result Grid -->
+          <div class="grid grid-cols-2 gap-3 sm:gap-4 mt-auto">
+            <div class="bg-black/40 p-3 sm:p-4 rounded-xl border border-gray-700/80">
+              <i class="fa-solid fa-trophy text-wildcat-gold text-sm sm:text-base mb-1"></i>
+              <p class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mb-0.5">Result</p>
+              <p id="modalResult"
+                class="font-bold text-white text-xs sm:text-sm leading-tight break-words tracking-normal">
+                Grand Champion
+              </p>
+            </div>
+            <div class="bg-black/40 p-3 sm:p-4 rounded-xl border border-gray-700/80">
+              <i class="fa-solid fa-users text-iit-red text-sm sm:text-base mb-1"></i>
+              <p class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mb-0.5">Division</p>
+              <p id="modalDivision"
+                class="font-bold text-white text-xs sm:text-sm leading-tight break-words tracking-normal">
+                College Category
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center">
+      <button onclick="closeLightbox()"
+        class="absolute top-6 right-6 text-white text-4xl hover:text-red-500 z-[70] transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <button onclick="changeImage(-1)"
+        class="absolute left-4 md:left-10 text-white text-4xl hover:text-wildcat-gold z-[70] p-4">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <img id="lightboxImg" src=""
+        class="max-h-[90vh] max-w-[90vw] object-contain rounded shadow-2xl transition-all duration-300" />
+      <button onclick="changeImage(1)"
+        class="absolute right-4 md:right-10 text-white text-4xl hover:text-wildcat-gold z-[70] p-4">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

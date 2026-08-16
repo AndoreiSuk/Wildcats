@@ -7,26 +7,21 @@ body {
 }
 
 /* CUSTOM SCROLLBAR */
-
-/* The width of the scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* The background track (Dark Grey/Black) */
 ::-webkit-scrollbar-track {
   background: #0a0a0a;
   border-left: 1px solid #333;
 }
 
-/* The moving handle (Wildcat Gold) */
 ::-webkit-scrollbar-thumb {
   background: #ffd700;
   border-radius: 5px;
-  border: 2px solid #0a0a0a; /* Creates a padding effect */
+  border: 2px solid #0a0a0a;
 }
 
-/* Handle on hover (Wildcat Orange) */
 ::-webkit-scrollbar-thumb:hover {
   background: #ff4500;
 }
@@ -49,11 +44,13 @@ body {
     opacity 0.8s ease-out,
     visibility 0.8s;
 }
+
 #splash-screen.hidden-splash {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
+
 .zoom-out {
   transform: scale(5);
   opacity: 0;
@@ -66,6 +63,7 @@ body {
   opacity: 0;
   transition: opacity 1s ease-in;
 }
+
 #main-content.visible {
   opacity: 1;
 }
@@ -89,6 +87,7 @@ body {
 .timeline-img {
   transition: transform 0.5s ease;
 }
+
 .timeline-card:hover .timeline-img {
   transform: scale(1.1);
 }
@@ -101,14 +100,17 @@ body {
     opacity 0.3s ease,
     visibility 0.3s ease;
 }
+
 .modal.active {
   opacity: 1;
   visibility: visible;
 }
+
 .modal-content {
   transform: scale(0.9);
   transition: transform 0.3s ease;
 }
+
 .modal.active .modal-content {
   transform: scale(1);
 }
@@ -121,6 +123,7 @@ body {
     opacity 0.3s ease,
     visibility 0.3s ease;
 }
+
 #lightbox.active {
   opacity: 1;
   visibility: visible;
@@ -135,42 +138,12 @@ body {
     background-attachment: scroll;
   }
 
-  /* Fix for "9533.jpg" - Reduce letter spacing and font size */
-  .intro-text,
-  h2,
-  p {
-    letter-spacing: 2px !important;
-    font-size: 1rem;
-    padding: 0 15px;
-  }
-
-  /* Fix for "9534.jpg" - Scale down the logo and massive text */
-  .logo {
-    width: 100px;
-    height: 100px;
-    margin-top: -50px;
-  }
-
-  h1 {
-    font-size: 3rem !important;
-    line-height: 1.1;
-  }
-
-  .tagline,
-  .username {
-    font-size: 0.8rem;
-  }
-
-  /* Adjust buttons and boxes for mobile */
-  .champion-box {
-    padding: 10px 20px;
-    width: 90%;
-    font-size: 0.9rem;
-  }
-
-  /* Optional: Fix the dark Instagram icon contrast */
-  .social-icon {
-    filter: invert(1);
+  /* Reset modal typography so Tailwind utilities take priority */
+  .modal-content p,
+  .modal-content h2,
+  .modal-content span {
+    letter-spacing: normal !important;
+    padding: 0 !important;
   }
 }
 
