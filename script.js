@@ -20,7 +20,7 @@ const champData = {
     subtitle: "2019 DANZTRACK PHILIPPINES",
     title: "THE FIRST CROWN",
     result: "Grand Champion",
-    division: "College Category",
+    division: "College Division",
     img: "images/2019/danztrack2019.png",
     gallery: [
       "images/2019/danztrack2019.png",
@@ -32,7 +32,7 @@ const champData = {
     subtitle: "2023 DANZTRACK PHILIPPINES",
     title: "THE COMEBACK",
     result: "Grand Champion",
-    division: "College Category",
+    division: "College Division",
     img: "images/2023/danztrack2023Kingkara.jpg",
     gallery: [
       "images/2023/danztrack2023Kingkara.jpg",
@@ -72,7 +72,7 @@ const champData = {
     subtitle: "2024 DANZTRACK PHILIPPINES",
     title: "BACK TO BACK",
     result: "Grand Champion",
-    division: "College Category",
+    division: "College Division",
     img: "images/2024/danztrack2024Kingkara.jpg",
     gallery: [
       "images/2024/danztrack2024Kingkara.jpg",
@@ -80,6 +80,12 @@ const champData = {
       "images/2024/danztrack2024-001.jpg",
       "images/2024/danztrack2024-002.jpg",
       "images/2024/danztrack2024-003.jpg",
+      "images/2024/danztrack2024-01.jpg",
+      "images/2024/danztrack2024-02.jpg",
+      "images/2024/danztrack2024-03.jpg",
+      "images/2024/danztrack2024-04.jpg",
+      "images/2024/danztrack2024-05.jpg",
+      "images/2024/danztrack2024-06.jpg"
     ],
     desc: "Defending the title is harder than winning it. Facing fierce competition from other Colleges in Iligan City, the Wildcats executed a flawless routine.",
   },

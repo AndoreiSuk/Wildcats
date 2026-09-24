@@ -183,6 +183,48 @@
       <!-- 2. 2-COLUMN RESPONSIVE GRID -->
       <div id="newsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
 
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('wsb2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/WildcatsWSBVisualizer.jpg"
+                alt="MSU-IIT Wildcats World Supremacy Battlegrounds Visualizer"
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                VISUALIZER
+              </span>
+              <span
+                class="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 22, 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                Hindi nila kailangang tumingin sa ibaba. Nakatingin lang sila sa harap.
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                [They didn't have to look down. They only looked ahead.] The MSU-IIT Wildcats take the stage at World
+                Supremacy Battlegrounds this September 26, 2026, at USTP Cagayan de Oro City.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#WSB2026</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>Read Story</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
         <!-- FEATURE: MSU-IIT Victory Party with Wildcats -->
         <article
           class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
@@ -215,7 +257,7 @@
           <div
             class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
             <span
-              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#msuiitwildcats</span>
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#victoryparty</span>
             <span
               class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
               <span>Read Story</span>
@@ -254,7 +296,7 @@
           <div
             class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
             <span
-              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#MSUIITWildcats</span>
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#PARAASAPOD?</span>
             <span
               class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
               <span>Read Story</span>
@@ -297,7 +339,7 @@
           <div
             class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
             <span
-              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#MSUIITWildcats</span>
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#WildcatsInRawaten</span>
             <span
               class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
               <span>Read Story</span>
@@ -482,7 +524,8 @@
           </div>
           <div
             class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
-            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#WILDCATS</span>
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#WILDCATSOTW</span>
             <span
               class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
               <span>Read Story</span>
@@ -599,7 +642,7 @@
           <div
             class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
             <span
-              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#MSUIITWildcats</span>
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#WildcatsOfficers</span>
             <span
               class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
               <span>Read Story</span>
@@ -1629,6 +1672,33 @@
             <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">This victory is a testament to teamwork, resilience, and the MSU-IIT legacy of excellence. The Wildcats stand tall as proud ambassadors, carrying the torch of passion and pride!</p>
           `
       },
+      wsb2026: {
+        title: "Hindi nila kailangang tumingin sa ibaba. Nakatingin lang sila sa harap.",
+        date: "September 22, 2026",
+        img: "images/WildcatsWSBVisualizer.jpg",
+        tags: ["#msuiitwildcats", "#intothewildcats", "#WSB2026"],
+        body: `
+            <div class="p-4 rounded-xl bg-black/70 border border-wildcat-gold/40 text-center my-2">
+              <p class="font-heading font-black italic text-lg sm:text-xl text-white uppercase tracking-wider">
+                &ldquo;Hindi nila kailangang tumingin sa ibaba. Nakatingin lang sila sa harap.&rdquo;
+              </p>
+              <p class="text-xs sm:text-sm text-wildcat-gold tracking-widest uppercase mt-1 font-semibold">
+                [They didn't have to look down. They only looked ahead.]
+              </p>
+            </div>
+
+            <p>The <span class="text-wildcat-gold font-bold uppercase">MSU-IIT WILDCATS</span> take the stage at <span class="text-wildcat-gold font-bold uppercase">World Supremacy Battlegrounds</span> this <span class="text-wildcat-gold font-bold">September 26, 2026</span>, at USTP Cagayan de Oro City.</p>
+
+            <p>Suiting up in sharp tailored suits and commanded by laser focus, the pack brings months of intensive choreography, discipline, and synchronized power to one of the biggest collegiate street dance battlegrounds in the country.</p>
+
+            <div class="pt-4 border-t border-gray-800/80 text-xs text-gray-400 space-y-1">
+            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Photography:</span> Rebecca</p>
+            <p><i class="fa-solid fa-palette mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Layout:</span> Flint</p>
+            <p><i class="fa-solid fa-pen-nib mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Caption:</span> Gabe</p>
+          </div>
+            <p class="italic text-wildcat-gold font-bold pt-2">Into the wild, WILDCATS!</p>
+          `
+      },
       gaap2026: {
         title: "WILDCATS in Equestria!",
         date: "August 14, 2026",
@@ -1679,8 +1749,8 @@
             Let's all walk this journey together into the WILD, CATS!
           </p>
           <div class="pt-4 border-t border-gray-800/80 text-xs text-gray-400 space-y-1">
-            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Photo:</span> Gabe Lojeco</p>
-            <p><i class="fa-solid fa-pen-nib mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Caption:</span> Rebecca Antonio</p>
+            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Photography:</span> Rebecca Antonio</p>
+            <p><i class="fa-solid fa-pen-nib mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Caption:</span> Gabe Lojeco</p>
           </div>
         `
       },
@@ -1756,8 +1826,8 @@
             See you there, MSUans! Into the wild, Cats!
           </p>
           <div class="pt-4 border-t border-gray-800/80 text-xs text-gray-400 space-y-1">
-            <p><i class="fa-solid fa-pen-nib mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Caption:</span> Rebecca</p>
-            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Layout / Visuals:</span> Flint</p>
+            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Photography:</span> Rebecca</p>
+            <p><i class="fa-solid fa-palette mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Layout / Visuals:</span> Flint</p>
           </div>
         `
       },
@@ -1792,9 +1862,9 @@
             The Rawaten Extravaganza brought raw talent, cultural heritage, and athletic spirit to MSU-Main. Yet for the Wildcats and their fellow RPG artists, September 1 was defined not just by the thunderous applause on stage, but by the camaraderie, preparation, and warm hospitality that sustained them from departure to return.
           </p>
           <div class="pt-4 border-t border-gray-800/80 text-xs text-gray-400 space-y-1">
-            <p><i class="fa-solid fa-pen-nib mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Writer:</span> Rebecca</p>
-            <p><i class="fa-solid fa-palette mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Visuals & Layout:</span> Josh &amp; Flint</p>
-            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Photography:</span> Flint</p>
+            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Photography:</span> Rebecca</p>
+            <p><i class="fa-solid fa-pen-nib mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Caption:</span> Josh &amp; Flint</p>
+            <p><i class="fa-solid fa-palette mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Visuals and Layout:</span> Flint</p>
           </div>
         `
       },
@@ -1849,9 +1919,9 @@
             Watch out as these ferocious beasts prepare to dominate even more dance scenes. They are the pack of champions. They are the legacy. They are the WILDCATS. Into the wild, CATS!
           </p>
           <div class="pt-4 border-t border-gray-800/80 text-xs text-gray-400 space-y-1">
-            <p><i class="fa-solid fa-pen-nib mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Caption:</span> Rebecca</p>
+            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Photography:</span> Rebecca</p>
             <p><i class="fa-solid fa-palette mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Layout:</span> Flint</p>
-            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Photography:</span> Gabe</p>
+            <p><i class="fa-solid fa-pen-nib mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Caption:</span> Gabe</p>
           </div>
         `
       },
@@ -1898,8 +1968,8 @@
             See you there, MSUans! Into the wild, Cats!
           </p>
           <div class="pt-4 border-t border-gray-800/80 text-xs text-gray-400 space-y-1">
-            <p><i class="fa-solid fa-pen-nib mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Caption:</span> Rebecca</p>
-            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Layout / Visuals:</span> Flint</p>
+            <p><i class="fa-solid fa-camera mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Photography:</span> Rebecca</p>
+            <p><i class="fa-solid fa-palette mr-1 text-wildcat-orange"></i> <span class="font-bold text-gray-300">Layout / Visuals:</span> Flint</p>
           </div>
         `
       },

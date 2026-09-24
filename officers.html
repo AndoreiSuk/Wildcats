@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet the Officers | MSU-IIT Wildcats</title>
+    <link rel="icon" type="image/png" href="images/wildcatslogokingkara1.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'wildcat-gold': '#FFD700',
+                        'wildcat-orange': '#FF6B00',
+                        'card-bg': '#181818'
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'Impact', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:ital,wght@1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body
+    class="bg-[#0e0e0e] text-gray-200 font-body antialiased selection:bg-wildcat-gold selection:text-black min-h-screen flex flex-col justify-between">
+
+    <!-- TOP NAVIGATION / HEADER (MATCHES WILDCATS-NEWS.HTML) -->
+    <header class="border-b border-gray-800/80 bg-black/80 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+            <!-- Back to Home Link with Native SVG -->
+            <a href="index.html"
+                class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-400 hover:text-wildcat-gold transition duration-300">
+                <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+                <span>BACK TO HOME</span>
+            </a>
+
+            <!-- Brand Logo on the Right -->
+            <div class="flex items-center gap-2.5">
+                <img src="images/wildcatslogokingkara.png" alt="Wildcats Logo"
+                    class="h-8 sm:h-9 w-auto object-contain drop-shadow-md" />
+                <span class="text-base sm:text-xl font-black font-heading uppercase hidden sm:block">
+                    WILDCATS <span class="text-wildcat-gold">OFFICERS</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- TITLE SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-6 text-center">
+        <span
+            class="inline-block text-[11px] sm:text-xs font-black uppercase tracking-[0.25em] text-wildcat-orange mb-2 bg-wildcat-orange/10 border border-wildcat-orange/30 px-3 py-1 rounded-full">
+            Leadership & Creative Direction
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-heading font-black text-white italic uppercase tracking-tight">
+            Meet the <span class="text-wildcat-gold">Pack Leaders</span>
+        </h1>
+        <p class="mt-3 text-gray-400 text-xs sm:text-sm max-w-xl mx-auto font-light">
+            The directors, choreographers, and executives steering the MSU-IIT Wildcats through the ongoing season.
+        </p>
+
+        <!-- FILTER BUTTONS -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
+            <button onclick="filterOfficers('all', this)"
+                class="filter-btn active bg-wildcat-gold text-black border border-wildcat-gold px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider transition">
+                All
+            </button>
+            <button onclick="filterOfficers('exec', this)"
+                class="filter-btn bg-black/60 text-gray-400 border border-gray-800 hover:border-gray-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition">
+                Executive Board
+            </button>
+            <button onclick="filterOfficers('coaching', this)"
+                class="filter-btn bg-black/60 text-gray-400 border border-gray-800 hover:border-gray-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition">
+                Head Coaches
+            </button>
+            <button onclick="filterOfficers('production', this)"
+                class="filter-btn bg-black/60 text-gray-400 border border-gray-800 hover:border-gray-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition">
+                Production & Stage
+            </button>
+            <button onclick="filterOfficers('technical', this)"
+                class="filter-btn bg-black/60 text-gray-400 border border-gray-800 hover:border-gray-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition">
+                Technical
+            </button>
+            <button onclick="filterOfficers('media', this)"
+                class="filter-btn bg-black/60 text-gray-400 border border-gray-800 hover:border-gray-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider transition">
+                Media & Creatives
+            </button>
+        </div>
+    </section>
+
+    <!-- GRID OF ROSTER CARDS -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex-1 w-full">
+        <div id="officersGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+    </main>
+
+    <!-- MODAL PROFILE -->
+    <div id="officerModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeOfficerModal()"></div>
+
+        <div
+            class="relative bg-[#141414] w-full max-w-lg rounded-2xl overflow-hidden border border-gray-700 shadow-2xl z-10 flex flex-col my-auto">
+            <button onclick="closeOfficerModal()"
+                class="absolute top-3 right-3 z-20 bg-black/80 hover:bg-red-600 active:scale-90 text-white w-9 h-9 rounded-full flex items-center justify-center transition border border-gray-700">
+                <svg class="w-4 h-4 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <!-- Modal Image Banner (Dual-Layer Ambient Showcase) -->
+            <div class="w-full h-80 sm:h-96 relative bg-[#121212] overflow-hidden flex items-center justify-center">
+                <!-- Blurred Background Atmosphere -->
+                <img id="modalOfficerImgBg" src="" alt="" aria-hidden="true"
+                    class="absolute inset-0 w-full h-full object-cover blur-2xl scale-125 opacity-40 select-none pointer-events-none" />
+
+                <!-- Sharp Foreground Portrait (Never Cropped) -->
+                <img id="modalOfficerImg" src="" alt="Officer profile"
+                    class="relative z-10 max-h-full max-w-full object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]" />
+
+                <!-- Bottom Vignette -->
+                <div
+                    class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#141414] to-transparent z-20 pointer-events-none">
+                </div>
+
+                <!-- Dept Badge -->
+                <span id="modalOfficerDept"
+                    class="absolute top-3.5 left-3.5 bg-black/85 backdrop-blur-md border border-wildcat-gold/50 text-wildcat-gold text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider z-30 shadow-lg"></span>
+            </div>
+
+            <div class="p-6 space-y-4">
+                <div>
+                    <h2 id="modalOfficerName" class="text-2xl font-heading font-black text-white italic uppercase"></h2>
+                    <p id="modalOfficerTitle" class="text-wildcat-orange text-xs font-bold uppercase tracking-widest">
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-[11px] font-bold uppercase text-gray-400 tracking-wider mb-1">About & Vision</h4>
+                    <p id="modalOfficerBio" class="text-gray-300 text-xs sm:text-sm font-light leading-relaxed"></p>
+                </div>
+
+                <div>
+                    <h4 class="text-[11px] font-bold uppercase text-gray-400 tracking-wider mb-1.5">Specialties & Styles
+                    </h4>
+                    <div id="modalOfficerStyles" class="flex flex-wrap gap-1.5"></div>
+                </div>
+
+                <!-- Footer: Batch on Left, Social Icons on Right -->
+                <div class="pt-4 border-t border-gray-800 flex items-center justify-between gap-3">
+                    <span id="modalOfficerBatch" class="text-xs text-gray-500 font-semibold truncate"></span>
+                    <div id="modalOfficerSocials" class="flex items-center gap-2 shrink-0"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-10 sm:py-12 border-t border-gray-800 bg-black text-center relative z-20">
+        <div class="flex justify-center gap-7 sm:gap-8 mb-6 sm:mb-8">
+            <a href="https://facebook.com/MSUIITWILDCATS" target="_blank"
+                class="text-gray-400 hover:text-blue-500 text-xl sm:text-2xl transition" aria-label="Facebook"><i
+                    class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/msuiitwildcats" target="_blank"
+                class="text-gray-400 hover:text-pink-500 text-xl sm:text-2xl transition" aria-label="Instagram"><i
+                    class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p class="text-gray-600 text-xs sm:text-sm px-4">
+            © 2026 MSU-IIT Wildcats. Made with ❤️ in Iligan City. Into the Wild--Cats!!!
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function getPlaceholderAvatar(name) {
+            const initials = name
+                .split(" ")
+                .map(n => n[0])
+                .slice(0, 2)
+                .join("")
+                .toUpperCase();
+
+            const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" width="100%" height="100%" class="w-full h-full">
+          <defs>
+            <radialGradient id="wildcatGlow" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.25" />
+              <stop offset="60%" stop-color="#141414" stop-opacity="0.95" />
+              <stop offset="100%" stop-color="#0e0e0e" stop-opacity="1" />
+            </radialGradient>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFD700" />
+              <stop offset="100%" stop-color="#FF6B00" />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#wildcatGlow)" />
+          <path d="M 0 160 L 400 160 M 0 320 L 400 320 M 133 0 L 133 480 M 266 0 L 266 480" 
+                stroke="#ffffff" stroke-width="1" stroke-opacity="0.04" />
+          <g fill="#1f1f1f" stroke="#333333" stroke-width="1.5">
+            <circle cx="200" cy="180" r="54" />
+            <path d="M 100 360 C 100 270, 140 250, 200 250 C 260 250, 300 270, 300 360 Z" />
+          </g>
+          <circle cx="200" cy="180" r="38" fill="#141414" stroke="url(#goldGradient)" stroke-width="2.5" />
+          <text x="200" y="190" 
+                text-anchor="middle" 
+                fill="#FFD700" 
+                font-family="'Montserrat', sans-serif" 
+                font-size="28" 
+                font-weight="900" 
+                letter-spacing="1">
+            ${initials}
+          </text>
+          <rect x="110" y="385" width="180" height="26" rx="13" fill="#000000" stroke="#FFD700" stroke-opacity="0.4" stroke-width="1" />
+          <text x="200" y="402" 
+                text-anchor="middle" 
+                fill="#a1a1aa" 
+                font-family="'Inter', sans-serif" 
+                font-size="10" 
+                font-weight="700" 
+                letter-spacing="2">
+            AHA INYO PIC BES???
+          </text>
+        </svg>
+      `;
+            return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+        }
+
+        const officersData = [
+            // EXECUTIVE BOARD
+            {
+                id: "pres_dave",
+                name: "Dave Garbanzos",
+                title: "President",
+                dept: "exec",
+                img: "",
+                bio: "Directing strategic vision, organizational governance, and overall crew unity for the collegiate and competitive dance season.",
+                styles: ["Executive Leadership"],
+                batch: "Wildcats Executive Board",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "vp_david",
+                name: "David Garcia",
+                title: "Vice President",
+                dept: "exec",
+                img: "",
+                bio: "Overseeing internal operations, project execution, and supporting organizational development across all committee wings.",
+                styles: ["Executive Leadership"],
+                batch: "Wildcats Executive Board",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "sec_john",
+                name: "John Lloyed Suaring",
+                title: "Secretary",
+                dept: "exec",
+                img: "",
+                bio: "Managing institutional communications, documentation, meeting records, and official university liaison affairs.",
+                styles: ["Administration", "Records"],
+                batch: "Wildcats Executive Board",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "treas_rufel",
+                name: "Rufel Barluado",
+                title: "Treasurer",
+                dept: "exec",
+                img: "",
+                bio: "Leading financial accountability, fundraising allocation, seasonal budget execution, and production logistics funding.",
+                styles: ["Finance & Budgeting"],
+                batch: "Wildcats Executive Board",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "asst_treas_sean",
+                name: "Sean Gabor",
+                title: "Assistant Treasurer",
+                dept: "exec",
+                img: "",
+                bio: "Assisting in financial documentation, collection logistics, seasonal fund tracking, and fiscal disbursements.",
+                styles: ["Financial Ops", "Treasury Support"],
+                batch: "Wildcats Treasury Committee",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "asst_treas_juniezsa",
+                name: "Juniezsa Bacus",
+                title: "Assistant Treasurer",
+                dept: "exec",
+                img: "images/NiezsaAngry.jpg",
+                bio: "Supporting treasury reporting, inventory auditing, fundraising accountability, and team payment records.",
+                styles: ["Financial Auditing", "Treasury Support"],
+                batch: "Wildcats Treasury Committee",
+                socials: {
+                    instagram: "https://www.instagram.com/shinosha_",
+                    facebook: "https://www.facebook.com/NiezsaBacus"
+                }
+            },
+
+            // HEAD COACHES
+            {
+                id: "coach_buds",
+                name: "Buds Capatagan",
+                title: "Dance Master",
+                dept: "coaching",
+                img: "",
+                bio: "Directing competitive routine execution, technical precision, choreography masterclasses, and dancer conditioning.",
+                styles: ["Coaching"],
+                batch: "Coaching Staff",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "coach_princess",
+                name: "Princess Ganaden",
+                title: "Dance Master",
+                dept: "coaching",
+                img: "images/naddiegyal.jpg",
+                bio: "Spearheading routine dynamics, stage presentation, musicality, and high-intensity performance choreography.",
+                styles: ["Coaching"],
+                batch: "Coaching Staff",
+                socials: {
+                    instagram: "https://www.instagram.com/chinads_/",
+                    facebook: "https://www.facebook.com/nads.xiengrei20"
+                }
+            },
+
+            // PRODUCTION & STAGE OPS
+            {
+                id: "prod_andrey",
+                name: "Andrey Monsanto",
+                title: "Production Manager",
+                dept: "production",
+                img: "images/Jungkook.jpg",
+                bio: "Directing end-to-end production pipelines, stage mechanics, rehearsal timetables, and multi-team operational synergy.",
+                styles: ["Logistics"],
+                batch: "Production Directorate",
+                socials: {
+                    instagram: "https://www.instagram.com/andoreisukieee/",
+                    facebook: "https://www.facebook.com/andoreisukiee"
+                }
+            },
+            {
+                id: "stage_carlo",
+                name: "Carlo Montejo",
+                title: "Stage Manager",
+                dept: "production",
+                img: "",
+                bio: "Managing cues, stage transitions, backstage protocols, and real-time execution during major showcases and competitions.",
+                styles: ["Stage Operations", "Call Management"],
+                batch: "Production Directorate",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "stage_jericho",
+                name: "Jericho Jabla",
+                title: "Stage Manager",
+                dept: "production",
+                img: "",
+                bio: "Ensuring backstage coordination, entrance and exit flows, and dynamic stage readiness during live performances.",
+                styles: ["Stage Management", "Backstage Flow"],
+                batch: "Production Directorate",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+
+            // TECHNICAL
+            {
+                id: "tech_samantha",
+                name: "Samantha Palubon",
+                title: "Technical Head",
+                dept: "technical",
+                img: "images/Sammy004.jpg",
+                bio: "Spearheading technical setups, equipment management, lighting coordination, and audio system integration for stage sets.",
+                styles: ["Technical Production", "Audio & Gear"],
+                batch: "Technical Directorate",
+                socials: {
+                    instagram: "https://www.instagram.com/mnwlkr.sm/",
+                    facebook: "https://www.facebook.com/smnthplbn"
+                }
+            },
+
+            // MEDIA & CREATIVES
+            {
+                id: "media_flint",
+                name: "Flint Aaron Sagrado",
+                title: "Multimedia Head",
+                dept: "media",
+                img: "",
+                bio: "Leading creative visual direction, branding identity, promotional campaigns, and multimedia asset releases.",
+                styles: ["Creative Director", "Multimedia"],
+                batch: "Media & Creatives",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "layout_win",
+                name: "Win Vincent Tagab",
+                title: "Multimedia Layout Artist",
+                dept: "media",
+                img: "",
+                bio: "Designing promotional key visuals, social media campaign layouts, and official event publication materials.",
+                styles: ["Graphic Design", "Brand Identity"],
+                batch: "Media & Creatives",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "layout_cyrus",
+                name: "Cyrus Jake Azucena",
+                title: "Multimedia Layout Artist",
+                dept: "media",
+                img: "",
+                bio: "Crafting digital typography, showcase art, teaser posters, and matchday tournament assets.",
+                styles: ["Visual Design", "Layout Art"],
+                batch: "Media & Creatives",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "layout_cj",
+                name: "Cj Mangubat",
+                title: "Multimedia Layout Artist",
+                dept: "media",
+                img: "",
+                bio: "Developing striking layout concepts, cyber athletic visual assets, and high-impact digital art for the team.",
+                styles: ["Digital Art", "Layout"],
+                batch: "Media & Creatives",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "docu_rebecca",
+                name: "Rebecca Antonio",
+                title: "Documentation",
+                dept: "media",
+                img: "images/rebecca001.jpg",
+                bio: "Capturing courtside highlights, behind-the-scenes rehearsal archives, stage photography, and historical records.",
+                styles: ["Photography", "Documentation"],
+                batch: "Media & Creatives",
+                socials: {
+                    facebook: "https://www.facebook.com/rebecca.antonio07",
+                    instagram: "https://www.instagram.com/_sayorriii/"
+
+                }
+            },
+            {
+                id: "writer_gabe",
+                name: "Gabe Lyniel Lojeco",
+                title: "Content Writer",
+                dept: "media",
+                img: "",
+                bio: "Crafting official team statements, competition recap articles, social copy, and creative event narratives.",
+                styles: ["Editorial", "Creative Writing"],
+                batch: "Media & Creatives",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            },
+            {
+                id: "writer_josh",
+                name: "Josh Lozano",
+                title: "Content Writer",
+                dept: "media",
+                img: "",
+                bio: "Writing engaging news stories, feature spotlights, dancer profiles, and press releases for the Wildcats pack.",
+                styles: ["Sports Journalism", "Storytelling"],
+                batch: "Media & Creatives",
+                socials: {
+                    instagram: "https://instagram.com",
+                    facebook: "https://facebook.com"
+                }
+            }
+        ];
+
+        function renderOfficers(filter = "all") {
+            const grid = document.getElementById("officersGrid");
+            grid.innerHTML = "";
+
+            const filtered = filter === "all"
+                ? officersData
+                : officersData.filter(o => o.dept === filter);
+
+            filtered.forEach(officer => {
+                const avatarSrc = officer.img && officer.img.trim() !== ""
+                    ? officer.img
+                    : getPlaceholderAvatar(officer.name);
+
+                const card = document.createElement("article");
+                card.className = "bg-card-bg border border-gray-800 hover:border-wildcat-gold/50 rounded-2xl overflow-hidden transition-all duration-300 shadow-lg flex flex-col justify-between group cursor-pointer active:scale-[0.98]";
+                card.onclick = () => openOfficerModal(officer.id);
+
+                card.innerHTML = `
+                  <div>
+                    <div class="h-64 sm:h-72 w-full overflow-hidden relative bg-[#121212]">
+                      <img 
+                        src="${avatarSrc}" 
+                        alt="${officer.name}" 
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" 
+                        loading="lazy" 
+                      />
+                      <div class="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent"></div>
+                      <span class="absolute top-3 left-3 bg-black/85 backdrop-blur-md border border-wildcat-gold/50 text-wildcat-gold text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
+                        ${officer.title}
+                      </span>
+                    </div>
+
+                    <div class="p-5">
+                      <h3 class="text-lg font-heading font-black text-white uppercase italic tracking-wide group-hover:text-wildcat-gold transition-colors">
+                        ${officer.name}
+                      </h3>
+                      <p class="text-wildcat-orange text-xs font-bold uppercase tracking-wider mb-2">
+                        ${officer.dept.toUpperCase()}
+                      </p>
+                      <p class="text-gray-400 text-xs font-light leading-relaxed line-clamp-2">
+                        ${officer.bio}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="px-5 pb-5 pt-3 border-t border-gray-800/80 flex items-center justify-between text-xs">
+                    <span class="text-gray-500 text-[11px] font-semibold">${officer.styles[0] || 'Member'}</span>
+                    <span class="text-wildcat-gold font-bold uppercase tracking-widest inline-flex items-center gap-1.5 group-hover:translate-x-1 transition duration-300 text-[11px]">
+                      <span>View Profile</span>
+                      <svg class="w-3 h-3 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </span>
+                  </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterOfficers(dept, btnElement) {
+            document.querySelectorAll(".filter-btn").forEach(btn => {
+                btn.classList.remove("bg-wildcat-gold", "text-black", "border-wildcat-gold");
+                btn.classList.add("bg-black/60", "text-gray-400", "border-gray-800");
+            });
+
+            if (btnElement) {
+                btnElement.classList.add("bg-wildcat-gold", "text-black", "border-wildcat-gold");
+                btnElement.classList.remove("bg-black/60", "text-gray-400", "border-gray-800");
+            }
+
+            renderOfficers(dept);
+        }
+
+        function openOfficerModal(id) {
+            const officer = officersData.find(o => o.id === id);
+            if (!officer) return;
+
+            const avatarSrc = officer.img && officer.img.trim() !== ""
+                ? officer.img
+                : getPlaceholderAvatar(officer.name);
+
+            // Populate both foreground and background atmosphere
+            document.getElementById("modalOfficerImg").src = avatarSrc;
+            const modalBg = document.getElementById("modalOfficerImgBg");
+            if (modalBg) modalBg.src = avatarSrc;
+
+            document.getElementById("modalOfficerDept").innerText = officer.dept.toUpperCase();
+            document.getElementById("modalOfficerName").innerText = officer.name;
+            document.getElementById("modalOfficerTitle").innerText = officer.title;
+            document.getElementById("modalOfficerBio").innerText = officer.bio;
+            document.getElementById("modalOfficerBatch").innerText = officer.batch;
+
+            // Render Specialties
+            const stylesContainer = document.getElementById("modalOfficerStyles");
+            stylesContainer.innerHTML = (officer.styles || [])
+                .map(style => `<span class="bg-black/80 border border-gray-700 text-wildcat-gold text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">${style}</span>`)
+                .join(" ");
+
+            // Dynamic Social Media Buttons
+            const socialsContainer = document.getElementById("modalOfficerSocials");
+            socialsContainer.innerHTML = "";
+            const socials = officer.socials || {};
+
+
+            // Facebook
+            if (socials.facebook && socials.facebook.trim() !== "") {
+                socialsContainer.innerHTML += `
+                    <a href="${socials.facebook}" target="_blank" rel="noopener noreferrer" 
+                       class="w-8 h-8 rounded-full bg-black/80 border border-gray-700 hover:border-wildcat-gold text-gray-300 hover:text-wildcat-gold flex items-center justify-center transition-all duration-300 active:scale-90" 
+                       title="Facebook Profile">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.688 5H18V0h-3.808C10.597 0 9 1.583 9 4.615V8z"/>
+                        </svg>
+                    </a>
+                `;
+            }
+
+            // Instagram
+            if (socials.instagram && socials.instagram.trim() !== "") {
+                socialsContainer.innerHTML += `
+                    <a href="${socials.instagram}" target="_blank" rel="noopener noreferrer" 
+                       class="w-8 h-8 rounded-full bg-black/80 border border-gray-700 hover:border-wildcat-gold text-gray-300 hover:text-wildcat-gold flex items-center justify-center transition-all duration-300 active:scale-90" 
+                       title="Instagram Profile">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                `;
+            }
+
+            // TikTok
+            if (socials.tiktok && socials.tiktok.trim() !== "") {
+                socialsContainer.innerHTML += `
+                    <a href="${socials.tiktok}" target="_blank" rel="noopener noreferrer" 
+                       class="w-8 h-8 rounded-full bg-black/80 border border-gray-700 hover:border-wildcat-gold text-gray-300 hover:text-wildcat-gold flex items-center justify-center transition-all duration-300 active:scale-90" 
+                       title="TikTok Profile">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.47 6.27 6.27 0 0 0 1.86-4.46V8.71a8.21 8.21 0 0 0 4.91 1.6v-3.45a4.78 4.78 0 0 1-1-.17z"/>
+                        </svg>
+                    </a>
+                `;
+            }
+
+            document.getElementById("officerModal").classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeOfficerModal() {
+            document.getElementById("officerModal").classList.add("hidden");
+            document.body.style.overflow = "auto";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => renderOfficers("all"));
+    </script>
+</body>
+
+</html>
