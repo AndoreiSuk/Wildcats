@@ -144,7 +144,7 @@ const champData = {
     gallery: [
       "images/questionmark.jpg"
     ],
-    desc: "Three consecutive national crowns. One unbroken legacy. In 3 days, the Wildcats step onto the floor to defend their throne and cement a historic 4-peat championship at Danztrack 2026.",
+    desc: "Three consecutive national crowns. One unbroken legacy. This Sept 30, the wildcats will return to the Danztrack Philippines stage to defend their title and pursue a historic 4-peat. The question is: can they do it?",
   },
 };
 
