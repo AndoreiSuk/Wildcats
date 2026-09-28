@@ -121,6 +121,11 @@
         </button>
         <button
           class="filter-btn shrink-0 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-300 bg-card-bg text-gray-300 border-gray-800 hover:border-wildcat-gold hover:text-white active:scale-95"
+          data-category="feature">
+          Visualizers & Features
+        </button>
+        <button
+          class="filter-btn shrink-0 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider border transition-all duration-300 bg-card-bg text-gray-300 border-gray-800 hover:border-wildcat-gold hover:text-white active:scale-95"
           data-category="campus">
           Campus & Events
         </button>
@@ -148,6 +153,10 @@
             <span
               class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-black/80 backdrop-blur-md border border-wildcat-gold/50 text-wildcat-gold text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 rounded-full uppercase tracking-wider">
               Featured Headline
+            </span>
+            <span
+              class="absolute top-3 right-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+              CHAMPIONS
             </span>
           </div>
           <div class="lg:col-span-5 p-5 sm:p-8 md:p-10 flex flex-col justify-between">
@@ -183,14 +192,439 @@
       <!-- 2. 2-COLUMN RESPONSIVE GRID -->
       <div id="newsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
 
+        <!-- News Card: Concept Photo - Kung ‘di ka pa galit, bakit? -->
         <article
           class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
-          data-category="campus" data-aos="fade-up" onclick="openNewsModal('wsb2026')">
+          data-category="feature" data-aos="fade-up" onclick="openNewsModal('concept_galit2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/wsb/concept4.png" alt="Wildcats Concept Photo: Kung ‘di ka pa galit, bakit?"
+                class="w-full h-full object-cover object-[50%_45%] group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                CONCEPT PHOTO
+              </span>
+              <span
+                class="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 28, 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                CONCEPT PHOTO: Kung ‘di ka pa galit, bakit?
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Diving straight into raw street realism and student realities. A compelling visual statement framed
+                through the lens of the MSU-IIT Wildcats.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#DiKaPaGalitBakit?</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>View Gallery</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- News Card: WSB 2026 Highest Overall Score (92.67) -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="championships" data-aos="fade-up" onclick="openNewsModal('wsb_highest_score2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WSBResults.jpg" alt="WSB 2026 CDO Official Results & Rankings"
+                class="w-full h-full object-cover object-[50%_45%] group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                MILESTONE
+              </span>
+              <span
+                class="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 28, 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                HISTORIC MILESTONE: MSU-IIT Wildcats Secure Highest Overall Score of 92.67 at WSB 2026 CDO Regional
+                Stage
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Following the official score releases by WSB Street, the MSU-IIT Wildcats emerged with the highest
+                numerical mark of the entire competition across all divisions with a 92.67 rating.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#HighestScore92.67</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>Read Story</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- News Card: Miss Iligan 2026 Opening Performance -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('miss_iligan2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsMissIligan.jpg" alt="MSU-IIT Wildcats at Miss Iligan 2026"
+                class="w-full h-full object-cover object-[50%_10%] group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                PERFORMANCE
+              </span>
+              <span
+                class="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 27, 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                The MSU-IIT Wildcats delivered a high-octane opening performance at the Miss Iligan 2026 coronation
+                night.
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Fresh off their regional championship win at WSB 2026, the Wildcats commanded the floor before a packed
+                home crowd at the MSU-IIT Gymnasium, kicking off Miss Iligan 2026 with pure intensity.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#MissIligan2026</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>Read Story</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- News Card: Concept Photo - Halfway There -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="feature" data-aos="fade-up" onclick="openNewsModal('concept_halfway2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/wsb/concept1.jpg" alt="Wildcats Concept Photo: Halfway There"
+                class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                CONCEPT PHOTO
+              </span>
+              <span
+                class="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 28, 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                CONCEPT PHOTO: They thought that was the finale, but we were just warming up.
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                The truth is, we’re only halfway there. Exploring deeper narratives and raw frames through the lens of
+                the MSU-IIT Wildcats.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#WEARENOTYETDONE</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>View Gallery</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- News Card: Iligan City Dance Groups Dominate WSB 2026 -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="feature" data-aos="fade-up" onclick="openNewsModal('iligan_wsb_domination2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsLAGun.jpg" alt="Iligan City Dance Groups WSB 2026 Domination"
+                class="w-full h-full object-cover object-[50%_25%] group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                FEATURE
+              </span>
+              <span
+                class="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 27, 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                The Baddest Dancers are in L. A. Gun: Iligan City Dance Groups Dominated WSB 2026
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Five teams, one city, zero limits. Iligan’s finest dance crews swept the stage at World Supremacy
+                Battlegrounds 2026, bringing home top honors and securing their spots for the World Finals in Hong Kong!
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#HongKongHereTheyCome</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>Read Story</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- News Card: WSB 2026 Monster Division Championship & Hong Kong Qualification -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="championships" data-aos="fade-up" onclick="openNewsModal('wsb_hk_champs2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsWSBChamps.jpg" alt="MSU-IIT Wildcats WSB 2026 Regional Champions"
+                class="w-full h-full object-cover object-[50%_10%] group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                CHAMPIONS
+              </span>
+              <span
+                class="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 26, 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                CATS has 9 lives, Thieves has 7: MSU-IIT Wildcats Named WSB 2026 Monster Division Champions, Earn Hong
+                Kong Spot
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Sweeping the stage at USTP, the MSU-IIT Wildcats claimed 1st Place (Regional Champion) in the Monster
+                Division and Best in Choreography, officially punching their ticket to the WSB World Championship in
+                Hong Kong!
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#RegionalChampion</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>Read Story</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- News Card: WSB 2026 Technical Glitch & Championship Win -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('wsb_resilience2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsWSB.jpg" alt="Wildcats at WSB 2026 Stage"
+                class="w-full h-full object-cover object-[50%_10%] group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 26, 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                FROM 9 DOWN TO 7: Wildcats’ 9 Lives Almost Ran Out After Back-to-Back Technical Errors at WSB 2026
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                The MSU-IIT Wildcats proved that real champions hold their ground even when technical troubles strike,
+                enduring an audio delay and live track overlap before securing the Monster Division Crown and Best in
+                Choreography.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#CorruptsBeingCorrupted</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>Read Story</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- News Card: MSU-IIT Wildcats in WSB 2026 -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="campus" data-aos="fade-up" onclick="openNewsModal('wsb_compete2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/updates/WildcatsGoWSB.jpg" alt="MSU-IIT Wildcats WSB 2026 Delegation"
+                class="w-full h-full object-cover object-[50%_10%] group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 26, 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                MSU-IIT Wildcats will bring Institute Pride to WSB Street at USTP, Cagayan de Oro City!
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                The MSU-IIT Wildcats Dancers take their talent to the regional stage as they compete in the World
+                Supremacy Battlegrounds (WSB) 2026 competition.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#WSB2026</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>Read Story</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- News Card: Concept Photo - Magtanim ay 'di biro -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="feature" data-aos="fade-up" onclick="openNewsModal('concept_photo_magtanim2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/wsb/layout1.jpg" alt="Wildcats Concept Photo: Magtanim ay 'di biro"
+                class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                CONCEPT PHOTO
+              </span>
+              <span
+                class="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                CONCEPT PHOTO: Magtanim ay ‘di biro, maghapong nakayuko.
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                Hirap na ngang makatayo, sila pa ang nakaupo. Ako ang nagtanim, iba ang umangkin. Oh Kaloy, maligayang
+                pagdating sa mundong ubod ng sakim.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span
+              class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#ConceptPhoto</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>View Gallery</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- News Card: Visualizer Sonder -->
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="feature" data-aos="fade-up" onclick="openNewsModal('visualizer_sonder2026')">
+          <div>
+            <div class="h-52 sm:h-60 overflow-hidden relative">
+              <img src="images/wsb/jeep.jpg" alt="Wildcats Visualizer: Sonder"
+                class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition duration-500"
+                loading="lazy" />
+              <span
+                class="absolute top-3 left-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                VISUALIZER
+              </span>
+              <span
+                class="absolute top-3 right-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                Sep 25, 2026
+              </span>
+            </div>
+            <div class="p-5 sm:p-6">
+              <h3
+                class="text-lg sm:text-xl font-heading font-black text-white uppercase italic leading-snug mb-2 sm:mb-3 group-hover:text-wildcat-gold transition">
+                VISUALIZER: Everyone has a story. Sonder (n.)
+              </h3>
+              <p class="text-gray-400 text-xs sm:text-sm font-light leading-relaxed line-clamp-3">
+                The realization and understanding that all other people have lives as complex as one’s own. An intimate
+                photo essay exploring the quiet battles, daily grinds, and unyielding fire across our streets.
+              </p>
+            </div>
+          </div>
+          <div
+            class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 sm:pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs">
+            <span class="text-wildcat-gold font-bold uppercase tracking-wider text-[11px] sm:text-xs">#Sonder</span>
+            <span
+              class="text-wildcat-orange font-bold uppercase tracking-widest inline-flex items-center gap-1.5 shrink-0 group-hover:translate-x-1 transition duration-300">
+              <span>Read Story</span>
+              <svg class="w-3.5 h-3.5 stroke-current shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <article
+          class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
+          data-category="feature" data-aos="fade-up" onclick="openNewsModal('wsb2026')">
           <div>
             <div class="h-52 sm:h-60 overflow-hidden relative">
               <img src="images/WildcatsWSBVisualizer.jpg"
                 alt="MSU-IIT Wildcats World Supremacy Battlegrounds Visualizer"
-                class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
+                class="w-full h-full object-cover object-[50%_30%] group-hover:scale-105 transition duration-500"
                 loading="lazy" />
               <span
                 class="absolute top-3 left-3 bg-wildcat-gold text-black text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
@@ -310,10 +744,10 @@
         <!-- FEATURE: Wildcats in MSU-Main (Rawaten) -->
         <article
           class="news-card bg-card-bg rounded-2xl border border-gray-800 hover:border-wildcat-gold/50 transition-all duration-300 flex flex-col justify-between overflow-hidden group shadow-lg cursor-pointer active:scale-[0.98]"
-          data-category="campus" data-aos="fade-up" onclick="openNewsModal('featureRawaten2026')">
+          data-category="feature" data-aos="fade-up" onclick="openNewsModal('featureRawaten2026')">
           <div>
             <div class="h-52 sm:h-60 overflow-hidden relative">
-              <img src="images/Rawaten/RawatenFeaturePost.jpg" alt="FEATURE: Wildcats in MSU-Main"
+              <img src="images/Rawaten/rawatenfeature.jpg" alt="FEATURE: Wildcats in MSU-Main"
                 class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
                 loading="lazy" />
               <span
@@ -848,7 +1282,7 @@
           <div>
             <div class="h-52 sm:h-60 overflow-hidden relative">
               <img src="images/wildcatsaudition2026.jpg" alt="Auditions 2026"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                class="w-full h-full object-cover object-[50%_40%] group-hover:scale-105 transition duration-500"
                 loading="lazy" />
               <span
                 class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">July
@@ -968,7 +1402,7 @@
                   'images/mentoring/mentoring044.jpg'
                 ])">
               <img src="images/mentoring/mentoring045.jpg" alt="Mentoring Program"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                class="w-full h-full object-cover object-[50%_80%] group-hover:scale-105 transition duration-500"
                 loading="lazy" />
               <span
                 class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Oct
@@ -1009,7 +1443,7 @@
           <div>
             <div class="h-52 sm:h-60 overflow-hidden relative">
               <img src="images/updates/WildcatsTwinWorkshop.jpg" alt="Twin Workshop"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                class="w-full h-full object-cover object-[50%_30%] group-hover:scale-105 transition duration-500"
                 loading="lazy" />
               <span
                 class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Oct
@@ -1084,7 +1518,7 @@
           <div>
             <div class="h-52 sm:h-60 overflow-hidden relative">
               <img src="images/updates/WildcatsASEANCouncil.jpg" alt="11th ACPES"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                class="w-full h-full object-cover object-[50%_40%] group-hover:scale-105 transition duration-500"
                 loading="lazy" />
               <span
                 class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Oct
@@ -1121,7 +1555,7 @@
           <div>
             <div class="h-52 sm:h-60 overflow-hidden relative">
               <img src="images/updates/WildcatsDiyandiQueen2025.jpg" alt="Diyandi Queen"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                class="w-full h-full object-cover object-[50%_20%] group-hover:scale-105 transition duration-500"
                 loading="lazy" />
               <span
                 class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Sep
@@ -1485,7 +1919,7 @@
           <div>
             <div class="h-52 sm:h-60 overflow-hidden relative">
               <img src="images/updates/WildcatsGawadSerbisyo2025.jpg" alt="Gawad Serbisyo"
-                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500"
+                class="w-full h-full object-cover object-[50%_40%] group-hover:scale-105 transition duration-500"
                 loading="lazy" />
               <span
                 class="absolute top-3 left-3 bg-black/80 backdrop-blur-md border border-gray-700 text-gray-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Aug
@@ -1672,6 +2106,599 @@
             <p class="pl-4 border-l-4 border-wildcat-gold italic text-gray-400">This victory is a testament to teamwork, resilience, and the MSU-IIT legacy of excellence. The Wildcats stand tall as proud ambassadors, carrying the torch of passion and pride!</p>
           `
       },
+      concept_galit2026: {
+        title: "[CONCEPT PHOTO] Kung ‘di ka pa galit, bakit?",
+        date: "September 2026",
+        img: "images/wsb/concept4.png",
+        hideBanner: true,
+        tags: ["#msuiitwildcats", "#ConceptPhoto", "#Visualizer", "#UkayUkay"],
+        body: `
+            <!-- Statement Box -->
+            <div class="p-5 sm:p-6 rounded-2xl bg-black/70 border border-wildcat-gold/40 text-center my-4 shadow-inner">
+              <p class="font-heading font-black italic text-lg sm:text-xl text-white uppercase tracking-wider mb-1">
+                “Kung ‘di ka pa galit, bakit?”
+              </p>
+              <p class="text-xs sm:text-sm text-wildcat-gold tracking-widest uppercase font-semibold">
+                Visual Series • Second-Hand Realities
+              </p>
+            </div>
+
+            <!-- Additional Gallery Photo -->
+            <div class="space-y-6 my-6">
+              <div class="rounded-2xl border border-gray-800 bg-[#121212] overflow-hidden shadow-lg group">
+                <div class="relative w-full h-[280px] sm:h-[440px] overflow-hidden">
+                  <img src="images/wsb/concept4.png" alt="Concept Frame IV" 
+                       class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition duration-500" loading="lazy" />
+                </div>
+                <div class="p-4 bg-black/80 border-t border-gray-800/80 flex items-center justify-between text-xs">
+                  <span class="text-wildcat-gold font-mono uppercase tracking-widest font-black">[ Frame IV: The Journey ]</span>
+                  <span class="text-gray-400 font-mono text-[11px]">Series 04</span>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-gray-800 bg-[#121212] overflow-hidden shadow-lg group">
+                <div class="relative w-full h-[280px] sm:h-[440px] overflow-hidden">
+                  <img src="images/wsb/concept5.png" alt="Concept Frame V" 
+                       class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition duration-500" loading="lazy" />
+                </div>
+                <div class="p-4 bg-black/80 border-t border-gray-800/80 flex items-center justify-between text-xs">
+                  <span class="text-wildcat-gold font-mono uppercase tracking-widest font-black">[ Frame V: The Search ]</span>
+                  <span class="text-gray-400 font-mono text-[11px]">Series 05</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Credits Footer -->
+            <div class="pt-5 border-t border-gray-800 text-xs text-gray-400 space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="space-y-1">
+                  <p class="text-gray-300 font-bold uppercase tracking-wider">Concept & Visual Production</p>
+                  <p class="text-gray-400">Written by: <span class="text-white font-medium">Rebecca Antonio</span></p>
+                  <p class="text-gray-400">Shot by: <span class="text-white font-medium">Flint Aaron</span></p>
+                </div>
+                <div class="space-y-1">
+                  <p class="text-gray-300 font-bold uppercase tracking-wider">Behind The Lens Volunteers</p>
+                  <p class="text-gray-400">Juniezsa Bacus • Josh Zechariah • Gabe Lyniel Lojeco</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="italic text-wildcat-gold font-bold pt-2">#msuiitwildcats • Into the wild, WILDCATS!</p>
+          `
+      },
+      wsb_highest_score2026: {
+        title: "HISTORIC MILESTONE: MSU-IIT Wildcats Secure Highest Overall Score of 92.67 at WSB 2026 CDO Regional Stage",
+        date: "September 28, 2026",
+        img: "images/updates/WSBResults.jpg",
+        tags: ["#msuiitwildcats", "#WSB2026", "#HighestScore", "#MonsterDivision", "#RoadToHongKong"],
+        body: `
+            <div class="p-4 rounded-xl bg-black/70 border border-wildcat-gold/40 text-center my-2">
+              <p class="font-heading font-black italic text-base sm:text-lg text-white uppercase tracking-wider">
+                HIGHEST NUMERICAL MARK OF WSB 2026 CDO REGIONAL STAGE
+              </p>
+              <p class="text-xs sm:text-sm text-wildcat-gold tracking-widest uppercase mt-1 font-semibold">
+                92.67 Points • Monster Division Champion • Tournament-Wide Leader
+              </p>
+            </div>
+
+            <p>The <span class="text-wildcat-gold font-bold uppercase">MSU-IIT Wildcats Dancers</span> have officially added a historic milestone to their team timeline. Following the official score releases by the WSB Street Facebook page, the Wildcats emerged with the highest numerical mark of the entire competition at the <span class="text-wildcat-gold font-bold">World Supremacy Battlegrounds (WSB) 2026</span> regional stage held at USTP.</p>
+
+            <p>The Wildcats earned a top score of <span class="text-wildcat-gold font-bold text-base">92.67</span> in the Monster Division, leading a standout field of regional talent. They were followed closely by Zankofa of the Varsity Division with 91.67, and fellow Iligan crew Street Movers of the Open Division with 91.33.</p>
+
+            <!-- Score Summary Table -->
+            <div class="overflow-x-auto my-4 rounded-xl border border-gray-800 bg-black/60">
+              <table class="w-full text-left text-xs sm:text-sm">
+                <thead class="bg-card-bg/80 text-wildcat-gold font-heading uppercase text-[11px] tracking-wider border-b border-gray-800">
+                  <tr>
+                    <th class="py-2.5 px-3">Division</th>
+                    <th class="py-2.5 px-3">Crew</th>
+                    <th class="py-2.5 px-3 text-right">Score</th>
+                    <th class="py-2.5 px-3 text-right">Rank</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800/60 font-medium">
+                  <tr class="bg-wildcat-gold/10 text-white font-bold border-l-2 border-wildcat-gold">
+                    <td class="py-2.5 px-3 text-wildcat-gold">MONSTER</td>
+                    <td class="py-2.5 px-3">MSU-IIT WILDCATS</td>
+                    <td class="py-2.5 px-3 text-right font-black text-wildcat-gold">92.67</td>
+                    <td class="py-2.5 px-3 text-right text-wildcat-gold">CHAMPION</td>
+                  </tr>
+                  <tr class="text-gray-300">
+                    <td class="py-2 px-3 text-gray-400">VARSITY</td>
+                    <td class="py-2 px-3">ZANKOFA</td>
+                    <td class="py-2 px-3 text-right font-bold">91.67</td>
+                    <td class="py-2 px-3 text-right text-gray-400">CHAMPION</td>
+                  </tr>
+                  <tr class="text-gray-300">
+                    <td class="py-2 px-3 text-gray-400">OPEN</td>
+                    <td class="py-2 px-3">STREET MOVERS</td>
+                    <td class="py-2 px-3 text-right font-bold">91.33</td>
+                    <td class="py-2 px-3 text-right text-gray-400">CHAMPION</td>
+                  </tr>
+                  <tr class="text-gray-300">
+                    <td class="py-2 px-3 text-gray-400">YOUNG GUNS</td>
+                    <td class="py-2 px-3">ZANKOFA</td>
+                    <td class="py-2 px-3 text-right font-bold">89.00</td>
+                    <td class="py-2 px-3 text-right text-gray-400">CHAMPION</td>
+                  </tr>
+                  <tr class="text-gray-300">
+                    <td class="py-2 px-3 text-gray-400">CELL</td>
+                    <td class="py-2 px-3">HYPE IT UP</td>
+                    <td class="py-2 px-3 text-right font-bold">87.33</td>
+                    <td class="py-2 px-3 text-right text-gray-400">CHAMPION</td>
+                  </tr>
+                  <tr class="text-gray-300">
+                    <td class="py-2 px-3 text-gray-400">SOLO</td>
+                    <td class="py-2 px-3">STITCH</td>
+                    <td class="py-2 px-3 text-right font-bold">86.00</td>
+                    <td class="py-2 px-3 text-right text-gray-400">CHAMPION</td>
+                  </tr>
+                  <tr class="text-gray-300">
+                    <td class="py-2 px-3 text-gray-400">SCHOOL</td>
+                    <td class="py-2 px-3">MSU-IIT ORIONS</td>
+                    <td class="py-2 px-3 text-right font-bold">85.67</td>
+                    <td class="py-2 px-3 text-right text-gray-400">CHAMPION</td>
+                  </tr>
+                  <tr class="text-gray-300">
+                    <td class="py-2 px-3 text-gray-400">JUNIOR</td>
+                    <td class="py-2 px-3">UNITY DANCE CREW</td>
+                    <td class="py-2 px-3 text-right font-bold">80.67</td>
+                    <td class="py-2 px-3 text-right text-gray-400">CHAMPION</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>Even while facing disorienting technical audio errors during their performance, the crew's composure and technical execution earned the highest mark awarded by the panel of judges across all divisions.</p>
+
+            <p>This scoring record stands as a proud chapter in the Wildcats' history as they continue their preparations for the WSB World Finals in Hong Kong next year.</p>
+
+            <div class="pt-4 border-t border-gray-800 text-xs text-gray-400 space-y-1">
+              <p class="text-gray-500">Source: <a href="https://www.facebook.com/share/p/19bxuKhVhB/" target="_blank" rel="noopener noreferrer" class="text-wildcat-gold hover:underline">WSB Street Official Facebook Page</a></p>
+              <p class="text-gray-500">Official Tournament Dispatch • MSU-IIT Wildcats Media & Creatives</p>
+            </div>
+
+            <p class="italic text-wildcat-gold font-bold pt-2">Highest on the board. Into the wild, WILDCATS!</p>
+          `
+      },
+      concept_halfway2026: {
+        title: "[CONCEPT PHOTO] They thought that was the finale, but we were just warming up. The truth is, we’re only halfway there.",
+        date: "September 28, 2026",
+        img: "images/wsb/concept1.jpg",
+        hideBanner: true,
+        tags: ["#msuiitwildcats", "#ConceptPhoto", "#Visualizer", "#RoadToHongKong"],
+        body: `
+
+            <!-- Additional Gallery Photos -->
+            <div class="space-y-6 my-6">
+
+              <!-- Frame 1 -->
+              <div class="rounded-2xl border border-gray-800 bg-[#121212] overflow-hidden shadow-lg group">
+                <div class="relative w-full h-[280px] sm:h-[440px] overflow-hidden">
+                  <img src="images/wsb/concept1.jpg" alt="Concept Frame II" 
+                       class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition duration-500" loading="lazy" />
+                </div>
+                <div class="p-4 bg-black/80 border-t border-gray-800/80 flex items-center justify-between text-xs">
+                  <span class="text-wildcat-gold font-mono uppercase tracking-widest font-black">[ Frame I: The Vendor ]</span>
+                  <span class="text-gray-400 font-mono text-[11px]">Series 01 // Rujen</span>
+                </div>
+              </div>
+
+              <!-- Frame 2 -->
+              <div class="rounded-2xl border border-gray-800 bg-[#121212] overflow-hidden shadow-lg group">
+                <div class="relative w-full h-[280px] sm:h-[440px] overflow-hidden">
+                  <img src="images/wsb/concept2.jpg" alt="Concept Frame II" 
+                       class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition duration-500" loading="lazy" />
+                </div>
+                <div class="p-4 bg-black/80 border-t border-gray-800/80 flex items-center justify-between text-xs">
+                  <span class="text-wildcat-gold font-mono uppercase tracking-widest font-black">[ Frame II: The Driver ]</span>
+                  <span class="text-gray-400 font-mono text-[11px]">Series 02 // Rieck</span>
+                </div>
+              </div>
+
+              <!-- Frame 3 -->
+              <div class="rounded-2xl border border-gray-800 bg-[#121212] overflow-hidden shadow-lg group">
+                <div class="relative w-full h-[280px] sm:h-[440px] overflow-hidden">
+                  <img src="images/wsb/concept3.jpg" alt="Concept Frame III" 
+                       class="w-full h-full object-cover object-[50%_40%] group-hover:scale-105 transition duration-500" loading="lazy" />
+                </div>
+                <div class="p-4 bg-black/80 border-t border-gray-800/80 flex items-center justify-between text-xs">
+                  <span class="text-wildcat-gold font-mono uppercase tracking-widest font-black">[ Frame III: The Aisle ]</span>
+                  <span class="text-gray-400 font-mono text-[11px]">Series 03 // Princess</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Credits Footer -->
+            <div class="pt-5 border-t border-gray-800 text-xs text-gray-400 space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="space-y-1">
+                  <p class="text-gray-300 font-bold uppercase tracking-wider">Concept & Visual Production</p>
+                  <p class="text-gray-400">Written by: <span class="text-white font-medium">Rebecca Antonio</span></p>
+                  <p class="text-gray-400">Shot by: <span class="text-white font-medium">Flint Aaron</span></p>
+                </div>
+                <div class="space-y-1">
+                  <p class="text-gray-300 font-bold uppercase tracking-wider">Behind The Lens Volunteers</p>
+                  <p class="text-gray-400">Juniezsa Bacus • Josh Zechariah • Gabe Lyniel Lojeco • JL Suaring</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="italic text-wildcat-gold font-bold pt-2">#msuiitwildcats • Into the wild, WILDCATS!</p>
+          `
+      },
+      miss_iligan2026: {
+        title: "The MSU-IIT Wildcats delivered a high-octane opening performance at the Miss Iligan 2026 coronation night.",
+        date: "September 27, 2026",
+        img: "images/updates/WildcatsMissIligan.jpg",
+        tags: ["#MissIligan2026", "#msuiitwildcats", "#LivePerformance", "#MSUIITGymnasium"],
+        body: `
+            <div class="p-4 rounded-xl bg-black/70 border border-wildcat-gold/40 text-center my-2">
+              <p class="font-heading font-black italic text-base sm:text-lg text-white uppercase tracking-wider">
+                MISS ILIGAN 2026 CORONATION NIGHT
+              </p>
+              <p class="text-xs sm:text-sm text-wildcat-gold tracking-widest uppercase mt-1 font-semibold">
+                Official Opening Production • MSU-IIT Gymnasium, Iligan City
+              </p>
+            </div>
+
+            <p>Fresh off their regional victory at the <span class="text-wildcat-gold font-bold">World Supremacy Battlegrounds (WSB) 2026</span>, the <span class="text-wildcat-gold font-bold uppercase">MSU-IIT Wildcats Dancers</span> commanded the floor once again—this time delivering a high-energy opening production number at <span class="text-white font-bold">Miss Iligan 2026</span>, held earlier tonight at the MSU-IIT Gymnasium.</p>
+
+            <p>Dressed in striking yellow-green and neutral-toned outfits, the champion roster brought the same intensity, precision, and star power that earned them top honors in Cagayan de Oro just days ago. Performing before a packed home crowd, the lineup proved that their momentum shows no signs of slowing down as they continue to dominate every stage they step on.</p>
+
+            <p>The performance served as another showcase of the crew's versatility and relentless drive, keeping the energy electric as Miss Iligan 2026 celebrates its coronation night.</p>
+
+            <div class="pt-4 border-t border-gray-800 text-xs text-gray-400 space-y-1">
+              <p class="text-gray-500">Photo Courtesy of Miss Iligan • MSU-IIT Wildcats Media & Creatives</p>
+            </div>
+
+            <p class="italic text-wildcat-gold font-bold pt-2">Into the wild, WILDCATS!</p>
+          `
+      },
+      iligan_wsb_domination2026: {
+        title: "The Baddest Dancers are in L. A. Gun: Iligan City Dance Groups Dominated WSB 2026",
+        date: "September 27, 2026",
+        img: "images/updates/WildcatsLAGun.jpg",
+        tags: ["#HongKongHereTheyCome", "#msuiitwildcats", "#WSB2026", "#IliganPride"],
+        body: `
+            <div class="p-4 rounded-xl bg-black/70 border border-wildcat-gold/40 text-center my-2">
+              <p class="font-heading font-black italic text-base sm:text-lg text-white uppercase tracking-wider">
+                FIVE TEAMS • ONE CITY • ZERO LIMITS
+              </p>
+              <p class="text-xs sm:text-sm text-wildcat-gold tracking-widest uppercase mt-1 font-semibold">
+                Iligan City Sweeps World Supremacy Battlegrounds 2026
+              </p>
+            </div>
+
+            <p><span class="text-wildcat-gold font-bold uppercase">Iligan’s finest dance crews</span> swept the stage at the <span class="text-wildcat-gold font-bold">World Supremacy Battlegrounds (WSB) 2026</span> at USTP Cagayan de Oro City, bringing home top honors across divisions and punching their tickets to the international finals in Hong Kong next year!</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-4 text-xs sm:text-sm">
+              <div class="p-3 rounded-lg bg-black/50 border border-gray-800">
+                <p class="text-wildcat-gold font-bold uppercase">MSU-IIT WILDCATS</p>
+                <p class="text-white font-black text-sm">CHAMPION & Best in Choreography</p>
+                <p class="text-gray-400 text-xs">Monster Division</p>
+              </div>
+              <div class="p-3 rounded-lg bg-black/50 border border-gray-800">
+                <p class="text-wildcat-gold font-bold uppercase">MSU-IIT ORIONS</p>
+                <p class="text-white font-black text-sm">CHAMPION</p>
+                <p class="text-gray-400 text-xs">College Division</p>
+              </div>
+              <div class="p-3 rounded-lg bg-black/50 border border-gray-800">
+                <p class="text-wildcat-gold font-bold uppercase">STREET MOVERS</p>
+                <p class="text-white font-black text-sm">CHAMPION</p>
+                <p class="text-gray-400 text-xs">Open Division</p>
+              </div>
+              <div class="p-3 rounded-lg bg-black/50 border border-gray-800">
+                <p class="text-wildcat-gold font-bold uppercase">HYPE IT UP</p>
+                <p class="text-white font-black text-sm">CHAMPION</p>
+                <p class="text-gray-400 text-xs">Cell Division</p>
+              </div>
+              <div class="p-3 rounded-lg bg-black/50 border border-gray-800 sm:col-span-2">
+                <p class="text-wildcat-gold font-bold uppercase">LEAGUE OF ACES</p>
+                <p class="text-white font-black text-sm">2ND PLACER</p>
+                <p class="text-gray-400 text-xs">Monster Division</p>
+              </div>
+            </div>
+
+            <p>Congratulations to all the dancers, choreographers, and support crews for representing Iligan City with pure passion and talent on the regional stage.</p>
+
+            <div class="pt-4 border-t border-gray-800 text-xs text-gray-400 space-y-1">
+              <p class="text-gray-500">Community Feature • MSU-IIT Wildcats Media & Creatives</p>
+            </div>
+
+            <p class="italic text-wildcat-gold font-bold pt-2">Hong Kong, here we come! Into the wild, WILDCATS!</p>
+          `
+      },
+      wsb_hk_champs2026: {
+        title: "CATS has 9 lives, Thieves has 7: MSU-IIT Wildcats Named WSB 2026 Monster Division Champions, Earn Hong Kong Spot",
+        date: "September 27, 2026",
+        img: "images/updates/WildcatsWSBChamps.jpg",
+        tags: ["#RegionalChampion", "#BestInChoreography", "#msuiitwildcats", "#WSB2026", "#RoadToHongKong"],
+        body: `
+            <div class="p-4 rounded-xl bg-black/70 border border-wildcat-gold/40 text-center my-2">
+              <p class="font-heading font-black italic text-base sm:text-lg text-white uppercase tracking-wider">
+                WSB 2026 MONSTER DIVISION REGIONAL CHAMPIONS
+              </p>
+              <p class="text-xs sm:text-sm text-wildcat-gold tracking-widest uppercase mt-1 font-semibold">
+                1st Place • Best in Choreography Award • World Finals Hong Kong Qualifier
+              </p>
+            </div>
+
+            <p>Showing that hard work and passion can overcome any obstacle, the <span class="text-wildcat-gold font-bold uppercase">MSU-IIT Wildcats Dancers</span> swept the stage at the <span class="text-wildcat-gold font-bold">World Supremacy Battlegrounds (WSB) 2026</span> at USTP. The group claimed <span class="text-white font-bold">1st Place (Regional Championship)</span> in the Monster Division and earned the overall award for <span class="text-white font-bold">Best in Choreography</span>.</p>
+
+            <p>This big win came right after major technical issues during their performance. Even with a long music delay and an overlapping audio track caused by event technical errors, the Wildcats stayed calm and focused under the lights. Instead of letting sound problems ruin weeks of practice, the team danced through every count with complete professionalism, turning a stressful moment into a show of pure strength.</p>
+
+            <p>Their efforts paid off in a big way. On top of winning the regional title and the top choreography award, the Wildcats officially earned their spot to compete on the international stage at the <span class="text-wildcat-gold font-bold">WSB World Championship in Hong Kong</span>!</p>
+
+            <p>This victory belongs to the entire team. The dancers, choreographers, officers, production crew, and multimedia team worked collectively to keep the group going through every tough moment leading up to the competition.</p>
+
+            <p>By pushing past the sound errors and giving their all, the MSU-IIT Wildcats proved once again that true champions shine no matter what happens on stage—showing everyone what it really means to go into the wild.</p>
+
+            <div class="pt-4 border-t border-gray-800 text-xs text-gray-400 space-y-1">
+              <p class="text-gray-500">Official Tournament Release • MSU-IIT Wildcats Media & Creatives</p>
+            </div>
+
+            <p class="italic text-wildcat-gold font-bold pt-2">Next stop: Hong Kong! Into the wild, WILDCATS!</p>
+          `
+      },
+      wsb_resilience2026: {
+        title: "FROM 9 DOWN TO 7: Wildcats’ 9 Lives Almost Ran Out After Back-to-Back Technical Errors at WSB 2026",
+        date: "September 26, 2026",
+        img: "images/updates/WildcatsWSB.jpg",
+        tags: ["#CorruptsBeingCorrupted", "#msuiitwildcats", "#WSB2026", "#MonsterDivisionChampions"],
+        body: `
+            <div class="p-4 rounded-xl bg-black/70 border border-wildcat-gold/40 text-center my-2">
+              <p class="font-heading font-black italic text-base sm:text-lg text-white uppercase tracking-wider">
+                CAGAYAN DE ORO CITY — UNBROKEN COMPOSURE UNDER FIRE
+              </p>
+              <p class="text-xs sm:text-sm text-wildcat-gold tracking-widest uppercase mt-1 font-semibold">
+                Monster Division Champions • Best in Choreography
+              </p>
+            </div>
+
+            <p><span class="text-white font-bold">CAGAYAN DE ORO CITY</span> — The <span class="text-wildcat-gold font-bold uppercase">MSU-IIT Wildcats Dancers</span> proved that real champions hold their ground even when technical troubles strike, enduring major sound issues before securing a major win at the <span class="text-wildcat-gold font-bold">World Supremacy Battlegrounds (WSB) 2026</span> held at USTP.</p>
+
+            <p>What was supposed to be a seamless routine turned into a test of patience and professionalism right from the start. The group was hit with a nearly six-minute delay before the performance because the event's production team had not properly downloaded the team's official audio track. Standing under the stage lights, the dancers stayed fully in character, maintaining their composure while group president <span class="text-wildcat-gold font-bold">Dave Andrei Garbanzos</span> stepped in to coordinate directly with the sound booth.</p>
+
+            <p>Once the audio finally played, the Wildcats launched into their routine with full energy. However, another issue hit mid-performance: the same audio track began playing over itself, creating a confusing overlap that continued all the way to the end of the routine. Despite the disorienting background noise, the group refused to break formation, pushing through every count until the final beat.</p>
+
+            <p>While waiting for an official statement from WSB Productions regarding the technical mishaps, the dancers kept their composure intact. The group's resilience paid off by the end of the night, as the <span class="text-wildcat-gold font-bold uppercase">MSU-IIT Wildcats</span> were officially crowned <span class="text-wildcat-gold font-bold">Monster Division Champions</span> and brought home the award for <span class="text-wildcat-gold font-bold">Best in Choreography</span>.</p>
+
+            <div class="pt-4 border-t border-gray-800 text-xs text-gray-400 space-y-1">
+              <p class="text-gray-500">Official Release • MSU-IIT Wildcats Media & Creatives</p>
+            </div>
+
+            <p class="italic text-wildcat-gold font-bold pt-2">#CorruptsBeingCorrupted • Into the wild, WILDCATS!</p>
+          `
+      },
+      wsb_compete2026: {
+        title: "MSU-IIT Wildcats will bring Institute Pride to WSB Street at USTP, Cagayan de Oro City!",
+        date: "September 26, 2026",
+        img: "images/updates/WildcatsGoWSB.jpg",
+        tags: ["#MSUIIT", "#msuiitwildcats", "#WSB2026", "#WSBStreet"],
+        body: `
+            <div class="p-4 rounded-xl bg-black/70 border border-wildcat-gold/40 text-center my-2">
+              <p class="font-heading font-black italic text-base sm:text-lg text-white uppercase tracking-wider">
+                COMPETING AT WORLD SUPREMACY BATTLEGROUNDS 2026
+              </p>
+              <p class="text-xs sm:text-sm text-wildcat-gold tracking-widest uppercase mt-1 font-semibold">
+                September 26, 2026 • USTP Gymnasium, Cagayan de Oro City
+              </p>
+            </div>
+
+            <p>The <span class="text-wildcat-gold font-bold uppercase">MSU-IIT Wildcats Dancers</span> are taking their talent to the regional stage as they compete in the <span class="text-wildcat-gold font-bold uppercase">World Supremacy Battlegrounds (WSB) 2026</span> competition.</p>
+
+            <p>The event takes place today, <span class="text-wildcat-gold font-bold">September 26, 2026</span>, at the University of Science and Technology of Southern Philippines (USTP) in Cagayan de Oro City.</p>
+
+            <p>Carrying the pride of the institute, the Wildcats aim to showcase their choreography against top dance crews from across the region. The competition serves as another major platform for the group to demonstrate their dedication to performance excellence and represent MSU-IIT on a prestigious stage.</p>
+
+            <div class="pt-4 border-t border-gray-800 text-xs text-gray-400 space-y-1">
+              <p class="text-gray-500">Official Tournament Dispatch • MSU-IIT Wildcats Media & Creatives</p>
+            </div>
+
+            <p class="italic text-wildcat-gold font-bold pt-2">Into the wild, WILDCATS!</p>
+          `
+      },
+      concept_photo_magtanim2026: {
+        title: "[CONCEPT PHOTO] Magtanim ay ‘di biro",
+        date: "September 2026",
+        img: "images/wsb/layout1.jpg",
+        hideBanner: true,
+        tags: ["#msuiitwildcats", "#ConceptPhoto", "#Visualizer", "#IliganCity"],
+        body: `
+            <!-- Poem / Manifesto Card -->
+            <div class="p-5 sm:p-6 rounded-2xl bg-black/70 border border-wildcat-gold/40 text-center my-4 shadow-inner">
+              <p class="font-heading font-black italic text-base sm:text-lg text-white uppercase tracking-wider mb-3">
+                MAGTANIM AY ‘DI BIRO
+              </p>
+              <div class="text-xs sm:text-sm text-gray-300 italic font-serif leading-relaxed max-w-md mx-auto space-y-1">
+                <p>Magtanim ay ‘di biro,</p>
+                <p>maghapong nakayuko.</p>
+                <p>Hirap na ngang makatayo,</p>
+                <p class="text-wildcat-gold font-semibold">sila pa ang nakaupo.</p>
+                <div class="w-8 h-[1px] bg-wildcat-gold/40 mx-auto my-2"></div>
+                <p>Ako ang nagtanim,</p>
+                <p>iba ang umangkin.</p>
+                <p>Oh Kaloy, maligayang pagdating</p>
+                <p class="text-wildcat-gold font-semibold">sa mundong ubod ng sakim.</p>
+              </div>
+            </div>
+
+            <!-- Gallery Layouts -->
+            <div class="space-y-6 my-6">
+
+              <!-- Layout #I: Jeep -->
+              <div class="rounded-2xl border border-gray-800 bg-[#121212] overflow-hidden shadow-lg group">
+                <div class="relative w-full h-[280px] sm:h-[440px] overflow-hidden">
+                  <img src="images/wsb/layout1.jpg" alt="Layout #I: Jeep" 
+                       class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition duration-500" loading="lazy" />
+                </div>
+                <div class="p-4 bg-black/80 border-t border-gray-800/80 flex items-center justify-between text-xs">
+                  <span class="text-wildcat-gold font-mono uppercase tracking-widest font-black">[ Layout #I: Jeep ]</span>
+                  <span class="text-gray-400 font-mono text-[11px]">The Street Transit</span>
+                </div>
+              </div>
+
+              <!-- Layout #II: Market -->
+              <div class="rounded-2xl border border-gray-800 bg-[#121212] overflow-hidden shadow-lg group">
+                <div class="relative w-full h-[280px] sm:h-[440px] overflow-hidden">
+                  <img src="images/wsb/layout2.jpg" alt="Layout #II: Market" 
+                       class="w-full h-full object-cover object-[50%_35%] group-hover:scale-105 transition duration-500" loading="lazy" />
+                </div>
+                <div class="p-4 bg-black/80 border-t border-gray-800/80 flex items-center justify-between text-xs">
+                  <span class="text-wildcat-gold font-mono uppercase tracking-widest font-black">[ Layout #II: Market ]</span>
+                  <span class="text-gray-400 font-mono text-[11px]">The Wet Market</span>
+                </div>
+              </div>
+
+              <!-- Layout #III: Ukay-Ukayan -->
+              <div class="rounded-2xl border border-gray-800 bg-[#121212] overflow-hidden shadow-lg group">
+                <div class="relative w-full h-[280px] sm:h-[440px] overflow-hidden">
+                  <img src="images/wsb/layout3.jpg" alt="Layout #III: Ukay-Ukayan" 
+                       class="w-full h-full object-cover object-[50%_40%] group-hover:scale-105 transition duration-500" loading="lazy" />
+                </div>
+                <div class="p-4 bg-black/80 border-t border-gray-800/80 flex items-center justify-between text-xs">
+                  <span class="text-wildcat-gold font-mono uppercase tracking-widest font-black">[ Layout #III: Ukay-Ukayan ]</span>
+                  <span class="text-gray-400 font-mono text-[11px]">Second-Hand Aisles</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Credits Footer -->
+            <div class="pt-5 border-t border-gray-800 text-xs text-gray-400 space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="space-y-1">
+                  <p class="text-gray-300 font-bold uppercase tracking-wider">Concept & Visual Production</p>
+                  <p class="text-gray-400">Written by: <span class="text-white font-medium">Rebecca Antonio</span></p>
+                  <p class="text-gray-400">Shot by: <span class="text-white font-medium">Flint Aaron</span></p>
+                </div>
+                <div class="space-y-1">
+                  <p class="text-gray-300 font-bold uppercase tracking-wider">Behind The Lens Volunteers</p>
+                  <p class="text-gray-400">Juniezsa Bacus • Josh Zechariah • Gabe Lyniel Lojeco</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="italic text-wildcat-gold font-bold pt-2">#msuiitwildcats • Into the wild, WILDCATS!</p>
+          `
+      },
+      visualizer_sonder2026: {
+        title: "VISUALIZER: Everyone has a story. Sonder (n.)",
+        date: "September 25, 2026",
+        img: "images/wsb/jeep.jpg",
+        hideBanner: true,
+        tags: ["#msuiitwildcats", "#Sonder", "#Visualizer", "#PhotoEssay"],
+        body: `
+            <!-- Dictionary / Title Box -->
+            <div class="p-5 rounded-2xl bg-black/70 border border-wildcat-gold/40 text-center my-3 shadow-inner">
+              <p class="font-heading font-black italic text-lg sm:text-2xl text-white uppercase tracking-wider">
+                𝐒𝐨𝐧𝐝𝐞𝐫 <span class="text-xs sm:text-sm text-wildcat-gold font-mono font-normal lowercase tracking-normal">(𝘯.)</span>
+              </p>
+              <p class="text-xs sm:text-sm text-gray-400 font-mono tracking-widest uppercase mt-0.5">
+                ꜱᴏɴ·​ᴅᴇʀ | ˈꜱäɴ-ᴅəʀ
+              </p>
+              <p class="text-xs sm:text-sm text-gray-300 mt-3 italic font-light max-w-xl mx-auto leading-relaxed">
+                “The realization and understanding that all other people have lives as complex as one’s own. The awareness that everyone around you is the main character of their own story.”
+              </p>
+              <p class="text-[11px] text-wildcat-gold uppercase tracking-wider font-semibold mt-2">
+                — John Koenig / Jessica Stillman
+              </p>
+            </div>
+
+            <!-- STORY ENTRIES -->
+            <div class="space-y-8 my-6">
+
+              <!-- JEEPNEY DRIVER -->
+              <div class="rounded-2xl border border-gray-800 bg-[#121212]/90 overflow-hidden shadow-lg">
+                <div class="h-64 sm:h-80 w-full overflow-hidden">
+                  <img src="images/wsb/jeep.jpg" alt="Jeepney Driver" 
+                       class="w-full h-full object-cover object-[50%_35%]" loading="lazy" />
+                </div>
+                <div class="p-5 sm:p-6 space-y-2">
+                  <span class="inline-block text-wildcat-gold font-mono text-xs uppercase tracking-widest font-black bg-wildcat-gold/10 px-2.5 py-1 rounded border border-wildcat-gold/30">
+                    [ jeepney driver ]
+                  </span>
+                  <p class="text-sm sm:text-base text-gray-300 font-light leading-relaxed pt-1">
+                    Seeing a driver is never just seeing a driver. It is witnessing a father battling choked streets, suffocating smog, and soaring fuel prices to keep his family afloat in a nation where corruption is the quiet thief of every honest effort. He navigates a system ruled by incompetent leaders who hoard privilege while ignoring the public good—an unbowed soul steering through the economic storm, driven by love in a country that gives him no room to perform.
+                  </p>
+                </div>
+              </div>
+
+              <!-- HIGH SCHOOL STUDENT -->
+              <div class="rounded-2xl border border-gray-800 bg-[#121212]/90 overflow-hidden shadow-lg">
+                <div class="h-64 sm:h-80 w-full overflow-hidden">
+                  <img src="images/wsb/highschoolstudent.jpg" alt="High School Student" 
+                       class="w-full h-full object-cover object-[50%_30%]" loading="lazy" />
+                </div>
+                <div class="p-5 sm:p-6 space-y-2">
+                  <span class="inline-block text-wildcat-gold font-mono text-xs uppercase tracking-widest font-black bg-wildcat-gold/10 px-2.5 py-1 rounded border border-wildcat-gold/30">
+                    [ high-school student ]
+                  </span>
+                  <p class="text-sm sm:text-base text-gray-300 font-light leading-relaxed pt-1">
+                    Seeing a student inside a moving jeepney is more than just a fleeting sight. It is observing a young soul visibly worn to the bone, their heavy eyes staring blankly as they try to endure an exhausting educational system—one where public funds meant for schools vanish into the deep pockets of corrupt officials. Surrounded by blaring horns, stagnant traffic, and the unrelenting heat, their weary face bears the strain of a future they desperately work to sustain.
+                  </p>
+                </div>
+              </div>
+
+              <!-- VENDOR -->
+              <div class="rounded-2xl border border-gray-800 bg-[#121212]/90 overflow-hidden shadow-lg">
+                <div class="h-64 sm:h-80 w-full overflow-hidden">
+                  <img src="images/wsb/vendor.jpg" alt="Vendor" 
+                       class="w-full h-full object-cover object-[50%_30%]" loading="lazy" />
+                </div>
+                <div class="p-5 sm:p-6 space-y-2">
+                  <span class="inline-block text-wildcat-gold font-mono text-xs uppercase tracking-widest font-black bg-wildcat-gold/10 px-2.5 py-1 rounded border border-wildcat-gold/30">
+                    [ vendor ]
+                  </span>
+                  <p class="text-sm sm:text-base text-gray-300 font-light leading-relaxed pt-1">
+                    Seeing a vendor in a crowded market isn't just watching someone trade goods to survive. It is seeing an individual enduring the shouts of impatient buyers, constantly forced to compromise their own ease just to keep poverty at bay. They deserve stability and a modest space of their own, yet the government offers no shelter, leaving them to fight through the heat to secure the bread they eat.
+                  </p>
+                </div>
+              </div>
+
+              <!-- COLLEGE STUDENT -->
+              <div class="rounded-2xl border border-gray-800 bg-[#121212]/90 overflow-hidden shadow-lg">
+                <div class="h-64 sm:h-80 w-full overflow-hidden">
+                  <img src="images/wsb/collegestudent.jpg" alt="College Student" 
+                       class="w-full h-full object-cover object-[50%_35%]" loading="lazy" />
+                </div>
+                <div class="p-5 sm:p-6 space-y-2">
+                  <span class="inline-block text-wildcat-gold font-mono text-xs uppercase tracking-widest font-black bg-wildcat-gold/10 px-2.5 py-1 rounded border border-wildcat-gold/30">
+                    [ college student ]
+                  </span>
+                  <p class="text-sm sm:text-base text-gray-300 font-light leading-relaxed pt-1">
+                    Seeing a college student is not merely seeing someone carrying books. It is seeing a brave soul who left their hometown to live alone in a new city, chasing tuition-free education in a system that turns a blind eye to student welfare. Dressed in second-hand clothes from distant shores, they make do with the bare minimum—coerced by political greed, yet carrying a quiet fire that refuses to yield.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Credits & References Footer -->
+            <div class="pt-5 border-t border-gray-800 text-xs text-gray-400 space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="space-y-1">
+                  <p class="text-gray-300 font-bold uppercase tracking-wider">Visualizer Production</p>
+                  <p class="text-gray-400">Written by: <span class="text-white font-medium">Rebecca Antonio</span></p>
+                  <p class="text-gray-400">Shot by: <span class="text-white font-medium">Flint Aaron</span></p>
+                </div>
+                <div class="space-y-1">
+                  <p class="text-gray-300 font-bold uppercase tracking-wider">Behind The Lens Volunteers</p>
+                  <p class="text-gray-400">Juniezsa Bacus • Josh Zechariah • Gabe Lyniel Lojeco</p>
+                </div>
+              </div>
+
+              <div class="text-[11px] text-gray-500 pt-2 border-t border-gray-800/60 flex flex-wrap gap-x-4 gap-y-1">
+                <span>References:</span>
+                <a href="https://www.merriam-webster.com/dictionary/sonder" target="_blank" rel="noopener noreferrer" class="text-wildcat-gold/80 hover:underline">Merriam-Webster</a>
+                <a href="https://dictionaryofobscuresorrows.com/" target="_blank" rel="noopener noreferrer" class="text-wildcat-gold/80 hover:underline">Dictionary of Obscure Sorrows</a>
+              </div>
+            </div>
+
+            <p class="italic text-wildcat-gold font-bold pt-2">#msuiitwildcats • Into the wild, WILDCATS!</p>
+          `
+      },
       wsb2026: {
         title: "Hindi nila kailangang tumingin sa ibaba. Nakatingin lang sila sa harap.",
         date: "September 22, 2026",
@@ -1834,7 +2861,7 @@
       featureRawaten2026: {
         title: "FEATURE | WILDCATS in MSU-Main: The Wildcats in Rawaten",
         date: "September  1, 2026",
-        img: "images/Rawaten/RawatenFeaturePost.jpg",
+        img: "images/Rawaten/rawatenfeature.jpg",
         tags: ["#MSUIITWildcats", "#Rawaten2026", "#MSUSAA", "#ResidentPerformingGroups", "#MSUMain"],
         body: `
           <p class="text-wildcat-gold font-bold text-base sm:text-lg italic">
@@ -2195,11 +3222,29 @@
 
       stopModalAudio();
 
-      currentNewsModalImg = item.img;
+      currentNewsModalImg = item.img || "";
 
       document.getElementById("modalArticleTitle").innerText = item.title;
       document.getElementById("modalArticleDate").innerText = item.date;
-      document.getElementById("modalArticleImg").src = item.img;
+
+      // Banner Handling: Hide if hideBanner is true OR if img is missing
+      const modalImg = document.getElementById("modalArticleImg");
+      if (modalImg) {
+        if (!item.hideBanner && item.img && item.img.trim() !== "") {
+          modalImg.src = item.img;
+          modalImg.classList.remove("hidden");
+          if (modalImg.parentElement && modalImg.parentElement.tagName === "DIV") {
+            modalImg.parentElement.classList.remove("hidden");
+          }
+        } else {
+          modalImg.src = "";
+          modalImg.classList.add("hidden");
+          if (modalImg.parentElement && modalImg.parentElement.tagName === "DIV") {
+            modalImg.parentElement.classList.add("hidden");
+          }
+        }
+      }
+
       document.getElementById("modalArticleBody").innerHTML = item.body;
       document.getElementById("modalArticleTags").innerHTML = item.tags
         .map(tag => `<span>${tag}</span>`)
@@ -2218,6 +3263,12 @@
           audioBtn.classList.add("hidden");
           audioBtn.classList.remove("flex");
         }
+      }
+
+      // Reset scroll position to top
+      const scrollableBody = document.querySelector("#articleModal .overflow-y-auto") || document.getElementById("articleModal");
+      if (scrollableBody) {
+        scrollableBody.scrollTop = 0;
       }
 
       document.getElementById("articleModal").classList.remove("hidden");

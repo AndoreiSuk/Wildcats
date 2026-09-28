@@ -125,15 +125,67 @@ const champData = {
     desc: "The 3-peat. Unprecedented dominance. This performance was a celebration of the team's history.",
   },
   2026: {
-    subtitle: "2026 WORLD OF DANCE PH", // Custom for WOD
-    title: "THE WORLD OF DANCE",
-    result: "aaaaaaaa",
+    subtitle: "WSB 2026",
+    title: "Monster Division Champions",
+    result: "Grand Champion",
+    division: "Monster Division",
+    img: "images/WildcatsWSBVisualizer.jpg",
+    gallery: [
+      "images/WildcatsWSBVisualizer.jpg"
+    ],
+    desc: "They didn't have to look down. They only looked ahead. Suited in tradition's formal attire, the pack brought laser-focus precision to USTP CDO and captured the Monster Division crown at World Supremacy Battlegrounds 2026.",
+  },
+  2026.1: {
+    subtitle: "DANZTRACK PHILIPPINES 2026",
+    title: "The 4-Peat Quest",
+    result: "N/A",
     division: "College Division",
-    img: "images/World_of_Dance_Philippines_logo.png",
-    gallery: ["images/World_of_Dance_Philippines_logo.png"],
-    desc: "Lorem Ipsum Kingkarasa Aron Dili Ma Evil Eye.",
+    img: "images/wildcatslogo.jpg",
+    gallery: [
+      "images/questionmark.jpg"
+    ],
+    desc: "Three consecutive national crowns. One unbroken legacy. In 3 days, the Wildcats step onto the floor to defend their throne and cement a historic 4-peat championship at Danztrack 2026.",
   },
 };
+
+// Danztrack PH 2026 Floating Bar Countdown
+(function initFloatingCountdown() {
+  const targetDate = new Date("2026-09-30T14:00:00+08:00").getTime();
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const daysEl = document.getElementById("bar-days");
+    const hoursEl = document.getElementById("bar-hours");
+    const minsEl = document.getElementById("bar-minutes");
+    const secsEl = document.getElementById("bar-seconds");
+
+    if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+    if (distance <= 0) {
+      daysEl.innerText = "00";
+      hoursEl.innerText = "00";
+      minsEl.innerText = "00";
+      secsEl.innerText = "00";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    daysEl.innerText = String(days).padStart(2, "0");
+    hoursEl.innerText = String(hours).padStart(2, "0");
+    minsEl.innerText = String(minutes).padStart(2, "0");
+    secsEl.innerText = String(seconds).padStart(2, "0");
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
+})();
+
 
 // Modal Variables
 const modal = document.getElementById("champModal");
