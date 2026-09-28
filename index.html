@@ -75,7 +75,7 @@
             <span class="hidden sm:inline">Danztrack PH 2026 <span class="text-wildcat-gold not-italic">| 4-PEAT
                 DEFENSE</span></span>
             <span class="inline sm:hidden text-wildcat-gold font-extrabold not-italic">DANZTRACK <span
-                class="text-white italic">4-PEAT</span></span>
+                class="text-white italic">PH</span></span>
           </span>
         </div>
 
@@ -457,8 +457,8 @@
                   class="absolute top-4 left-4 z-20 bg-gradient-to-r from-wildcat-orange to-yellow-600 text-black px-4 py-1 rounded-full border border-white/80 shadow-md">
                   <span class="font-bold text-sm">2026</span>
                 </div>
-                <!-- Live Dynamic Countdown Badge -->
-                <div
+                <!-- Live Dynamic Countdown / Status Badge -->
+                <div id="danztrack-card-badge"
                   class="absolute top-4 right-4 z-20 bg-black/85 backdrop-blur-md border border-wildcat-orange/50 text-wildcat-orange px-3 py-1 rounded-full flex items-center gap-1.5 shadow-lg">
                   <span class="relative flex h-2 w-2">
                     <span
@@ -482,7 +482,7 @@
                     <p class="text-sm text-gray-300 line-clamp-2">
                       Chasing history on the national stage. This September 30 the pack defends the collegiate crown...
                     </p>
-                    <p
+                    <p id="danztrack-card-cta"
                       class="text-wildcat-gold text-xs mt-3 font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform">
                       Defending Soon
                       <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -1176,40 +1176,94 @@
 
   <!-- Inline Countdown Script -->
   <script>
-    function initDanztrackCountdown() {
-      const targetDate = new Date("2026-09-30T14:00:00+08:00").getTime(); // 2:00 PM PHT
-      const countdownEl = document.getElementById("danztrack-countdown");
-
-      if (!countdownEl) return;
+    (function initUnifiedDanztrackCountdown() {
+      // Target: September 30, 2026, 2:00 PM PHT (UTC+8)
+      const targetTime = new Date("2026-09-30T14:00:00+08:00").getTime();
 
       function update() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
+        const now = Date.now();
+        const distance = targetTime - now;
 
+        // --- TIME REACHED: SWITCH BOTH TO "LIVE NOW" ---
         if (distance <= 0) {
-          countdownEl.innerText = "DEFENDING LIVE NOW";
-          countdownEl.classList.remove("text-wildcat-orange");
-          countdownEl.classList.add("text-yellow-400", "animate-pulse");
+          clearInterval(timerInterval);
+
+          // 1. Floating Header Bar -> LIVE NOW
+          const stickyBar = document.getElementById("danztrack-sticky-bar");
+          if (stickyBar) {
+            stickyBar.innerHTML = `
+          <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between gap-3 w-full">
+            <div class="flex items-center gap-2 sm:gap-3">
+              <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-red-600 shadow-[0_0_10px_rgba(239,68,68,0.9)]"></span>
+              </span>
+              <span class="font-heading font-black text-white uppercase italic text-xs sm:text-sm tracking-wider">
+                Danztrack PH 2026 <span class="text-wildcat-gold not-italic">| 🔴 LIVE NOW • 4-PEAT DEFENSE</span>
+              </span>
+            </div>
+            <button type="button" onclick="document.getElementById('danztrack-sticky-bar').remove()" class="text-gray-400 hover:text-white p-1 transition shrink-0" aria-label="Dismiss banner" title="Close banner">
+              <svg class="w-4 h-4 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+        `;
+          }
+
+          // 2. Timeline Card Badge -> LIVE NOW
+          const cardBadge = document.getElementById("danztrack-card-badge");
+          if (cardBadge) {
+            cardBadge.className = "absolute top-4 right-4 z-20 bg-red-600/20 backdrop-blur-md border border-red-500 text-red-400 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-[0_0_12px_rgba(239,68,68,0.5)]";
+            cardBadge.innerHTML = `
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+          </span>
+          <span class="font-black text-[11px] tracking-wider uppercase font-mono">LIVE NOW</span>
+        `;
+          }
+
+          // 3. Timeline Card CTA -> WATCH LIVE NOW
+          const cardCta = document.getElementById("danztrack-card-cta");
+          if (cardCta) {
+            cardCta.className = "text-red-400 text-xs mt-3 font-black uppercase tracking-wider group-hover:translate-x-2 transition-transform animate-pulse";
+            cardCta.innerHTML = `Watch Live Now <i class="fa-solid fa-arrow-right ml-1"></i>`;
+          }
+
           return;
         }
 
+        // --- COUNTDOWN ACTIVE ---
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        const pad = (n) => String(n).padStart(2, '0');
+        const padDays = String(days).padStart(2, "0");
+        const padHours = String(hours).padStart(2, "0");
+        const padMins = String(minutes).padStart(2, "0");
+        const padSecs = String(seconds).padStart(2, "0");
 
-        if (days > 0) {
-          countdownEl.innerText = `${days}D ${pad(hours)}H ${pad(minutes)}M ${pad(seconds)}S`;
-        } else {
-          countdownEl.innerText = `${pad(hours)}H ${pad(minutes)}M ${pad(seconds)}S`;
+        // Header units
+        const daysEl = document.getElementById("bar-days");
+        const hoursEl = document.getElementById("bar-hours");
+        const minsEl = document.getElementById("bar-minutes");
+        const secsEl = document.getElementById("bar-seconds");
+
+        if (daysEl) daysEl.textContent = padDays;
+        if (hoursEl) hoursEl.textContent = padHours;
+        if (minsEl) minsEl.textContent = padMins;
+        if (secsEl) secsEl.textContent = padSecs;
+
+        // Timeline card units
+        const cardCountdown = document.getElementById("danztrack-countdown");
+        if (cardCountdown) {
+          cardCountdown.textContent = `${days}D ${padHours}H ${padMins}M ${padSecs}S`;
         }
       }
 
+      const timerInterval = setInterval(update, 1000);
       update();
-      setInterval(update, 1000);
-    }
+    })();
 
     // Run on page load
     document.addEventListener("DOMContentLoaded", initDanztrackCountdown);
