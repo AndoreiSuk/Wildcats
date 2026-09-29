@@ -299,3 +299,4 @@ if (rosterContainer && btnLeft && btnRight) {
     });
   });
 }
+
