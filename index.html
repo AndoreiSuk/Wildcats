@@ -821,7 +821,7 @@
         c.addEventListener('click', (e) => {
           if (!desk.matches && !c.classList.contains('is-active')) {
             e.preventDefault();
-            c.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            rail.scrollTo({ left: c.offsetLeft - (rail.clientWidth - c.offsetWidth) / 2, behavior: 'smooth' });
           }
         });
       });
@@ -912,7 +912,11 @@
         rail.innerHTML = list.map(card).join('');
         cards = [...rail.children]; rail.scrollTo({ left: 0, behavior: 'auto' });
         $('ch-count').textContent = list.length; chips(); sync();
-        const on = chipsEl.querySelector('[aria-pressed="true"]'); if (on) on.scrollIntoView({ inline: 'center', block: 'nearest' });
+        const on = chipsEl.querySelector('[aria-pressed="true"]');
+        if (on) {
+          const x = on.getBoundingClientRect().left - chipsEl.getBoundingClientRect().left + chipsEl.scrollLeft;
+          chipsEl.scrollTo({ left: x - (chipsEl.clientWidth - on.offsetWidth) / 2, behavior: 'smooth' });
+        }
       };
 
       const setFilter = (s) => { if (s !== filter) { filter = s; render(); } };
@@ -1046,7 +1050,8 @@
         { t: 'Best in Production Number' },
         { t: 'Best in Creative Video' },
         { t: 'Best in Choreography' },
-        { t: 'Best Choreographer: Buds Capatagan', hot: 1 }
+        { t: 'Best Choreographer: Buds Capatagan', hot: 1 },
+        { t: 'Best Choreographer: Nathaniel Bañares', hot: 1 }
       ], .9)}</div>
       </section>
 
