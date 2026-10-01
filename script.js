@@ -129,23 +129,22 @@ const champData = {
     title: "Monster Division Champions",
     result: "Grand Champion",
     division: "Monster Division",
-    img: "images/WildcatsWSBVisualizer.jpg",
+    img: "images/wildcatslogo.jpg",
     gallery: [
-      "images/WildcatsWSBVisualizer.jpg"
+      "images/comingsoon.jpg"
     ],
     desc: "They didn't have to look down. They only looked ahead. Suited in tradition's formal attire, the pack brought laser-focus precision to USTP CDO and captured the Monster Division crown at World Supremacy Battlegrounds 2026.",
   },
   2026.1: {
     subtitle: "DANZTRACK PHILIPPINES 2026",
     title: "The 4-Peat Quest",
-    result: "N/A",
+    result: "Grand Champion",
     division: "College Division",
     img: "images/wildcatslogo.jpg",
     gallery: [
-      "images/questionmark.jpg"
+      "images/comingsoon.jpg"
     ],
-    desc: "Three consecutive national crowns. One unbroken legacy. This Sept 30, the wildcats will return to the Danztrack Philippines stage to defend their title and pursue a historic 4-peat. The question is: can they do it?",
-  },
+    desc: "Four consecutive crowns. One unbroken legacy. The Wildcats have conquered the stage once again, securing a historic 4-peat and cementing their place in the history of Danztrack Philippines."  },
 };
 
 // Danztrack PH 2026 Floating Bar Countdown
