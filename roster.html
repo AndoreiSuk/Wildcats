@@ -376,83 +376,85 @@
 
     <!-- =========================================================
        ROSTER DATA + LOGIC
-       To add a member: add one row to the right list below.
-       Every list below (athletes, allies, Rawaten, future events)
-       uses the SAME card, in this format:
-         [number, name, image, role, flag, crew]
-         - image: file inside the images/ folder
-         - role:  optional (defaults to 'Performer')
-         - flag:  optional, 'pres' (gold PRES badge) or 'head' (gold number)
-         - crew:  optional, shows a small orange crew tag (for allies)
+       Format:
+         CHOREOS: [name, image, role, isLead, instagram_handle_or_url]
+         ATHLETES/ALLIES: [num, name, image, role, flag, crew, instagram_handle_or_url]
+         - instagram: e.g. '@username', 'username', or 'https://instagram.com/username'
   ========================================================= -->
     <script>
-        // Choreographers: [name, image, role, isLead]
+        // Choreographers: [name, image, role, isLead, instagram]
         const CHOREOS = [
-            ['Buds Leo Capatagan', 'BudsChoreographer.jpg', 'Head Choreographer', true],
-            ['Nathaniel Bañares', 'NatnatChoreographer.jpg', 'Head Choreographer'],
-            ['Michael Vince Tingson', 'MichaelVinceChoreographer.jpg', 'Co-Choreographer'],
-            ['Adrian Ray Agosto', 'AdrianRayChoreographer.jpg', 'Co-Choreographer'],
-
-            ['Jhoruz Seville', 'JhoruzAmbot.jpg', 'Co-Choreographer'],
-            ['JM Lanioso', 'JMLanioso.jpg', 'Co-Choreographer']
+            ['Buds Leo Capatagan', 'BudsChoreographer.jpg', 'Head Choreographer', true, ''],
+            ['Nathaniel Bañares', 'NatnatChoreographer.jpg', 'Head Choreographer', false, ''],
+            ['Michael Vince Tingson', 'MichaelVinceChoreographer.jpg', 'Co-Choreographer', false, ''],
+            ['Adrian Ray Agosto', 'AdrianRayChoreographer.jpg', 'Co-Choreographer', false, ''],
+            ['Jhoruz Seville', 'JhoruzAmbot.jpg', 'Co-Choreographer', false, ''],
+            ['JM Lanioso', 'JMLanioso.jpg', 'Co-Choreographer', false, '']
         ];
 
-        // Danztrack & WSB lineup
+        // Danztrack & WSB lineup: [num, name, image, role, flag, crew, instagram]
         const ATHLETES = [
-            [1, 'Sean Jric B. Gabor', 'corrupt/sean.webp'],
-            [2, 'Joexua Ross Rieck L. Paco', 'corrupt/rieck.webp'],
-            [3, 'John Lloyed M. Suaring', 'corrupt/jl.webp'],
-            [4, 'Rujen Nephi Y. Amboang', 'corrupt/rujen.webp'],
-            [5, 'Samantha B. Palubon', 'corrupt/sam.webp', 'Technical Lead • Athlete'],
-            [6, 'Kylle A. Milvar', 'corrupt/kylle.webp'],
-            [7, 'Janiel Eubert M. Lumpaz', 'corrupt/coach.webp'],
-            [8, 'Kersie Braice D. Batulan', 'corrupt/butata.webp'],
-            [9, 'Jel Erica S. Natinga', 'corrupt/erica.webp'],
-            [10, 'Carlo Enrique R. Montejo', 'corrupt/carlo.webp'],
-            [11, 'Serenity Shin A. Torion', 'corrupt/shin.webp'],
-            [12, 'John Wyne G. Palubon', 'corrupt/wyne.webp'],
-            [13, 'Eman V. Sumalinog', 'corrupt/eman.webp'],
-            [14, 'Jachin Bryan D. Ligue', 'corrupt/jachin.webp'],
-            [15, 'Derrick Nicholas O. Tabimina', 'corrupt/derrick.webp'],
-            [16, 'Nelle Claresse A. Lado', 'corrupt/nelle.webp'],
-            [17, 'Joexua Cris Naesh L. Paco', 'corrupt/naesh.webp'],
-            [18, 'Jezryl I. Pagente', 'corrupt/jezryl.webp'],
-            [19, 'Lorenzo Miguel J. Gomez', 'corrupt/lm.webp'],
-            [20, 'Mariah Passy D. Pangasian', 'corrupt/aya.webp'],
-            [21, 'Art Florens B. Bendanillo', 'corrupt/art.webp'],
-            [22, 'Reden Jules B. Tracarol', 'corrupt/jules.webp'],
-            [23, 'Princess Jane E. Ganaden', 'corrupt/nads.webp'],
-            [24, 'Jericho B. Jabla', 'corrupt/echo.webp'],
-            [25, 'Methos M. Calunod', 'corrupt/methos.webp'],
-            [26, 'Grazelle Dimple-Ann Q. Adigue', 'corrupt/grazelle.webp'],
-            [27, 'Rufel F. Barluado', 'corrupt/rufel.webp'],
-            [28, 'Princess Lucille C. Mutya', 'corrupt/ipin.webp'],
-            [29, 'Lhiegy Gwyn B. Sacal', 'corrupt/lhiegy.webp'],
-            [30, 'Buds Leo Capatagan', 'corrupt/buds.webp', 'Head Choreo • Performer', 'head']
-        ];
 
-        // WSB allied crews (same card, plus the crew tag as the 6th item)
+            [1, 'Sean Jric B. Gabor', 'corrupt/sean.webp', 'Performer', '', '', ''],
+            [2, 'Joexua Ross Rieck L. Paco', 'corrupt/rieck.webp', 'Performer', '', '', ''],
+            [3, 'John Lloyed M. Suaring', 'corrupt/jl.webp', 'Performer', '', '', ''],
+            [4, 'Rujen Nephi Y. Amboang', 'corrupt/rujen.webp', 'Performer', '', '', ''],
+            [5, 'Samantha B. Palubon', 'corrupt/sam.webp', 'Technical Lead • Athlete', '', '', ''],
+            [6, 'Kylle A. Milvar', 'corrupt/kylle.webp', 'Performer', '', '', ''], [7, 'Janiel Eubert M. Lumpaz', 'corrupt/coach.webp', 'Performer', '', '', ''],
+            [8, 'Kersie Braice D. Batulan', 'corrupt/butata.webp', 'Performer', '', '', ''],
+            [9, 'Jel Erica S. Natinga', 'corrupt/erica.webp', 'Performer', '', '', ''],
+            [10, 'Carlo Enrique R. Montejo', 'corrupt/carlo.webp', 'Performer', '', '', ''],
+            [11, 'Serenity Shin A. Torion', 'corrupt/shin.webp', 'Performer', '', '', ''],
+            [12, 'John Wyne G. Palubon', 'corrupt/wyne.webp', 'Performer', '', '', ''],
+            [13, 'Eman V. Sumalinog', 'corrupt/eman.webp', 'Performer', '', '', ''],
+            [14, 'Jachin Bryan D. Ligue', 'corrupt/jachin.webp', 'Performer', '', '', ''],
+            [15, 'Derrick Nicholas O. Tabimina', 'corrupt/derrick.webp', 'Performer', '', '', ''],
+            [16, 'Nelle Claresse A. Lado', 'corrupt/nelle.webp', 'Performer', '', '', ''],
+            [17, 'Joexua Cris Naesh L. Paco', 'corrupt/naesh.webp', 'Performer', '', '', ''],
+            [18, 'Jezryl I. Pagente', 'corrupt/jezryl.webp', 'Performer', '', '', ''],
+            [19, 'Lorenzo Miguel J. Gomez', 'corrupt/lm.webp', 'Performer', '', '', ''],
+            [20, 'Mariah Passy D. Pangasian', 'corrupt/aya.webp', 'Performer', '', '', ''],
+            [21, 'Art Florens B. Bendanillo', 'corrupt/art.webp', 'Performer', '', '', ''],
+            [22, 'Reden Jules B. Tracarol', 'corrupt/jules.webp', 'Performer', '', '', ''],
+            [23, 'Princess Jane E. Ganaden', 'corrupt/nads.webp', 'Performer', '', '', ''],
+            [24, 'Jericho B. Jabla', 'corrupt/echo.webp', 'Performer', '', '', ''],
+            [25, 'Methos M. Calunod', 'corrupt/methos.webp', 'Performer', '', '', ''],
+            [26, 'Grazelle Dimple-Ann Q. Adigue', 'corrupt/grazelle.webp', 'Performer', '', '', ''],
+            [27, 'Rufel F. Barluado', 'corrupt/rufel.webp', 'Performer', '', '', ''],
+            [28, 'Princess Lucille C. Mutya', 'corrupt/ipin.webp', 'Performer', '', '', ''],
+            [29, 'Lhiegy Gwyn B. Sacal', 'corrupt/lhiegy.webp', 'Performer', '', '', ''],
+            [30, 'Buds Leo Capatagan', 'corrupt/buds.webp', 'Head Choreo • Performer', 'head', '', '']];
+
+        // WSB allied crews
         const ALLIES = [
-            [1, 'Justine Caylan', 'allies/justine.webp', 'Wildcats Performer', '', 'Hype It Up'],
-            [2, 'Andrey Gwynn N. Monsanto', 'allies/andrey1.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [3, 'Katelyn Lou R. Panorel', 'allies/katelyn2.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [4, 'Precious P. Lacsi', 'allies/precious1.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [5, 'Diana Fe Gian', 'allies/diana1.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [6, 'Cyrus Jake Azucena', 'allies/cyrus.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [7, 'Luke John Razada', 'allies/luke1.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [8, 'Yue Anthony A. Garcia', 'allies/yue.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [9, 'Lyanne M. Bautista', 'allies/lyanne1.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [10, 'Crecia P. Patagani', 'allies/paring1.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [11, 'Joseph Bangos', 'allies/joseph.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [12, 'James Arthur Oga', 'allies/james.webp', 'Wildcats Performer', '', 'League of Aces'],
-            [13, 'Khent Amber P. Paquingan', 'allies/khent.webp', 'Wildcats Performer', '', 'League of Aces'],
+            [1, 'Justine Caylan', 'allies/justine.webp', 'Wildcats Performer', '', 'Hype It Up', ''],
+            [2, 'Andrey Gwynn N. Monsanto', 'allies/andrey1.webp', 'Wildcats Performer', '', 'League of Aces', ''],
+            [3, 'Katelyn Lou R. Panorel', 'allies/katelyn2.webp', 'Wildcats Performer', '', 'League of Aces', ''],
+            [4, 'Precious P. Lacsi', 'allies/precious1.webp', 'Wildcats Performer', '', 'League of Aces', ''],
+            [5, 'Diana Fe Gian', 'allies/diana1.webp', 'Wildcats Performer', '', 'League of Aces', ''],
+            [6, 'Cyrus Jake Azucena', 'allies/cyrus.webp', 'Wildcats Performer', '', 'League of Aces', ''],
+            [7, 'Luke John Razada', 'allies/luke1.webp', 'Wildcats Performer', '', 'League of Aces', ''],
+            [8, 'Yue Anthony A. Garcia', 'allies/yue.webp', 'Wildcats Performer', '', 'League of Aces', ''],
+            [9, 'Lyanne M. Bautista', 'allies/lyanne1.webp', 'Wildcats Performer', '', 'League of Aces', ''],
+            [10, 'Crecia P. Patagani', 'allies/paring1.webp', 'Wildcats Performer', '', 'League of Aces', ''],
+            [11, 'Joseph Bangos', 'allies/joseph.webp', 'Wildcats Performer', '', 'League of Aces', ''],
+            [12, 'James Arthur Oga', 'allies/james1.jpg', 'Wildcats Performer', '', 'League of Aces', ''],
+            [13, 'Khent Amber P. Paquingan', 'allies/khent.webp', 'Wildcats Performer', '', 'League of Aces', '']
         ];
 
-        // Rawaten Extravaganza 2026: leave empty until the lineup is ready, e.g.
-        // [1, 'Full Name', 'rawaten/name.jpg'],
+        // Rawaten Extravaganza 2026
         const RAWATEN = [];
 
-        /* ---------- Image fallback: Wildcats logo, never a stranger's photo ---------- */
+        /* ---------- Helper: Resolve Instagram URL ---------- */
+        function getIgUrl(handle) {
+            if (!handle || typeof handle !== 'string') return null;
+            const trimmed = handle.trim();
+            if (!trimmed) return null;
+            if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) return trimmed;
+            return `https://instagram.com/${trimmed.replace(/^@/, '')}`;
+        }
+
+        /* ---------- Image fallback: Wildcats logo ---------- */
         function imgFallback(img) {
             img.onerror = null;
             img.src = 'images/wildcatslogokingkara.png';
@@ -467,20 +469,26 @@
             `<img src="images/${src}" alt="${alt}" onerror="imgFallback(this)" loading="lazy"
                 class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />`;
 
-        const choreoCard = ([name, img, role, lead]) => `
-            <div class="member-card group relative bg-[#0d0d10] rounded-xl border ${lead ? 'border-wildcat-gold/40 hover:border-wildcat-gold' : 'border-zinc-800 hover:border-wildcat-gold'} transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-lg">
-                <div class="aspect-[3/4] w-full overflow-hidden relative bg-black">
-                    ${photo(img, name)}${GRAD}
-                    <span class="absolute top-2 left-2 font-telemetry text-[8px] sm:text-[9px] font-bold ${lead ? 'text-black bg-wildcat-gold' : 'text-white bg-zinc-800'} px-1.5 py-0.5 rounded uppercase">${lead ? 'LEAD DIRECTOR' : 'CHOREO'}</span>
-                </div>
-                <div class="p-3 border-t border-zinc-900 flex flex-col justify-center min-h-[70px]">
-                    <h4 class="font-heading font-black text-xs sm:text-sm uppercase italic text-white group-hover:text-wildcat-gold transition leading-tight break-words">${name}</h4>
-                    <span class="font-telemetry text-[9px] text-zinc-500 uppercase tracking-wider block mt-1">${role}</span>
-                </div>
-            </div>`;
+        const choreoCard = ([name, img, role, lead, ig = '']) => {
+            const url = getIgUrl(ig);
+            const tag = url ? 'a' : 'div';
+            const linkProps = url ? `href="${url}" target="_blank" rel="noopener noreferrer"` : '';
 
-        // ONE card for every lineup (athletes, allies, Rawaten, future events)
-        const memberCard = ([num, name, img, role = 'Performer', flag = '', crew = '']) => {
+            return `
+    <${tag} ${linkProps} class="member-card group relative bg-[#0d0d10] rounded-xl border ${lead ? 'border-wildcat-gold/40 hover:border-wildcat-gold' : 'border-zinc-800 hover:border-wildcat-gold'} transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-lg block ${url ? 'cursor-pointer' : ''}">
+        <div class="aspect-[3/4] w-full overflow-hidden relative bg-black">
+            ${photo(img, name)}${GRAD}
+            <span class="absolute top-2 left-2 font-telemetry text-[8px] sm:text-[9px] font-bold ${lead ? 'text-black bg-wildcat-gold' : 'text-white bg-zinc-800'} px-1.5 py-0.5 rounded uppercase">${lead ? 'LEAD DIRECTOR' : 'CHOREO'}</span>
+        </div>
+        <div class="p-3 border-t border-zinc-900 flex flex-col justify-center min-h-[70px]">
+            <h4 class="font-heading font-black text-xs sm:text-sm uppercase italic text-white group-hover:text-wildcat-gold transition leading-tight break-words">${name}</h4>
+            <span class="font-telemetry text-[9px] text-zinc-500 uppercase tracking-wider block mt-1">${role}</span>
+        </div>
+    </${tag}>`;
+        };
+
+        // Standard card for athletes, allies, etc.
+        const memberCard = ([num, name, img, role = 'Performer', flag = '', crew = '', ig = '']) => {
             const n = String(num).padStart(2, '0');
             const badge = flag === 'pres' ? `<span class="absolute top-2 left-2 font-telemetry text-[9px] font-bold text-black bg-wildcat-gold px-2 py-0.5 rounded">#${n} // PRES</span>`
                 : flag === 'head' ? `<span class="absolute top-2 left-2 font-telemetry text-[9px] font-bold text-wildcat-gold bg-black/80 backdrop-blur px-2 py-0.5 rounded">#${n}</span>`
@@ -488,30 +496,33 @@
             const crewTag = crew
                 ? `<span class="self-start mb-1.5 font-telemetry text-[8px] font-bold text-wildcat-orange bg-wildcat-orange/10 px-1.5 py-0.5 rounded border border-wildcat-orange/30 uppercase tracking-wider">${crew}</span>`
                 : '';
+
+            const url = getIgUrl(ig);
+            const tag = url ? 'a' : 'div';
+            const linkProps = url ? `href="${url}" target="_blank" rel="noopener noreferrer"` : '';
+
             return `
-            <div class="member-card group relative bg-[#0d0d10] rounded-xl border border-zinc-800/80 hover:border-wildcat-gold/50 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow">
-                <div class="aspect-[3/4] w-full overflow-hidden relative bg-black">
-                    ${photo(img, name)}${GRAD}${badge}
-                </div>
-                <div class="p-3 border-t border-zinc-900 flex flex-col justify-center min-h-[66px]">
-                    ${crewTag}
-                    <h4 class="font-heading font-black text-xs sm:text-sm uppercase italic text-white group-hover:text-wildcat-gold transition leading-tight break-words">${name}</h4>
-                    <span class="font-telemetry text-[9px] text-zinc-500 uppercase tracking-wider block mt-1">${role}</span>
-                </div>
-            </div>`;
+    <${tag} ${linkProps} class="member-card group relative bg-[#0d0d10] rounded-xl border border-zinc-800/80 hover:border-wildcat-gold/50 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow block ${url ? 'cursor-pointer' : ''}">
+        <div class="aspect-[3/4] w-full overflow-hidden relative bg-black">
+            ${photo(img, name)}${GRAD}${badge}
+        </div>
+        <div class="p-3 border-t border-zinc-900 flex flex-col justify-center min-h-[66px]">
+            ${crewTag}
+            <h4 class="font-heading font-black text-xs sm:text-sm uppercase italic text-white group-hover:text-wildcat-gold transition leading-tight break-words">${name}</h4>
+            <span class="font-telemetry text-[9px] text-zinc-500 uppercase tracking-wider block mt-1">${role}</span>
+        </div>
+    </${tag}>`;
         };
 
         /* ---------- Render ---------- */
         const $ = (id) => document.getElementById(id);
         const norm = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-        // Fills any grid with member cards; shows the "coming soon" box if the list is empty
         function fillGrid(gridId, list, emptyId) {
             $(gridId).innerHTML = list.map(memberCard).join('');
             if (emptyId) $(emptyId).classList.toggle('hidden', list.length > 0);
         }
 
-        // Main lineup (with search)
         function renderRoster(query = '') {
             const q = norm(query.trim().replace(/^#/, ''));
             const hit = (...fields) => !q || fields.some((f) => norm(String(f)).includes(q));
@@ -523,10 +534,8 @@
             fillGrid('athlete-grid', at);
             $('choreo-count').textContent = ch.length;
             $('athlete-count').textContent = at.length;
-            $('choreo-block').classList.toggle('hidden', !ch.length);
-            $('athlete-block').classList.toggle('hidden', !at.length);
-            $('no-results').classList.toggle('hidden', ch.length + at.length > 0);
-            $('no-results').textContent = `No members found for "${query.trim()}".`;
+            $('choreo-block').classList.toggle('hidden', !ch.length); $('athlete-block').classList.toggle('hidden', !at.length);
+            $('no-results').classList.toggle('hidden', ch.length + at.length > 0); $('no-results').textContent = `No members found for "${query.trim()}".`;
         }
 
         $('roster-search').addEventListener('input', (e) => renderRoster(e.target.value));
@@ -534,12 +543,12 @@
         fillGrid('allies-grid', ALLIES);
         fillGrid('rawaten-grid', RAWATEN, 'rawaten-empty');
 
-        // Tab counts (Buds appears in both main lists, so count unique people)
+        // Tab counts
         $('tab-count-main').textContent = new Set([...CHOREOS.map((c) => c[0]), ...ATHLETES.map((a) => a[1])]).size;
         $('tab-count-allies').textContent = ALLIES.length;
         $('tab-count-rawaten').textContent = RAWATEN.length || 'Soon';
 
-        /* ---------- Tabs (supports links like roster.html#rawaten) ---------- */
+        /* ---------- Tabs ---------- */
         const PANES = ['unified-champs', 'wsb-allies', 'rawaten'];
         const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -564,7 +573,6 @@
                 btn.setAttribute('aria-selected', String(btn.id === `tab-${targetId}`));
             });
 
-            // Center the active tab inside the tab bar only (scrollIntoView could shift the whole page sideways)
             const bar = $('campaign-tabs');
             const activeBtn = $(`tab-${targetId}`);
             if (bar && activeBtn) {
