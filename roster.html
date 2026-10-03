@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WILDCATS ROSTER</title>
+    <link rel="icon" type="image/png" href="images/wildcatslogokingkara1.png" />
+    <script src="page-transition.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;1,700&family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <script>
+        tailwind.config = {
+            // Hover styles only apply on devices that can really hover (no "stuck" hover on phones)
+            future: { hoverOnlyWhenSupported: true },
+            theme: {
+                extend: {
+                    colors: {
+                        'wildcat-gold': '#FFE600',
+                        'wildcat-orange': '#FF5500',
+                        'card-bg': '#0f0f12',
+                    },
+                    fontFamily: {
+                        heading: ['Syne', 'sans-serif'],
+                        telemetry: ['"Chakra Petch"', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Safety net: nothing can make the whole page scroll sideways.
+           (clip, not hidden, so the sticky tab bar keeps working) */
+        html,
+        body {
+            overflow-x: clip;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .stroke-title {
+            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.12);
+            color: transparent;
+        }
+
+        /* Custom smooth scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ffd700;
+            border-radius: 4px;
+        }
+
+        /* Campaign tabs */
+        .campaign-tab-btn {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .625rem 1.25rem;
+            border-radius: 9999px;
+            background: rgba(24, 24, 27, .9);
+            border: 1px solid #27272a;
+            color: #a1a1aa;
+            font-family: "Chakra Petch", sans-serif;
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            transition: all .25s;
+            cursor: pointer;
+        }
+
+        @media (hover: hover) {
+            .campaign-tab-btn:hover {
+                color: #fff;
+                border-color: #52525b;
+            }
+        }
+
+        .campaign-tab-btn:active {
+            transform: scale(.95);
+        }
+
+        .campaign-tab-btn:focus-visible {
+            outline: 2px solid #FFE600;
+            outline-offset: 2px;
+        }
+
+        .campaign-tab-btn[aria-selected="true"] {
+            background: #FFE600;
+            border-color: #FFE600;
+            color: #000;
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(255, 230, 0, .3);
+        }
+
+        .tab-count {
+            font-size: .625rem;
+            font-weight: 700;
+            padding: .05rem .45rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, .08);
+        }
+
+        .campaign-tab-btn[aria-selected="true"] .tab-count {
+            background: rgba(0, 0, 0, .15);
+        }
+
+        .member-card:focus-within {
+            border-color: rgba(255, 230, 0, .6);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#070709] text-white selection:bg-wildcat-gold selection:text-black min-h-screen flex flex-col font-sans">
+
+    <!-- NAVBAR -->
+    <nav
+        class="py-3 sm:py-4 px-4 border-b border-gray-800 bg-black/80 backdrop-blur-md fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+            <a href="index.html"
+                class="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold uppercase tracking-wider text-gray-400 hover:text-wildcat-gold transition duration-300 shrink-0">
+                <svg class="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+                <span class="sm:hidden">BACK</span><span class="hidden sm:inline">BACK TO HOME</span>
+            </a>
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                <img src="images/wildcatslogokingkara.png" alt="Wildcats Logo"
+                    class="h-7 sm:h-9 w-auto object-contain drop-shadow-md shrink-0" />
+                <div
+                    class="text-xs sm:text-xl font-black font-heading uppercase text-white tracking-wider whitespace-nowrap">
+                    Wildcats <span class="text-wildcat-gold">Roster</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <header class="pt-24 pb-12 sm:pt-32 sm:pb-16 relative overflow-hidden border-b border-zinc-900 bg-[#070709]">
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-wildcat-gold/10 rounded-full blur-[140px] pointer-events-none">
+        </div>
+        <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
+            <span
+                class="font-heading font-black uppercase italic tracking-tighter text-[16vw] leading-none stroke-title opacity-20 block">WILDCATS</span>
+        </div>
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none">
+        </div>
+
+        <div class="px-4 max-w-7xl mx-auto relative z-20 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900/90 border border-zinc-800 text-[10px] font-telemetry tracking-[0.25em] text-zinc-400 uppercase mb-4 shadow-xl">
+                <span class="w-1.5 h-1.5 rounded-full bg-wildcat-gold shadow-[0_0_8px_#FFE600] animate-pulse"></span>
+                <span>SPEC SHEET // OPERATIONAL LINEUPS</span>
+            </div>
+            <h1
+                class="font-heading text-4xl sm:text-6xl md:text-7xl font-black uppercase italic tracking-tighter text-white leading-none mb-3">
+                WILDCATS <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-wildcat-gold via-yellow-400 to-wildcat-orange pr-2 inline-block">ROSTER</span>
+            </h1>
+            <p class="text-zinc-400 text-xs sm:text-sm font-light max-w-xl mx-auto leading-relaxed">
+                Active operatives, competition drivers, and creative directors representing the MSU-IIT Wildcats across
+                regional and national battlegrounds.
+            </p>
+        </div>
+    </header>
+
+    <!-- STICKY CAMPAIGN TABS -->
+    <div class="sticky top-[53px] sm:top-[68px] z-40 bg-[#070709]/90 backdrop-blur-md border-b border-zinc-900">
+        <div id="campaign-tabs" role="tablist" aria-label="Campaign lineups"
+            class="relative max-w-7xl mx-auto flex items-center gap-2.5 overflow-x-auto hide-scrollbar py-3 px-4 sm:justify-center">
+            <button type="button" role="tab" id="tab-unified-champs" aria-controls="unified-champs" aria-selected="true"
+                onclick="switchCampaign('unified-champs')" class="campaign-tab-btn">
+                1. Danztrack &amp; WSB '26 <span id="tab-count-main" class="tab-count">35</span>
+            </button>
+            <button type="button" role="tab" id="tab-wsb-allies" aria-controls="wsb-allies" aria-selected="false"
+                onclick="switchCampaign('wsb-allies')" class="campaign-tab-btn">
+                2. WSB Allied Crews <span id="tab-count-allies" class="tab-count">1</span>
+            </button>
+            <button type="button" role="tab" id="tab-rawaten" aria-controls="rawaten" aria-selected="false"
+                onclick="switchCampaign('rawaten')" class="campaign-tab-btn">
+                3. Rawaten '26 <span id="tab-count-rawaten" class="tab-count">Soon</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT: TABBED PANES -->
+    <main class="max-w-7xl mx-auto px-4 py-12 flex-1 w-full">
+
+        <!-- PANE 1: DANZTRACK & WSB MONSTER -->
+        <section id="unified-champs" role="tabpanel" aria-labelledby="tab-unified-champs" class="campaign-pane block">
+
+            <div
+                class="flex flex-col lg:flex-row lg:items-end justify-between border-b border-zinc-800/80 pb-6 mb-8 gap-6">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-telemetry tracking-widest text-zinc-400 uppercase mb-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-wildcat-orange animate-pulse"></span>
+                        <span>DUAL-CROWN REGIME // 2026 MAIN LINEUP</span>
+                    </div>
+                    <h2
+                        class="font-heading text-3xl sm:text-5xl md:text-6xl font-black uppercase italic tracking-tighter text-white leading-none">
+                        DANZTRACK &amp; <span
+                            class="inline-block pr-2 text-transparent bg-clip-text bg-gradient-to-r from-wildcat-gold via-yellow-400 to-wildcat-orange">WSB
+                            MONSTER</span>
+                    </h2>
+                    <p class="mt-3 text-zinc-400 text-xs sm:text-sm font-light max-w-2xl leading-relaxed">
+                        The core 35 operatives who delivered the historic 4-Peat defense at Danztrack Philippines and
+                        won the WSB Monster Division Regional Championship.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 font-telemetry text-xs">
+                    <div
+                        class="px-3.5 py-2.5 rounded-xl bg-[#0d0d10] border border-wildcat-gold/30 flex items-center gap-2 shadow-md">
+                        <span class="w-2 h-2 rounded-full bg-wildcat-gold"></span>
+                        <div>
+                            <span class="text-[9px] text-zinc-500 uppercase block leading-none">DANZTRACK 2026</span>
+                            <span class="text-white font-bold uppercase tracking-tight text-[11px]">4-PEAT
+                                CHAMPIONS</span>
+                        </div>
+                    </div>
+                    <div
+                        class="px-3.5 py-2.5 rounded-xl bg-[#0d0d10] border border-wildcat-orange/30 flex items-center gap-2 shadow-md">
+                        <span class="w-2 h-2 rounded-full bg-wildcat-orange"></span>
+                        <div>
+                            <span class="text-[9px] text-zinc-500 uppercase block leading-none">WSB MONSTER</span>
+                            <span class="text-white font-bold uppercase tracking-tight text-[11px]">1ST PLACE REGIONAL
+                                CHAMPIONS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div class="relative mb-10 max-w-md">
+                <i
+                    class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 text-sm pointer-events-none"></i>
+                <input id="roster-search" type="search" autocomplete="off" aria-label="Search the roster"
+                    placeholder="Search a name, role, or number..."
+                    class="w-full bg-[#0d0d10] border border-zinc-800 focus:border-wildcat-gold focus:outline-none rounded-full pl-11 pr-4 py-3 text-sm text-white placeholder-zinc-600 font-telemetry transition" />
+            </div>
+
+            <p id="no-results"
+                class="hidden text-center py-16 font-telemetry text-xs uppercase tracking-widest text-zinc-500">
+                No members found.
+            </p>
+
+            <!-- Choreography team -->
+            <div id="choreo-block" class="mb-14">
+                <div
+                    class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 mb-4 border-b border-zinc-900 pb-2">
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="w-2 h-2 rounded-full bg-wildcat-gold shadow-[0_0_8px_#FFE600] animate-pulse"></span>
+                        <h3 class="font-telemetry text-xs uppercase tracking-widest text-wildcat-gold font-bold">
+                            CREATIVE DIRECTORS &amp; CHOREOGRAPHERS (<span id="choreo-count">6</span>)
+                        </h3>
+                    </div>
+                </div>
+                <div id="choreo-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4"></div>
+            </div>
+
+            <!-- Athletes -->
+            <div id="athlete-block">
+                <div
+                    class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 mb-4 border-b border-zinc-900 pb-2">
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="w-2 h-2 rounded-full bg-wildcat-orange shadow-[0_0_8px_#FF5500] animate-pulse"></span>
+                        <h3 class="font-telemetry text-xs uppercase tracking-widest text-wildcat-orange font-bold">
+                            COMPETITION LINEUP &amp; ATHLETES (<span id="athlete-count">30</span>)
+                        </h3>
+                    </div>
+                    <span class="font-telemetry text-[10px] text-zinc-500 uppercase">ACTIVE OPERATIVES</span>
+                </div>
+                <div id="athlete-grid"
+                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"></div>
+            </div>
+        </section>
+
+        <!-- PANE 2: WSB ALLIED CREWS (same cards as the main lineup) -->
+        <section id="wsb-allies" role="tabpanel" aria-labelledby="tab-wsb-allies" class="campaign-pane hidden">
+            <div
+                class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-zinc-800/80 pb-5 mb-8 gap-4">
+                <div>
+                    <span
+                        class="text-wildcat-orange font-telemetry text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] block mb-1">
+                        SATELLITE &amp; OUTSIDE CREWS
+                    </span>
+                    <h2
+                        class="font-heading text-2xl sm:text-4xl font-black uppercase italic tracking-tighter text-white">
+                        EXTERNAL ALLIES
+                    </h2>
+                </div>
+                <div class="text-left sm:text-right font-telemetry text-[11px] sm:text-xs text-zinc-500">
+                    WILDCATS OPERATIVES COMPETING UNDER OUTSIDE BANNERS
+                </div>
+            </div>
+            <div id="allies-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+            </div>
+        </section>
+
+        <!-- PANE 3: RAWATEN (same cards as the main lineup) -->
+        <section id="rawaten" role="tabpanel" aria-labelledby="tab-rawaten" class="campaign-pane hidden">
+            <div
+                class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-zinc-800/80 pb-5 mb-8 gap-4">
+                <div>
+                    <span
+                        class="text-wildcat-gold font-telemetry text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] block mb-1">
+                        MARAWI EXHIBITION
+                    </span>
+                    <h2
+                        class="font-heading text-2xl sm:text-4xl font-black uppercase italic tracking-tighter text-white">
+                        RAWATEN EXTRAVAGANZA 2026
+                    </h2>
+                </div>
+                <div class="text-left sm:text-right font-telemetry text-[11px] sm:text-xs text-zinc-500">
+                    MSU-MAIN GRANDSTAND
+                </div>
+            </div>
+            <div id="rawaten-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+            </div>
+            <!-- Shown automatically while the RAWATEN list below is empty -->
+            <div id="rawaten-empty" class="hidden p-8 rounded-2xl bg-[#0d0d10] border border-zinc-800 text-center">
+                <p class="font-telemetry text-xs uppercase tracking-widest text-zinc-400">
+                    Exhibition lineup is being edited // Check back soon for the official RAWATEN 2026 roster.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-zinc-900 bg-black/60 py-10 sm:py-12 px-4 text-center font-telemetry relative z-20">
+        <div class="flex justify-center gap-7 sm:gap-8 mb-6 sm:mb-8">
+            <a href="https://facebook.com/MSUIITWILDCATS" target="_blank" rel="noopener noreferrer"
+                class="text-zinc-500 hover:text-blue-500 text-xl sm:text-2xl transition-colors duration-300"
+                aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/msuiitwildcats" target="_blank" rel="noopener noreferrer"
+                class="text-zinc-500 hover:text-pink-500 text-xl sm:text-2xl transition-colors duration-300"
+                aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p class="text-zinc-500 text-xs sm:text-sm tracking-wide px-2 mb-3">
+            MSU-IIT WILDCATS STREETDANCE TEAM • OFFICIAL COMPETITIVE ROSTER LOGS
+        </p>
+        <p class="text-zinc-600 text-[10px] sm:text-xs px-4">
+            © 2026 MSU-IIT Wildcats. Made with ❤️ in Iligan City. Into the Wild—Cats!!!
+        </p>
+    </footer>
+
+    <!-- =========================================================
+       ROSTER DATA + LOGIC
+       To add a member: add one row to the right list below.
+       Every list below (athletes, allies, Rawaten, future events)
+       uses the SAME card, in this format:
+         [number, name, image, role, flag, crew]
+         - image: file inside the images/ folder
+         - role:  optional (defaults to 'Performer')
+         - flag:  optional, 'pres' (gold PRES badge) or 'head' (gold number)
+         - crew:  optional, shows a small orange crew tag (for allies)
+  ========================================================= -->
+    <script>
+        // Choreographers: [name, image, role, isLead]
+        const CHOREOS = [
+            ['Buds Leo Capatagan', 'BudsChoreographer.jpg', 'Head Choreographer', true],
+            ['Nathaniel Bañares', 'NatnatChoreographer.jpg', 'Head Choreographer'],
+            ['Michael Vince Tingson', 'MichaelVinceChoreographer.jpg', 'Co-Choreographer'],
+            ['Adrian Ray Agosto', 'AdrianRayChoreographer.jpg', 'Co-Choreographer'],
+
+            ['Jhoruz Seville', 'JhoruzAmbot.jpg', 'Co-Choreographer'],
+            ['JM Lanioso', 'JMLanioso.jpg', 'Co-Choreographer']
+        ];
+
+        // Danztrack & WSB lineup
+        const ATHLETES = [
+            [1, 'Sean Jric B. Gabor', 'corrupt/sean.png'],
+            [2, 'Joexua Ross Rieck L. Paco', 'corrupt/rieck.png'],
+            [3, 'John Lloyed M. Suaring', 'corrupt/jl.png'],
+            [4, 'Rujen Nephi Y. Amboang', 'corrupt/rujen.png'],
+            [5, 'Samantha B. Palubon', 'corrupt/sam.png', 'Technical Lead • Athlete'],
+            [6, 'Kylle A. Milvar', 'corrupt/kylle.png'],
+            [7, 'Janiel Eubert M. Lumpaz', 'corrupt/coach.png'],
+            [8, 'Kersie Braice D. Batulan', 'corrupt/butata.png'],
+            [9, 'Jel Erica S. Natinga', 'corrupt/erica.png'],
+            [10, 'Carlo Enrique R. Montejo', 'corrupt/carlo.png'],
+            [11, 'Serenity Shin A. Torion', 'corrupt/shin.png'],
+            [12, 'John Wyne G. Palubon', 'corrupt/wyne.png'],
+            [13, 'Eman V. Sumalinog', 'corrupt/eman.png'],
+            [14, 'Jachin Bryan D. Ligue', 'corrupt/jachin.png'],
+            [15, 'Derrick Nicholas O. Tabimina', 'corrupt/derrick.png'],
+            [16, 'Nelle Claresse A. Lado', 'corrupt/nelle.png'],
+            [17, 'Joexua Cris Naesh L. Paco', 'corrupt/naesh.png'],
+            [18, 'Jezryl I. Pagente', 'corrupt/jezryl.png'],
+            [19, 'Lorenzo Miguel J. Gomez', 'corrupt/lm.png'],
+            [20, 'Mariah Passy D. Pangasian', 'corrupt/aya.png'],
+            [21, 'Art Florens B. Bendanillo', 'corrupt/art.png'],
+            [22, 'Reden Jules B. Tracarol', 'corrupt/jules.png'],
+            [23, 'Princess Jane E. Ganaden', 'corrupt/nads.png'],
+            [24, 'Jericho B. Jabla', 'corrupt/echo.png'],
+            [25, 'Methos M. Calunod', 'corrupt/methos.png'],
+            [26, 'Grazelle Dimple-Ann Q. Adigue', 'corrupt/grazelle.png'],
+            [27, 'Rufel F. Barluado', 'corrupt/rufel.png'],
+            [28, 'Princess Lucille C. Mutya', 'corrupt/ipin.png'],
+            [29, 'Lhiegy Gwyn B. Sacal', 'corrupt/lhiegy.png'],
+            [30, 'Buds Leo Capatagan', 'corrupt/buds.png', 'Head Choreo • Performer', 'head']
+        ];
+
+        // WSB allied crews (same card, plus the crew tag as the 6th item)
+        const ALLIES = [
+            [1, 'Justine Caylan', 'allies/justine.jpg', 'Wildcats Performer', '', 'Hype It Up'],
+            [2, 'Andrey Gwynn N. Monsanto', 'allies/andrey1.jpg', 'Wildcats Performer', '', 'League of Aces'],
+            [3, 'Katelyn Lou R. Panorel', 'allies/katelyn2.jpg', 'Wildcats Performer', '', 'League of Aces'],
+            [4, 'Precious P. Lacsi', 'allies/precious1.jpg', 'Wildcats Performer', '', 'League of Aces'],
+            [5, 'Diana Fe Gian', 'allies/diana1.jpg', 'Wildcats Performer', '', 'League of Aces'],
+            [6, 'Cyrus Jake Azucena', 'allies/cyrus.jpg', 'Wildcats Performer', '', 'League of Aces'],
+            [7, 'Luke John Razada', 'allies/luke1.jpg', 'Wildcats Performer', '', 'League of Aces'],
+            [8, 'Yue Anthony A. Garcia', 'allies/yue.jpg', 'Wildcats Performer', '', 'League of Aces'],
+            [9, 'Lyanne M. Bautista', 'allies/lyanne1.jpg', 'Wildcats Performer', '', 'League of Aces'],
+            [10, 'Crecia P. Patagani', 'allies/paring1.jpg', 'Wildcats Performer', '', 'League of Aces'],
+            [11, 'Joseph Bangos', 'allies/joseph.jpg', 'Wildcats Performer', '', 'League of Aces'],
+            [12, 'James Arthur Oga', 'allies/james.jpg', 'Wildcats Performer', '', 'League of Aces'],
+        ];
+
+        // Rawaten Extravaganza 2026: leave empty until the lineup is ready, e.g.
+        // [1, 'Full Name', 'rawaten/name.jpg'],
+        const RAWATEN = [];
+
+        /* ---------- Image fallback: Wildcats logo, never a stranger's photo ---------- */
+        function imgFallback(img) {
+            img.onerror = null;
+            img.src = 'images/wildcatslogokingkara.png';
+            img.style.objectFit = 'contain';
+            img.style.padding = '2rem';
+            img.style.opacity = '.3';
+        }
+
+        /* ---------- Card templates ---------- */
+        const GRAD = '<div class="absolute inset-0 bg-gradient-to-t from-[#0d0d10] via-transparent to-transparent"></div>';
+        const photo = (src, alt) =>
+            `<img src="images/${src}" alt="${alt}" onerror="imgFallback(this)" loading="lazy"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />`;
+
+        const choreoCard = ([name, img, role, lead]) => `
+            <div class="member-card group relative bg-[#0d0d10] rounded-xl border ${lead ? 'border-wildcat-gold/40 hover:border-wildcat-gold' : 'border-zinc-800 hover:border-wildcat-gold'} transition-all duration-300 overflow-hidden flex flex-col justify-between shadow-lg">
+                <div class="aspect-[3/4] w-full overflow-hidden relative bg-black">
+                    ${photo(img, name)}${GRAD}
+                    <span class="absolute top-2 left-2 font-telemetry text-[8px] sm:text-[9px] font-bold ${lead ? 'text-black bg-wildcat-gold' : 'text-white bg-zinc-800'} px-1.5 py-0.5 rounded uppercase">${lead ? 'LEAD DIRECTOR' : 'CHOREO'}</span>
+                </div>
+                <div class="p-3 border-t border-zinc-900 flex flex-col justify-center min-h-[70px]">
+                    <h4 class="font-heading font-black text-xs sm:text-sm uppercase italic text-white group-hover:text-wildcat-gold transition leading-tight break-words">${name}</h4>
+                    <span class="font-telemetry text-[9px] text-zinc-500 uppercase tracking-wider block mt-1">${role}</span>
+                </div>
+            </div>`;
+
+        // ONE card for every lineup (athletes, allies, Rawaten, future events)
+        const memberCard = ([num, name, img, role = 'Performer', flag = '', crew = '']) => {
+            const n = String(num).padStart(2, '0');
+            const badge = flag === 'pres' ? `<span class="absolute top-2 left-2 font-telemetry text-[9px] font-bold text-black bg-wildcat-gold px-2 py-0.5 rounded">#${n} // PRES</span>`
+                : flag === 'head' ? `<span class="absolute top-2 left-2 font-telemetry text-[9px] font-bold text-wildcat-gold bg-black/80 backdrop-blur px-2 py-0.5 rounded">#${n}</span>`
+                    : `<span class="absolute top-2 left-2 font-telemetry text-[9px] font-bold text-zinc-300 bg-black/80 backdrop-blur px-2 py-0.5 rounded">#${n}</span>`;
+            const crewTag = crew
+                ? `<span class="self-start mb-1.5 font-telemetry text-[8px] font-bold text-wildcat-orange bg-wildcat-orange/10 px-1.5 py-0.5 rounded border border-wildcat-orange/30 uppercase tracking-wider">${crew}</span>`
+                : '';
+            return `
+            <div class="member-card group relative bg-[#0d0d10] rounded-xl border border-zinc-800/80 hover:border-wildcat-gold/50 transition-all duration-300 overflow-hidden flex flex-col justify-between shadow">
+                <div class="aspect-[3/4] w-full overflow-hidden relative bg-black">
+                    ${photo(img, name)}${GRAD}${badge}
+                </div>
+                <div class="p-3 border-t border-zinc-900 flex flex-col justify-center min-h-[66px]">
+                    ${crewTag}
+                    <h4 class="font-heading font-black text-xs sm:text-sm uppercase italic text-white group-hover:text-wildcat-gold transition leading-tight break-words">${name}</h4>
+                    <span class="font-telemetry text-[9px] text-zinc-500 uppercase tracking-wider block mt-1">${role}</span>
+                </div>
+            </div>`;
+        };
+
+        /* ---------- Render ---------- */
+        const $ = (id) => document.getElementById(id);
+        const norm = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+        // Fills any grid with member cards; shows the "coming soon" box if the list is empty
+        function fillGrid(gridId, list, emptyId) {
+            $(gridId).innerHTML = list.map(memberCard).join('');
+            if (emptyId) $(emptyId).classList.toggle('hidden', list.length > 0);
+        }
+
+        // Main lineup (with search)
+        function renderRoster(query = '') {
+            const q = norm(query.trim().replace(/^#/, ''));
+            const hit = (...fields) => !q || fields.some((f) => norm(String(f)).includes(q));
+
+            const ch = CHOREOS.filter((c) => hit(c[0], c[2]));
+            const at = ATHLETES.filter((a) => hit(a[1], a[3] || 'Performer', a[0], String(a[0]).padStart(2, '0')));
+
+            $('choreo-grid').innerHTML = ch.map(choreoCard).join('');
+            fillGrid('athlete-grid', at);
+            $('choreo-count').textContent = ch.length;
+            $('athlete-count').textContent = at.length;
+            $('choreo-block').classList.toggle('hidden', !ch.length);
+            $('athlete-block').classList.toggle('hidden', !at.length);
+            $('no-results').classList.toggle('hidden', ch.length + at.length > 0);
+            $('no-results').textContent = `No members found for "${query.trim()}".`;
+        }
+
+        $('roster-search').addEventListener('input', (e) => renderRoster(e.target.value));
+        renderRoster();
+        fillGrid('allies-grid', ALLIES);
+        fillGrid('rawaten-grid', RAWATEN, 'rawaten-empty');
+
+        // Tab counts (Buds appears in both main lists, so count unique people)
+        $('tab-count-main').textContent = new Set([...CHOREOS.map((c) => c[0]), ...ATHLETES.map((a) => a[1])]).size;
+        $('tab-count-allies').textContent = ALLIES.length;
+        $('tab-count-rawaten').textContent = RAWATEN.length || 'Soon';
+
+        /* ---------- Tabs (supports links like roster.html#rawaten) ---------- */
+        const PANES = ['unified-champs', 'wsb-allies', 'rawaten'];
+        const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function switchCampaign(targetId, updateUrl = true) {
+            const target = $(targetId);
+            if (!target || !PANES.includes(targetId)) return;
+
+            document.querySelectorAll('.campaign-pane').forEach((s) => {
+                s.classList.add('hidden');
+                s.classList.remove('block');
+            });
+            target.classList.remove('hidden');
+            target.classList.add('block');
+            if (!reduceMotion) {
+                target.animate(
+                    [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'none' }],
+                    { duration: 350, easing: 'ease-out' }
+                );
+            }
+
+            document.querySelectorAll('.campaign-tab-btn').forEach((btn) => {
+                btn.setAttribute('aria-selected', String(btn.id === `tab-${targetId}`));
+            });
+
+            // Center the active tab inside the tab bar only (scrollIntoView could shift the whole page sideways)
+            const bar = $('campaign-tabs');
+            const activeBtn = $(`tab-${targetId}`);
+            if (bar && activeBtn) {
+                bar.scrollTo({
+                    left: activeBtn.offsetLeft - (bar.clientWidth - activeBtn.offsetWidth) / 2,
+                    behavior: reduceMotion ? 'auto' : 'smooth'
+                });
+            }
+
+            if (updateUrl) history.replaceState(null, '', '#' + targetId);
+        }
+
+        switchCampaign(location.hash.slice(1) || 'unified-champs', false);
+        addEventListener('hashchange', () => switchCampaign(location.hash.slice(1), false));
+    </script>
+
+</body>
+
+</html>

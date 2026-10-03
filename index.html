@@ -15,7 +15,10 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <script src="page-transition.js"></script>
+
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -45,14 +48,30 @@
 </head>
 
 <body class="bg-dark-bg text-white overflow-x-hidden">
-  <div id="splash-screen"
-    class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center cursor-pointer px-4 text-center">
+  <div id="splash-screen" role="button" tabindex="0" aria-label="Enter the MSU-IIT Wildcats website"
+    class="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center cursor-pointer px-4 text-center overflow-hidden select-none">
+
+    <!-- Ghost lettering -->
+    <span aria-hidden="true"
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-heading font-black italic uppercase tracking-tighter whitespace-nowrap text-[26vw] leading-none text-transparent pointer-events-none"
+      style="-webkit-text-stroke:1.5px rgba(255,255,255,.05)">WILDCATS</span>
+
+
+    <!-- Logo with rings -->
     <div id="splash-logo-container" class="relative group">
-      <img src="images/wildcatslogokingkara.png" alt="Click to Enter"
-        class="relative w-40 h-40 md:w-80 md:h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
+      <div class="sp-ring" aria-hidden="true"></div>
+      <div class="sp-ring-2" aria-hidden="true"></div>
+      <img src="images/wildcatslogokingkara.png" alt=""
+        class="sp-logo relative w-40 h-40 md:w-72 md:h-72 object-contain" />
     </div>
-    <p class="mt-8 text-gray-300 text-sm md:text-xl tracking-[0.3em] uppercase animate-pulse">
+
+    <p class="sp-up mt-12 md:mt-16 text-gray-200 text-sm md:text-xl tracking-[0.3em] uppercase" style="--d:.5s">
       Do you have what it takes to go wild??
+    </p>
+
+    <p aria-hidden="true"
+      class="absolute bottom-5 inset-x-0 text-[9px] sm:text-[11px] font-mono tracking-[0.3em] text-zinc-600 uppercase">
+      MSU-IIT Wildcats // Into the Wild-Cats!!!
     </p>
   </div>
 
@@ -74,14 +93,13 @@
         class="w-full max-w-7xl mx-auto flex items-center justify-between text-[9px] sm:text-xs font-mono tracking-widest text-zinc-500 uppercase z-20 pointer-events-none px-1">
         <!-- Left Side -->
         <div class="flex items-center gap-1.5 shrink-0">
-          <span class="w-1.5 h-1.5 rounded-full bg-wildcat-gold shadow-[0_0_8px_#FFD700] animate-pulse"></span>
           <span class="text-white">SYS // 2026</span>
         </div>
 
         <!-- Right Side (Now visible on mobile with flexible micro-spacing) -->
         <div class="flex items-center gap-1.5 sm:gap-3 text-zinc-500 shrink-0 text-right">
           <span class="text-white hidden min-[400px]:inline">9200 // COLLEGE CREW</span>
-          <span class="hidden min-[400px]:inline text-zinc-700">•</span>
+          <span class="hidden min-[400px]:inline text-wildcat-gold">•</span>
           <span class="text-white">8.2280° N, 124.2452° E</span>
         </div>
       </div>
@@ -124,10 +142,10 @@
           <a href="wildcats-news.html"
             class="group relative inline-flex items-center gap-3 px-8 py-3.5 sm:px-10 sm:py-4 rounded-full bg-gradient-to-r from-wildcat-gold to-yellow-400 text-black font-heading font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-[0_0_30px_rgba(255,215,0,0.35)] hover:shadow-[0_0_45px_rgba(255,215,0,0.6)] hover:scale-[1.02] active:scale-95">
             <span>SEE LATEST NEWS</span>
-            <svg class="w-4 h-4 stroke-current group-hover:translate-x-1 transition-transform" fill="none"
-              viewBox="0 0 24 24" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
+          </a>
+          <a href="roster.html"
+            class="group relative inline-flex items-center gap-3 px-8 py-3.5 sm:px-10 sm:py-4 rounded-full bg-gradient-to-r from-wildcat-gold to-yellow-400 text-black font-heading font-black text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-[0_0_30px_rgba(255,215,0,0.35)] hover:shadow-[0_0_45px_rgba(255,215,0,0.6)] hover:scale-[1.02] active:scale-95">
+            <span>MEET THE ROSTER</span>
           </a>
         </div>
 
@@ -768,9 +786,7 @@
           <div class="lg-body">
             <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">${e.title}</h3>
             <p class="text-sm text-gray-300 line-clamp-2">${e.desc}</p>
-            ${e.now
-          ? `<p id="danztrack-card-cta" class="text-red-400 text-xs mt-3 font-black uppercase tracking-wider group-hover:translate-x-2 transition-transform animate-pulse">Photos Uploading Soon...</p>`
-          : `<p class="${e.cta ? 'text-red-400 font-black animate-pulse group-hover:translate-x-2 transition-transform' : 'text-wildcat-gold font-bold'} text-xs mt-3 uppercase tracking-wider">${e.cta || 'Click to view'}</p>`}
+            <p class="${e.cta ? 'text-red-400 font-black animate-pulse group-hover:translate-x-2 transition-transform' : 'text-wildcat-gold font-bold'} text-xs mt-3 uppercase tracking-wider">${e.cta || 'Click to view'}</p>
           </div>
           <span class="lg-go"><i class="fa-solid fa-arrow-right text-sm"></i></span>
         </div>
@@ -1021,7 +1037,14 @@
     document.addEventListener("DOMContentLoaded", initDanztrackCountdown);
   </script>
 
+  <script>
+    // Keyboard users: Enter or Space enters the site (same as a click)
+    document.getElementById('splash-screen')?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.currentTarget.click(); }
+    });
+  </script>
 
+  <!-- CONGRATULATORY MESSAGE -->
   <script>
     (() => {
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;

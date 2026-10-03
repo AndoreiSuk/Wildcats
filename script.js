@@ -131,7 +131,7 @@ const champData = {
     division: "Monster Division",
     img: "images/wildcatslogo.jpg",
     gallery: [
-      "images/comingsoon.jpg"
+      "images/comingsoon.jpg",
     ],
     desc: "They didn't have to look down. They only looked ahead. Suited in tradition's formal attire, the pack brought laser-focus precision to USTP CDO and captured the Monster Division crown at World Supremacy Battlegrounds 2026.",
   },
@@ -140,9 +140,24 @@ const champData = {
     title: "The 4-Peat Quest",
     result: "Grand Champion",
     division: "College Division",
-    img: "images/wildcatslogo.jpg",
+    img: "images/2026/pic6.jpg",
     gallery: [
-      "images/comingsoon.jpg"
+      "images/2026/pic6.jpg",
+      "images/2026/pic2.jpg",
+      "images/2026/pic3.jpg",
+      "images/2026/pic4.jpg",
+      "images/2026/pic5.jpg",
+      "images/2026/pic7.jpg",
+      "images/2026/pic8.jpg",
+      "images/2026/pic9.jpg",
+      "images/2026/pic10.jpg",
+      "images/2026/pic11.jpg",
+      "images/2026/pic12.jpg",
+      "images/2026/pic13.jpg",
+      "images/2026/pic14.jpg",
+      "images/2026/pic15.jpg",
+      "images/2026/pic16.jpg",
+      "images/2026/pic17.jpg",
     ],
     desc: "Four consecutive crowns. One unbroken legacy. The Wildcats have conquered the stage once again, securing a historic 4-peat and cementing their place in the history of Danztrack Philippines."  },
 };
