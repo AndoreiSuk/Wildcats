@@ -45,6 +45,67 @@
       },
     };
   </script>
+
+  <style>
+    /* Locked = no page scroll and no scrollbar (splash + congratulation overlay) */
+    html.is-locked,
+    html.is-locked body {
+      overflow: hidden !important;
+    }
+
+    #splash-screen,
+    .wv {
+      touch-action: none;
+      overscroll-behavior: none;
+    }
+
+    html.skip-intro #splash-screen {
+      display: none !important;
+    }
+  </style>
+  <script>
+    // Blocks page scrolling (mouse wheel, touch swipe, keys) while the splash / overlay is on screen.
+    // Works on phones too: iOS ignores overflow:hidden on the page, so touch scrolling is blocked directly.
+    const ScrollLock = (() => {
+      let locks = 0;
+      const stop = (e) => e.preventDefault();
+      const stopKeys = (e) => {
+        if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+        if ([' ', 'PageUp', 'PageDown', 'Home', 'End', 'ArrowUp', 'ArrowDown'].includes(e.key) && e.target.tagName !== 'BUTTON') e.preventDefault();
+      };
+      return {
+        lock() {
+          if (locks++ > 0) return;
+          document.documentElement.classList.add('is-locked');
+          addEventListener('wheel', stop, { passive: false });
+          addEventListener('touchmove', stop, { passive: false });
+          addEventListener('keydown', stopKeys);
+        },
+        unlock() {
+          if (locks === 0 || --locks > 0) return;
+          document.documentElement.classList.remove('is-locked');
+          removeEventListener('wheel', stop);
+          removeEventListener('touchmove', stop);
+          removeEventListener('keydown', stopKeys);
+        }
+      };
+    })();
+    // Should the intro (splash + congratulation overlay) play on this page load?
+    // Yes on a first visit or a refresh. No when arriving from another page or with the browser's back button.
+    const INTRO = (() => {
+      let seen = false, reload = false;
+      try { seen = sessionStorage.getItem('intro-seen') === '1'; } catch (e) { }
+      try {
+        const nav = performance.getEntriesByType('navigation')[0];
+        reload = nav ? nav.type === 'reload' : (performance.navigation && performance.navigation.type === 1);
+      } catch (e) { }
+      if (reload) { try { sessionStorage.removeItem('intro-seen'); } catch (e) { } }
+      const show = !seen || reload;
+      if (!show) document.documentElement.classList.add('skip-intro');
+      return { show };
+    })();
+    if (INTRO.show) ScrollLock.lock(); // the splash is showing right now
+  </script>
 </head>
 
 <body class="bg-dark-bg text-white overflow-x-hidden">
@@ -1038,17 +1099,30 @@
   </script>
 
   <script>
-    // Keyboard users: Enter or Space enters the site (same as a click)
-    document.getElementById('splash-screen')?.addEventListener('keydown', (e) => {
+    // Splash: Enter / Space works like a click, and entering releases the splash's scroll lock
+    const splashEl = document.getElementById('splash-screen');
+    splashEl?.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.currentTarget.click(); }
     });
+    splashEl?.addEventListener('click', () => {
+      try { sessionStorage.setItem('intro-seen', '1'); } catch (e) { }
+      ScrollLock.unlock();
+    }, { once: true });
+
+    // Coming back from another page: no splash. We still run the splash's normal "enter" code,
+    // so the page opens exactly as it does after a click.
+    if (!INTRO.show) {
+      document.readyState === 'loading'
+        ? addEventListener('DOMContentLoaded', () => splashEl?.click())
+        : splashEl?.click();
+    }
   </script>
 
   <!-- CONGRATULATORY MESSAGE -->
   <script>
     (() => {
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      let root, cv, ctx, parts = [], raf = 0, timer = 0, stage = 0, prevOverflow = '';
+      let root, cv, ctx, parts = [], raf = 0, timer = 0, stage = 0;
 
       const chips = (list, base) => list.map((t, i) =>
         `<span class="wv-chip${t.hot ? ' hot' : ''}" style="--d:${(base + i * 0.35).toFixed(2)}s">${t.t}</span>`).join('');
@@ -1057,14 +1131,14 @@
       <div class="wv-rays"></div>
       <canvas></canvas>
       <button class="wv-skip" type="button">Skip</button>
-
-            <section class="wv-stage">
+ 
+      <section class="wv-stage">
         <p class="wv-kicker wv-up" style="--d:.1s">September 30, 2026 &nbsp;/&nbsp; DanzTrack Philippines</p>
         <h2 class="wv-grad wv-big wv-slam">4-PEAT</h2>
         <p class="wv-sub wv-up" style="--d:1s">College Division Champions. Again!</p>
         <div class="wv-row">${chips([{ t: '2023' }, { t: '2024' }, { t: '2025' }, { t: '2026', hot: 1 }], 1.5)}</div>
       </section>
-
+ 
       <section class="wv-stage">
         <p class="wv-kicker wv-up" style="--d:.1s">DanzTrack 2026 &nbsp;/&nbsp; Special Awards</p>
         <h2 class="wv-grad wv-mid wv-slam">Best of<br>the Best</h2>
@@ -1077,13 +1151,13 @@
         { t: 'Best Choreographer: Nathaniel Bañares', hot: 1 }
       ], .9)}</div>
       </section>
-
+ 
       <section class="wv-stage">
         <p class="wv-kicker wv-up" style="--d:.1s">Last Saturday &nbsp;/&nbsp; Sept 26</p>
         <h2 class="wv-grad wv-mid wv-slam">WSB 2026<br>Regional Champions</h2>
         <div class="wv-row">${chips([{ t: 'Monster Division: 1st Place' }, { t: 'Best in Choreography' }, { t: 'Next stop: Hong Kong', hot: 1 }], .9)}</div>
       </section>
-
+ 
       <section class="wv-stage">
         <p class="wv-kicker wv-up" style="--d:.1s">MSU-IIT Wildcats</p>
         <h2 class="wv-grad wv-mid wv-slam">Congratulations,<br>Wildcats!</h2>
@@ -1134,7 +1208,7 @@
           burst(w / 2, h * .3, 160);
           setTimeout(() => { burst(0, h, 60, 1.1, -Math.PI / 3); burst(w, h, 60, 1.1, -Math.PI * 2 / 3); }, 600);
           root.querySelector('.wv-hint').style.display = 'none';
-          setTimeout(() => root.querySelector('.wv-btn').focus({ preventScroll: true }), 1500);
+          setTimeout(() => root && root.querySelector('.wv-btn').focus({ preventScroll: true }), 1500);
         } else {
           timer = setTimeout(() => setStage(n + 1), reduce ? 3000 : 5400);
         }
@@ -1145,14 +1219,15 @@
         cancelAnimationFrame(raf); raf = 0; clearTimeout(timer);
         root.classList.remove('on');
         const el = root; root = null;
-        setTimeout(() => { el.remove(); document.body.style.overflow = prevOverflow; }, 800);
+        setTimeout(() => { el.remove(); ScrollLock.unlock(); }, 800); // page scrolls again once the overlay is gone
         document.removeEventListener('keydown', onKey);
       };
       const onKey = (e) => { if (e.key === 'Escape') close(); };
 
       const show = (force) => {
-        if (root) return;
+        if (root || (!force && !INTRO.show)) return;
         try { if (!force && sessionStorage.getItem('wv-seen')) return; } catch (e) { }
+        ScrollLock.lock();
         root = document.createElement('div');
         root.className = 'wv';
         root.setAttribute('role', 'dialog');
@@ -1160,8 +1235,6 @@
         root.setAttribute('aria-label', 'Congratulations, MSU-IIT Wildcats: 4-peat DanzTrack champions and WSB regional champions');
         root.innerHTML = markup();
         document.body.appendChild(root);
-        prevOverflow = document.body.style.overflow;
-        document.body.style.overflow = 'hidden';
         cv = root.querySelector('canvas'); ctx = cv.getContext('2d'); size();
         root.querySelector('.wv-skip').addEventListener('click', (e) => { e.stopPropagation(); close(); });
         root.querySelector('.wv-btn').addEventListener('click', (e) => { e.stopPropagation(); close(); });
@@ -1172,8 +1245,9 @@
       };
 
       window.WildcatsVictory = { show, close };
-      const splash = document.getElementById('splash-screen');
-      if (splash) splash.addEventListener('click', () => show(), { once: true });
+      // The splash's own unlock listener (above) runs first, then this one locks again
+      // in the same instant, so there is never a gap where the page can scroll.
+      document.getElementById('splash-screen')?.addEventListener('click', () => show(), { once: true });
     })();
   </script>
 
