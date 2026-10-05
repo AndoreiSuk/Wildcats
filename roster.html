@@ -263,7 +263,7 @@
                 <i
                     class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 text-sm pointer-events-none"></i>
                 <input id="roster-search" type="search" autocomplete="off" aria-label="Search the roster"
-                    placeholder="Search a name, role, or number..."
+                    placeholder="Search a name, or a role..."
                     class="w-full bg-[#0d0d10] border border-zinc-800 focus:border-wildcat-gold focus:outline-none rounded-full pl-11 pr-4 py-3 text-sm text-white placeholder-zinc-600 font-telemetry transition" />
             </div>
 
@@ -307,22 +307,63 @@
 
         <!-- PANE 2: WSB ALLIED CREWS (same cards as the main lineup) -->
         <section id="wsb-allies" role="tabpanel" aria-labelledby="tab-wsb-allies" class="campaign-pane hidden">
+
             <div
-                class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-zinc-800/80 pb-5 mb-8 gap-4">
+                class="flex flex-col lg:flex-row lg:items-end justify-between border-b border-zinc-800/80 pb-6 mb-8 gap-6">
                 <div>
-                    <span
-                        class="text-wildcat-orange font-telemetry text-[10px] sm:text-xs font-bold uppercase tracking-[0.25em] block mb-1">
-                        SATELLITE &amp; OUTSIDE CREWS
-                    </span>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-telemetry tracking-widest text-zinc-400 uppercase mb-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-wildcat-orange animate-pulse"></span>
+                        <span>SATELLITE &amp; OUTSIDE CREWS</span>
+                    </div>
                     <h2
-                        class="font-heading text-2xl sm:text-4xl font-black uppercase italic tracking-tighter text-white">
-                        EXTERNAL ALLIES
+                        class="font-heading text-3xl sm:text-5xl md:text-6xl font-black uppercase italic tracking-tighter text-white leading-none">
+                        EXTERNAL <span
+                            class="inline-block pr-2 text-transparent bg-clip-text bg-gradient-to-r from-wildcat-gold via-yellow-400 to-wildcat-orange">ALLIES</span>
                     </h2>
+                    <p class="mt-3 text-zinc-400 text-xs sm:text-sm font-light max-w-2xl leading-relaxed">
+                        Wildcats operatives who competed at World Supremacy Battlegrounds under outside banners.
+                    </p>
                 </div>
-                <div class="text-left sm:text-right font-telemetry text-[11px] sm:text-xs text-zinc-500">
-                    WILDCATS OPERATIVES COMPETING UNDER OUTSIDE BANNERS
+
+                <!-- Result cards: stacked on phones, side by side from tablet size up -->
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row gap-2 sm:gap-3 font-telemetry text-xs w-full lg:w-auto">
+                    <div
+                        class="px-3.5 py-2.5 rounded-xl bg-[#0d0d10] border border-wildcat-gold/30 flex items-center gap-2 shadow-md">
+                        <span class="w-2 h-2 rounded-full bg-wildcat-gold shrink-0"></span>
+                        <div>
+                            <span class="text-[9px] text-zinc-500 uppercase block leading-none">HYPE IT UP</span>
+                            <span class="text-white font-bold uppercase tracking-tight text-[11px]">CELL DIVISION
+                                CHAMPIONS</span>
+                        </div>
+                    </div>
+                    <div
+                        class="px-3.5 py-2.5 rounded-xl bg-[#0d0d10] border border-wildcat-orange/30 flex items-center gap-2 shadow-md">
+                        <span class="w-2 h-2 rounded-full bg-wildcat-orange shrink-0"></span>
+                        <div>
+                            <span class="text-[9px] text-zinc-500 uppercase block leading-none">LEAGUE OF ACES</span>
+                            <span class="text-white font-bold uppercase tracking-tight text-[11px]">MONSTER DIVISION 2ND
+                                PLACE</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Search -->
+            <div class="relative mb-10 max-w-md">
+                <i
+                    class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 text-sm pointer-events-none"></i>
+                <input id="allies-search" type="search" autocomplete="off" aria-label="Search the roster"
+                    placeholder="Search a name, or a role..."
+                    class="w-full bg-[#0d0d10] border border-zinc-800 focus:border-wildcat-gold focus:outline-none rounded-full pl-11 pr-4 py-3 text-sm text-white placeholder-zinc-600 font-telemetry transition" />
+            </div>
+
+            <p id="allies-empty"
+                class="hidden text-center py-16 font-telemetry text-xs uppercase tracking-widest text-zinc-500">
+                No members found.
+            </p>
+
             <div id="allies-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
             </div>
         </section>
@@ -400,7 +441,8 @@
             [3, 'John Lloyed M. Suaring', 'corrupt/jl.webp', 'Performer', '', '', ''],
             [4, 'Rujen Nephi Y. Amboang', 'corrupt/rujen.webp', 'Performer', '', '', ''],
             [5, 'Samantha B. Palubon', 'corrupt/sam.webp', 'Technical Lead • Athlete', '', '', ''],
-            [6, 'Kylle A. Milvar', 'corrupt/kylle.webp', 'Performer', '', '', ''], [7, 'Janiel Eubert M. Lumpaz', 'corrupt/coach.webp', 'Performer', '', '', ''],
+            [6, 'Kylle A. Milvar', 'corrupt/kylle.webp', 'Performer', '', '', ''],
+            [7, 'Janiel Eubert M. Lumpaz', 'corrupt/coach.webp', 'Performer', '', '', ''],
             [8, 'Kersie Braice D. Batulan', 'corrupt/butata.webp', 'Performer', '', '', ''],
             [9, 'Jel Erica S. Natinga', 'corrupt/erica.webp', 'Performer', '', '', ''],
             [10, 'Carlo Enrique R. Montejo', 'corrupt/carlo.webp', 'Performer', '', '', ''],
@@ -411,12 +453,12 @@
             [15, 'Derrick Nicholas O. Tabimina', 'corrupt/derrick.webp', 'Performer', '', '', ''],
             [16, 'Nelle Claresse A. Lado', 'corrupt/nelle.webp', 'Performer', '', '', ''],
             [17, 'Joexua Cris Naesh L. Paco', 'corrupt/naesh.webp', 'Performer', '', '', ''],
-            [18, 'Jezryl I. Pagente', 'corrupt/jezryl.webp', 'Performer', '', '', ''],
+            [18, 'Princess Jane E. Ganaden', 'corrupt/nads.webp', 'Performer', '', '', ''],
             [19, 'Lorenzo Miguel J. Gomez', 'corrupt/lm.webp', 'Performer', '', '', ''],
             [20, 'Mariah Passy D. Pangasian', 'corrupt/aya.webp', 'Performer', '', '', ''],
             [21, 'Art Florens B. Bendanillo', 'corrupt/art.webp', 'Performer', '', '', ''],
             [22, 'Reden Jules B. Tracarol', 'corrupt/jules.webp', 'Performer', '', '', ''],
-            [23, 'Princess Jane E. Ganaden', 'corrupt/nads.webp', 'Performer', '', '', ''],
+            [23, 'Jezryl I. Pagente', 'corrupt/jezryl.webp', 'Performer', '', '', ''],
             [24, 'Jericho B. Jabla', 'corrupt/echo.webp', 'Performer', '', '', ''],
             [25, 'Methos M. Calunod', 'corrupt/methos.webp', 'Performer', '', '', ''],
             [26, 'Grazelle Dimple-Ann Q. Adigue', 'corrupt/grazelle.webp', 'Performer', '', '', ''],
@@ -542,6 +584,22 @@
         renderRoster();
         fillGrid('allies-grid', ALLIES);
         fillGrid('rawaten-grid', RAWATEN, 'rawaten-empty');
+
+        // Search for any lineup: wireSearch(inputId, list, gridId, emptyMessageId)
+        function wireSearch(inputId, list, gridId, emptyId) {
+            const input = $(inputId);
+            if (!input) return;
+            input.addEventListener('input', () => {
+                const q = norm(input.value.trim().replace(/^#/, ''));
+                const hit = (m) => !q || [m[1], m[5] || '', m[0], String(m[0]).padStart(2, '0')]
+                    .some((f) => norm(String(f)).includes(q));
+                const results = list.filter(hit);
+                fillGrid(gridId, results);
+                $(emptyId).classList.toggle('hidden', results.length > 0);
+                $(emptyId).textContent = `No members found for "${input.value.trim()}".`;
+            });
+        }
+        wireSearch('allies-search', ALLIES, 'allies-grid', 'allies-empty');
 
         // Tab counts
         $('tab-count-main').textContent = new Set([...CHOREOS.map((c) => c[0]), ...ATHLETES.map((a) => a[1])]).size;
