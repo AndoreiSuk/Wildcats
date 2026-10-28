@@ -206,6 +206,14 @@
                 onclick="switchCampaign('rawaten')" class="campaign-tab-btn">
                 3. Rawaten '26 <span id="tab-count-rawaten" class="tab-count">Soon</span>
             </button>
+            <button type="button" role="tab" id="tab-ipag" aria-controls="ipag" aria-selected="false"
+                onclick="switchCampaign('ipag')" class="campaign-tab-btn">
+                4. IPAG Su'g Saulog <span id="tab-count-ipag" class="tab-count">5</span>
+            </button>
+            <button type="button" role="tab" id="tab-halloween" aria-controls="halloween" aria-selected="false"
+                onclick="switchCampaign('halloween')" class="campaign-tab-btn">
+                5. Halloween Videoshoot <span id="tab-count-halloween" class="tab-count">Soon</span>
+            </button>
         </div>
     </div>
 
@@ -415,6 +423,106 @@
                 </p>
             </div>
         </section>
+
+        <!-- PANE 4: IPAG SUG SAULOG -->
+        <section id="ipag" role="tabpanel" aria-labelledby="tab-ipag" class="campaign-pane hidden">
+            <div
+                class="flex flex-col lg:flex-row lg:items-end justify-between border-b border-zinc-800/80 pb-6 mb-8 gap-6">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-telemetry tracking-widest text-zinc-400 uppercase mb-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-wildcat-gold animate-pulse"></span>
+                        <span>IPAG // CULTURAL PERFORMANCE</span>
+                    </div>
+                    <h2
+                        class="font-heading text-3xl sm:text-5xl md:text-6xl font-black uppercase italic tracking-tighter text-white leading-none">
+                        IPAG <span
+                            class="inline-block pr-2 text-transparent bg-clip-text bg-gradient-to-r from-wildcat-gold via-yellow-400 to-wildcat-orange">SU'G
+                            SAULOG</span>
+                    </h2>
+                    <p class="mt-3 text-zinc-400 text-xs sm:text-sm font-light max-w-2xl leading-relaxed">
+                        Wildcats performers who represented the Integrated Performing Arts Guild's (IPAG) Su'g Saulog:
+                        Mga Sugilanong Mindanao.
+                    </p>
+                </div>
+            </div>
+            <div id="ipag-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+            </div>
+            <div id="ipag-empty" class="hidden p-8 rounded-2xl bg-[#0d0d10] border border-zinc-800 text-center">
+                <p class="font-telemetry text-xs uppercase tracking-widest text-zinc-400">Lineup incoming // Roster
+                    updates soon.</p>
+            </div>
+        </section>
+
+        <!-- PANE 5: HALLOWEEN VIDEOSHOOT -->
+        <section id="halloween" role="tabpanel" aria-labelledby="tab-halloween" class="campaign-pane hidden">
+            <div
+                class="flex flex-col lg:flex-row lg:items-end justify-between border-b border-zinc-800/80 pb-6 mb-8 gap-6">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-telemetry tracking-widest text-zinc-400 uppercase mb-3">
+                        <span class="w-1.5 h-1.5 rounded-full bg-wildcat-orange animate-pulse"></span>
+                        <span>SEASONAL PRODUCTION // VIDEO</span>
+                    </div>
+                    <h2
+                        class="font-heading text-3xl sm:text-5xl md:text-6xl font-black uppercase italic tracking-tighter text-white leading-none">
+                        HALLOWEEN <span
+                            class="inline-block pr-2 text-transparent bg-clip-text bg-gradient-to-r from-wildcat-gold via-yellow-400 to-wildcat-orange">VIDEOSHOOT</span>
+                    </h2>
+                    <p class="mt-3 text-zinc-400 text-xs sm:text-sm font-light max-w-2xl leading-relaxed">
+                        The director, choreographers, videographers, and performers behind the Wildcats Halloween
+                        videoshoot.
+                    </p>
+                </div>
+            </div>
+            <!-- Search -->
+            <div class="relative mb-10 max-w-md">
+                <i
+                    class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 text-sm pointer-events-none"></i>
+                <input id="halloween-search" type="search" autocomplete="off"
+                    aria-label="Search the Halloween videoshoot lineup" placeholder="Search a name, role, or number..."
+                    class="w-full bg-[#0d0d10] border border-zinc-800 focus:border-wildcat-gold focus:outline-none rounded-full pl-11 pr-4 py-3 text-sm text-white placeholder-zinc-600 font-telemetry transition" />
+            </div>
+            <p id="halloween-none"
+                class="hidden text-center py-16 font-telemetry text-xs uppercase tracking-widest text-zinc-500"></p>
+            <div id="halloween-empty" class="hidden p-8 rounded-2xl bg-[#0d0d10] border border-zinc-800 text-center">
+                <p class="font-telemetry text-xs uppercase tracking-widest text-zinc-400">Lineup incoming // Roster
+                    updates soon.</p>
+            </div>
+
+            <!-- Director, choreographers, videographers -->
+            <div id="halloween-crew-block" class="mb-14">
+                <div
+                    class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 mb-4 border-b border-zinc-900 pb-2">
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="w-2 h-2 rounded-full bg-wildcat-gold shadow-[0_0_8px_#FFE600] animate-pulse"></span>
+                        <h3 class="font-telemetry text-xs uppercase tracking-widest text-wildcat-gold font-bold">
+                            DIRECTION &amp; CREW (<span id="halloween-crew-count">0</span>)
+                        </h3>
+                    </div>
+                </div>
+                <div id="halloween-crew-grid"
+                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"></div>
+            </div>
+
+            <!-- Performers -->
+            <div id="halloween-perf-block">
+                <div
+                    class="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 mb-4 border-b border-zinc-900 pb-2">
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="w-2 h-2 rounded-full bg-wildcat-orange shadow-[0_0_8px_#FF5500] animate-pulse"></span>
+                        <h3 class="font-telemetry text-xs uppercase tracking-widest text-wildcat-orange font-bold">
+                            PERFORMERS (<span id="halloween-perf-count">0</span>)
+                        </h3>
+                    </div>
+                </div>
+                <div id="halloween-perf-grid"
+                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"></div>
+            </div>
+        </section>
+
     </main>
 
     <!-- FOOTER -->
@@ -447,10 +555,10 @@
         const CHOREOS = [
             ['Buds Leo Capatagan', 'BudsChoreographer.jpg', 'Head Choreographer', true, ''],
             ['Nathaniel Bañares', 'NatnatChoreographer.jpg', 'Head Choreographer', false, ''],
-            ['Michael Vince Tingson', 'MichaelVinceChoreographer.jpg', 'Co-Choreographer', false, ''],
+            ['Michael Tingson', 'MichaelVinceChoreographer.jpg', 'Co-Choreographer', false, ''],
             ['Adrian Ray Agosto', 'AdrianRayChoreographer.jpg', 'Co-Choreographer', false, ''],
             ['Jhoruz Seville', 'JhoruzAmbot.jpg', 'Co-Choreographer', false, ''],
-            ['JM Lanioso', 'JMLanioso.jpg', 'Co-Choreographer', false, '']
+            ['Jerald Mar Lanioso', 'JMLanioso.jpg', 'Co-Choreographer', false, '']
         ];
 
         // Danztrack & WSB lineup: [num, name, image, role, flag, crew, instagram]
@@ -460,7 +568,7 @@
             [2, 'Joexua Ross Rieck L. Paco', 'corrupt/rieck.webp', 'Performer', '', '', ''],
             [3, 'John Lloyed M. Suaring', 'corrupt/jl.webp', 'Performer', '', '', ''],
             [4, 'Rujen Nephi Y. Amboang', 'corrupt/rujen.webp', 'Performer', '', '', ''],
-            [5, 'Samantha B. Palubon', 'corrupt/sam.webp', 'Technical Lead • Athlete', '', '', ''],
+            [5, 'Samantha B. Palubon', 'corrupt/sam.webp', 'Performer', '', '', ''],
             [6, 'Kylle A. Milvar', 'corrupt/kylle.webp', 'Performer', '', '', ''],
             [7, 'Janiel Eubert M. Lumpaz', 'corrupt/coach.webp', 'Performer', '', '', ''],
             [8, 'Kersie Braice D. Batulan', 'corrupt/butata.webp', 'Performer', '', '', ''],
@@ -485,7 +593,8 @@
             [27, 'Rufel F. Barluado', 'corrupt/rufel.webp', 'Performer', '', '', ''],
             [28, 'Princess Lucille C. Mutya', 'corrupt/ipin.webp', 'Performer', '', '', ''],
             [29, 'Lhiegy Gwyn B. Sacal', 'corrupt/lhiegy.webp', 'Performer', '', '', ''],
-            [30, 'Buds Leo Capatagan', 'corrupt/buds.webp', 'Head Choreo • Performer', 'head', '', '']];
+            [30, 'Buds Leo Capatagan', 'corrupt/buds.webp', 'Head Choreo • Performer', 'head', '', '']
+        ];
 
         // WSB allied crews
         const ALLIES = [
@@ -506,6 +615,62 @@
 
         // Rawaten Extravaganza 2026
         const RAWATEN = [];
+
+        // 4. IPAG Sug Saulog (5 performers)
+        const IPAG = [
+            [1, 'Mariah Passy Pangasian', 'ipag/aya.jpg', 'Performer', '', 'IPAG / WILDCATS'],
+            [2, 'Jachin Bryan Ligue', 'ipag/jachin.jpg', 'Performer', '', 'IPAG / WILDCATS'],
+            [3, 'Buds Leo Capatagan', 'ipag/buds.jpg', 'Performer', '', 'IPAG / WILDCATS'],
+            [4, 'Camelle Villarmea', 'ipag/cams.jpg', 'Performer', '', 'IPAG / WILDCATS'],
+            [5, 'Princess Lucille Mutya', 'ipag/ipin.jpg', 'Performer', '', 'IPAG / WILDCATS']
+        ];
+
+        // 5. Halloween Videoshoot: director, choreographers, videographers
+        const HALLOWEEN_CREW = [
+            [1, 'David Eunel Garcia', 'halloween/david.jpg', 'Director / Choreographer', 'head'],
+            [2, 'Princess Jane Ganaden', 'PrincessJanePic001.jpg', 'Choreographer'],
+            [3, 'Flint Aaron Sagrado', 'halloween/flint.jpg', 'Videographer'],
+            [4, 'Luigi Benedict Verador', 'halloween/ben.jpg', 'Assistant'],
+            [5, 'Reden Jules Tracarol', 'halloween/jules.jpg', 'Assistant']
+        ];
+
+        // 5. Halloween Videoshoot: performers (add all 30+; copy a row for each person)
+        const HALLOWEEN_PERFORMERS = [
+            [1, 'Andrey Gwynn Monsanto', 'halloween/andrey.jpg'],
+            [2, 'Ailyn Senbonmatsu', 'halloween/ailyn.jpg'],
+            [3, 'Precious Lacsi', 'halloween/precious.jpg'],
+            [4, 'Juniezsa Bacus', 'halloween/niezsa.jpg'],
+            [5, 'Freelyn Abes', 'halloween/freelyn.jpg'],
+            [6, 'Ziad El-Rayyan Aliponto', 'halloween/ziad.jpg'],
+            [7, 'Chealieh Bless Rodrigo', 'halloween/chealieh.jpg'],
+            [8, 'John Wyne Palubon', 'halloween/wyne.jpg'],
+            [9, 'John Lloyed Suaring', 'halloween/jl.jpg'],
+            [10, 'Harry Notinggo', 'halloween/harry.jpg'],
+            [11, 'Nelle Claresse Lado', 'halloween/nelle.jpg'],
+            [12, 'Joexua Ross Rieck Paco', 'halloween/rieck.jpg'],
+            [13, 'Rebecca Lyn Antonio', 'halloween/rebecca.jpg'],
+            [14, 'James Kyle Laguna', 'halloween/kang.jpg'],
+            [15, 'Jel Erica Natinga', 'halloween/erica.jpg'],
+            [16, 'Dave Andrei Garbanzos', 'halloween/dave.jpg', 'Performer / Choreographer', 'head'],
+            [17, 'Samantha Palubon', 'halloween/samantha.jpg', 'Performer / Choreographer', 'head'],
+            [18, 'Lorenzo Miguel Gomez', 'halloween/LM.jpg'],
+            [19, 'Aleana Sullano', 'halloween/aleana.JPG'],
+            [20, 'Luke John Razada', 'halloween/luke.jpg'],
+            [21, 'Sean Jric Gabor', 'halloween/sean.jpg'],
+            [22, 'Krishna Dorothy Leyran', 'halloween/krishna.jpg'],
+            [23, 'Janiel Eubert Lumpaz', 'halloween/janiel.jpg'],
+            [24, 'Carlo Enrique Montejo', 'halloween/carlo.jpg', 'Performer / Choreographer', 'head'],
+            [25, 'Anthony Yue Garcia', 'halloween/yue.jpg'],
+            [26, 'Cendy Patagani', 'halloween/cendy.jpg'],
+            [27, 'Gabe Lyniel Lojeco', 'halloween/gabe.jpg'],
+            [28, 'Cassandra Lariosa', 'halloween/cassandra.jpeg'],
+            [29, 'Miguel Montescarlos', 'halloween/miguel.jpeg'],
+            [30, 'Debie Demicillo', 'halloween/debie.jpeg'],
+            [31, 'Mary Claire Ygay', 'halloween/mary.jpg'],
+            [32, 'John Ailecs Oros', 'halloween/oros.jpeg'],
+            [33, 'Z Yanna Amrei Doplon', 'halloween/yanna.jpg'],
+            [34, 'Hani Dutaharon', 'halloween/hani.jpg'],
+        ];
 
         /* ---------- Helper: Resolve Instagram URL ---------- */
         function getIgUrl(handle) {
@@ -604,6 +769,30 @@
         renderRoster();
         fillGrid('allies-grid', ALLIES);
         fillGrid('rawaten-grid', RAWATEN, 'rawaten-empty');
+        fillGrid('ipag-grid', IPAG, 'ipag-empty');
+
+        function renderHalloween(query = '') {
+            const q = norm(query.trim().replace(/^#/, ''));
+            const hit = (m) => !q || [m[1], m[3] || '', m[0], String(m[0]).padStart(2, '0')].some((f) => norm(String(f)).includes(q));
+            const crew = HALLOWEEN_CREW.filter(hit), perf = HALLOWEEN_PERFORMERS.filter(hit);
+            const total = HALLOWEEN_CREW.length + HALLOWEEN_PERFORMERS.length;
+            fillGrid('halloween-crew-grid', crew);
+            fillGrid('halloween-perf-grid', perf);
+            $('halloween-crew-count').textContent = crew.length;
+            $('halloween-perf-count').textContent = perf.length;
+            $('halloween-crew-block').classList.toggle('hidden', !crew.length);
+            $('halloween-perf-block').classList.toggle('hidden', !perf.length);
+            $('halloween-empty').classList.toggle('hidden', total > 0);
+            $('halloween-none').classList.toggle('hidden', !(total > 0 && !crew.length && !perf.length));
+            $('halloween-none').textContent = `No members found for "${query.trim()}".`;
+        }
+        $('halloween-search').addEventListener('input', (e) => renderHalloween(e.target.value));
+        renderHalloween();
+
+        // Tab counts (a person who is both choreographer and performer counts once)
+        $('tab-count-ipag').textContent = IPAG.length || 'Soon';
+        $('tab-count-halloween').textContent =
+            new Set([...HALLOWEEN_CREW, ...HALLOWEEN_PERFORMERS].map((m) => m[1])).size || 'Soon';
 
         // Search for any lineup: wireSearch(inputId, list, gridId, emptyMessageId)
         function wireSearch(inputId, list, gridId, emptyId) {
@@ -627,7 +816,7 @@
         $('tab-count-rawaten').textContent = RAWATEN.length || 'Soon';
 
         /* ---------- Tabs ---------- */
-        const PANES = ['unified-champs', 'wsb-allies', 'rawaten'];
+        const PANES = ['unified-champs', 'wsb-allies', 'rawaten', 'ipag', 'halloween'];
         const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         function switchCampaign(targetId, updateUrl = true) {
